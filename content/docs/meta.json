@@ -1,0 +1,14 @@
+{
+  "root": true,
+  "pages": [
+    "---Guide---",
+    "index",
+    "contribute",
+    "---Components---",
+    "...components",
+    "---Blocks---",
+    "...blocks",
+    "---Others---",
+    "[Github](https://github.com/)"
+  ]
+}

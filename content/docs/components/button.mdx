@@ -1,0 +1,84 @@
+---
+title: Button
+description:  Button
+---
+
+import { Tabs, Tab } from "fumadocs-ui/components/tabs";
+import { Step, Steps } from "fumadocs-ui/components/steps";   
+import Button from "@/kaifui/components/Button";
+
+Looking for a simple yet powerful Hero Section      
+
+## Preview
+
+<Tabs items={["preview", "code"]}>
+    <Tab value={"preview"}>    
+       <Button />
+    </Tab>
+    <Tab value={"code"}>
+```bash
+import React from "react";
+
+const Button = () => {
+  return (
+    <>
+      <button className="bg-black hover:bg-black/90 dark:bg-white dark:hover:bg-white/90 text-white dark:text-black px-3 py-1 rounded transition duration-300 text-sm">
+         Button
+       </button>
+    </>
+  );
+};
+
+export default Button;
+```
+    </Tab>
+ </Tabs>
+
+## Installation
+
+<Steps>
+<Step>
+
+  ### Copy paste the code
+
+```ts title="components/Button.tsx" 
+import React from "react";
+
+const Button = () => {
+  return (
+    <>
+      <button className="bg-black hover:bg-black/90 dark:bg-white dark:hover:bg-white/90 text-white dark:text-black px-3 py-1 rounded transition duration-300 text-sm">
+         Button
+       </button>
+    </>
+  );
+};
+
+export default Button;
+```
+</Step>
+<Step>
+  ### Use in page
+
+```ts title="app/page.tsx" 
+import Button from "@/components/Button";
+import Link from "next/link";
+
+export default function HomePage() {
+  return (
+    <>
+      <Button />
+    </>
+  );
+}
+```
+</Step>
+</Steps>
+
+## Tech Stack
+
+<Cards>
+  <Card title="React" />
+  <Card title="Next.js" />
+  <Card title="Tailwind CSS" />
+</Cards>
