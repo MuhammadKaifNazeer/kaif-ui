@@ -34,6 +34,17 @@ export const baseOptions: HomeLayoutProps = {
       url: "/templates",
       icon: <LayoutTemplateIcon />,
     },
+    {
+      icon: <BookIcon />,
+      text: "Components",
+      url: "/docs",
+      active: "nested-url",
+    },
+    {
+      text: "Text Animations",
+      url: "/templates",
+      icon: <LayoutTemplateIcon />,
+    },
   ],
 };
 
