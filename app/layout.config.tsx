@@ -46,7 +46,7 @@ export const baseOptions: HomeLayoutProps = {
     {
       icon: <PanelsTopLeft />,
       text: "Templates",
-      url: "/templates",
+      url: "/docs/alltemplates",
     },
     // {
     //   text: "Text Animations",

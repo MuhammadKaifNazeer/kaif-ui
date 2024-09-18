@@ -8,7 +8,6 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-// Exporting metadata for title and description
 export const metadata = {
   title: "Kaif UI - Animated React Component Library",
   description:
