@@ -80,12 +80,12 @@ const Hero = () => {
             </span>
           </h2>
           <div className="mt-4 flex w-full flex-col items-center justify-center gap-4 px-8 sm:flex-row">
-            <Link href={"/docs/components"} className="w-full sm:w-max">
+            <Link href={"/docs/allcomponents"} className="w-full sm:w-max">
               <Button className="no-underline flex space-x-2 group cursor-pointer transition duration-200 p-px font-semibold px-4 py-2 bg-black dark:bg-white dark:text-black text-white relative z-20 h-10 w-full items-center justify-center rounded-lg text-center text-sm sm:w-52 w-full">
                 Browse Components
               </Button>
             </Link>
-            <Link href={"/docs/blocks"} className="w-full sm:w-max">
+            <Link href={"/docs/allblocks"} className="w-full sm:w-max">
               <Button className="no-underline space-x-2 group cursor-pointer transition duration-200 p-px font-semibold px-4 py-2 relative z-20 text-sm bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 dark:hover:bg-neutral-900 shadow-input text-black dark:text-white w-full h-10 flex items-center justify-center rounded-lg text-center sm:w-52 w-full">
                 Browse Blocks
               </Button>

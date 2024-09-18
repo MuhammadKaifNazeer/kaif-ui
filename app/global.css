@@ -75,3 +75,8 @@ article.max-w-\[840px\] {
     @apply bg-background text-foreground;
   }
 }
+
+/* In a CSS or Tailwind file */
+.no-decoration {
+  text-decoration: none !important;
+}
