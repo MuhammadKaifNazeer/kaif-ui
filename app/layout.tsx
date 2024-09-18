@@ -3,15 +3,63 @@ import { RootProvider } from "fumadocs-ui/provider";
 import { Inter } from "next/font/google";
 import type { ReactNode } from "react";
 import { ThemeProvider } from "@/components/theme-provider";
+import type { Metadata } from "next";
 
 const inter = Inter({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  title: "Kaif UI - Animated React Component Library",
+export const metadata: Metadata = {
+  title: "Kaif UI - Build Beautiful Interfaces at Lightning Speed",
   description:
-    "Kaif UI is a components library offering animated React components built with ShadCN UI and Framer Motion, perfect for enhancing your web projects.",
+    "Explore a vast library of beautifully crafted, animated components. Save development time, enhance user experience, and build visually stunning interfaces at lightning speed.",
+  icons: {
+    icon: "/favicon/favicon.ico",
+  },
+  keywords: [
+    "Kaif UI",
+    "React component library",
+    "ShadCN UI",
+    "Framer Motion",
+    "UI components",
+    "Web development",
+    "Frontend library",
+    "Animated components",
+  ],
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  themeColor: "#ffffff",
+  authors: [
+    {
+      name: "Muhammad Kaif Nazeer",
+      url: "https://muhammadkaifnazeer.netlify.app/",
+    },
+  ],
+  openGraph: {
+    type: "website",
+    url: "https://kaif-ui.vercel.app/",
+    title: "Kaif UI - Build Beautiful Interfaces at Lightning Speed",
+    description:
+      "Explore a vast library of beautifully crafted, animated components. Save development time, enhance user experience, and build visually stunning interfaces at lightning speed.",
+    siteName: "Kaif UI",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Kaif UI - Build Beautiful Interfaces at Lightning Speed",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://kaif-ui.vercel.app/",
+  },
 };
 
 export default function Layout({ children }: { children: ReactNode }) {

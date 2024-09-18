@@ -79,8 +79,17 @@ export function Navbar({ className }: NavbarProps) {
                       width={50}
                       height={50}
                       decoding="async"
-                      src="/logo.png"
-                      className="w-6 h-6"
+                      src="/logo/logo-dark-theme.svg"
+                      className="w-6 h-6 hidden dark:block rounded"
+                    />
+                    <Image
+                      alt="Logo"
+                      loading="lazy"
+                      width={50}
+                      height={50}
+                      decoding="async"
+                      src="/logo/logo-light-theme.svg"
+                      className="w-6 h-6 dark:hidden rounded"
                     />
                     <h3 className="text-xl font-bold">Kaif UI</h3>
                   </div>
@@ -116,8 +125,17 @@ export function Navbar({ className }: NavbarProps) {
                   width={50}
                   height={50}
                   decoding="async"
-                  src="/logo.png"
-                  className="w-6 h-6"
+                  src="/logo/logo-dark-theme.svg"
+                  className="w-6 h-6 hidden dark:block rounded"
+                />
+                <Image
+                  alt="Logo"
+                  loading="lazy"
+                  width={50}
+                  height={50}
+                  decoding="async"
+                  src="/logo/logo-light-theme.svg"
+                  className="w-6 h-6 dark:hidden rounded"
                 />
                 <h3 className="text-xl font-bold">Kaif UI</h3>
               </div>
@@ -172,8 +190,17 @@ export function Navbar({ className }: NavbarProps) {
                       width={50}
                       height={50}
                       decoding="async"
-                      src="/logo.png"
-                      className="w-6 h-6"
+                      src="/logo/logo-dark-theme.svg"
+                      className="w-6 h-6 hidden dark:block rounded"
+                    />
+                    <Image
+                      alt="Logo"
+                      loading="lazy"
+                      width={50}
+                      height={50}
+                      decoding="async"
+                      src="/logo/logo-light-theme.svg"
+                      className="w-6 h-6 dark:hidden rounded"
                     />
                     <h3 className="text-xl font-bold">Kaif UI</h3>
                   </div>
