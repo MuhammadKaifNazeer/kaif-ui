@@ -66,7 +66,7 @@ export function Navbar({ className }: NavbarProps) {
     <>
       <header className="fixed top-0 z-[100] w-full border-b border-transparent bg-transparent w-full">
         <div
-          className={`hidden lg:block w-full ${scrolled ? "backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b" : ""}`}
+          className={`hidden lg:block w-full ${scrolled ? "backdrop-blur supports-[backdrop-filter]:bg-background/60" : ""}`}
         >
           <div className="px-4 py-4 flex h-16 items-center max-w-7xl mx-auto w-full">
             <div className="flex items-center justify-between w-full">
@@ -106,7 +106,7 @@ export function Navbar({ className }: NavbarProps) {
 
         <div className="block lg:hidden">
           <div
-            className={`fixed w-full top-0 flex items-center justify-between gap-4 px-4 py-2 md:px-6 z-[100] ${scrolled ? "backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b" : ""}`}
+            className={`fixed w-full top-0 flex items-center justify-between gap-4 px-4 py-2 md:px-6 z-[100] ${scrolled ? "backdrop-blur supports-[backdrop-filter]:bg-background/60" : ""}`}
           >
             <Link href="/">
               <div className="flex flex items-center justify-start gap-2">
