@@ -9,6 +9,7 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { NavMenu } from "@/components/NavigationMenu/NavigationMenu";
 import { ThemeToggler } from "@/components/ThemeToggler/ThemeToggler";
+import SearchTriggerButton from "@/components/SearchTriggerButton/SearchTriggerButton";
 
 type NavbarProps = {
   className?: string;
@@ -87,6 +88,7 @@ export function Navbar({ className }: NavbarProps) {
                 <NavMenu />
               </div>
               <div className="flex items-center justify-end gap-2">
+                <SearchTriggerButton />
                 <ThemeToggler />
                 <Link
                   href="https://github.com/MuhammadKaifNazeer/kaif-ui"
@@ -104,7 +106,7 @@ export function Navbar({ className }: NavbarProps) {
 
         <div className="block lg:hidden">
           <div
-            className={`fixed w-full top-0 flex items-center justify-between gap-4 bg-background px-4 py-2 md:px-6 z-[100] ${scrolled ? "backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b" : ""}`}
+            className={`fixed w-full top-0 flex items-center justify-between gap-4 px-4 py-2 md:px-6 z-[100] ${scrolled ? "backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b" : ""}`}
           >
             <Link href="/">
               <div className="flex flex items-center justify-start gap-2">
@@ -122,17 +124,19 @@ export function Navbar({ className }: NavbarProps) {
             </Link>
             <div className="flex items-center justify-end gap-2">
               <div className="flex items-center justify-end gap-2">
+                <SearchTriggerButton />
                 <ThemeToggler />
-                <Button className="gap-2 hidden sm:flex">
-                  <Github className="w-4 h-4" />
-                  Give a star
-                </Button>
+                <Link
+                  href="https://github.com/MuhammadKaifNazeer/kaif-ui"
+                  target="_blank"
+                >
+                  <Button variant="ghost" size="icon">
+                    <Github className="w-4 h-4" />
+                  </Button>
+                </Link>
               </div>
-              <Button variant="outline" size="icon" className="sm:hidden">
-                <Github className="w-4 h-4" />
-              </Button>
               <Button
-                variant="outline"
+                variant="ghost"
                 size="icon"
                 className="shrink-0 rounded"
                 onClick={toggleSidebar}
