@@ -17,21 +17,21 @@ type NavbarProps = {
 
 const NavLinks = [
   {
-    link: "/components",
+    link: "/docs/allcomponents",
     name: "Components",
   },
   {
-    link: "/blocks",
+    link: "/docs/allblocks",
     name: "Blocks",
   },
   {
-    link: "/templates",
+    link: "/docs/alltemplates",
     name: "Templates",
   },
-  {
-    link: "/textanimations",
-    name: "Text Animation",
-  },
+  // {
+  //   link: "/textanimations",
+  //   name: "Text Animation",
+  // },
 ];
 
 export function Navbar({ className }: NavbarProps) {
