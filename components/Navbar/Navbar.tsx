@@ -88,10 +88,15 @@ export function Navbar({ className }: NavbarProps) {
               </div>
               <div className="flex items-center justify-end gap-2">
                 <ThemeToggler />
-                <Button className="gap-2">
-                  <Github className="w-4 h-4" />
-                  Give a star
-                </Button>
+                <Link
+                  href="https://github.com/MuhammadKaifNazeer/kaif-ui"
+                  target="_blank"
+                >
+                  <Button className="gap-2">
+                    <Github className="w-4 h-4" />
+                    Give a star
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
