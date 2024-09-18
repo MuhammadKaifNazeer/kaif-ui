@@ -3,92 +3,207 @@
 import React from "react";
 import { Github } from "lucide-react";
 import Link from "next/link";
+import { Cover } from "@/components/ui/cover";
+import { Users } from "@/components/Users/Users";
+import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   return (
-    <main className="flex items-center justify-center bg-[url('/rings-bg.svg')] w-full h-screen bg-cover relative bg-no-repeat flex-wrap bg-center">
-      <div
-        aria-hidden="true"
-        className="bg-[radial-gradient(_50%_50%_at_50%_50%,_#fff_0,_hsla(0,_0%,_100%,_0)_100%_)] opacity-[0.06] rotate-45 w-full -top-[80px] max-w-[1800px]"
-      ></div>
-      <div className="flex flex-col items-center max-w-[800px] px-[16px] py-[0] -mt-72">
-        <h1 className="text-4xl font-bold text-center space-x-2 ">
-          <span
-            className="[box-shadow:0_0_0_2px_#666] px-[2px] py-[0] relative inline-flex mr-2"
-            style={{ letterSpacing: "-2px" }}
-          >
-            <div
-              className="bg-[#fff] w-[4px] h-[4px] [box-shadow:0_0_0_1px_var(--accent-color)] absolute"
-              style={{ top: "-3px", left: "-3px" }}
-            ></div>
-            <div
-              className="bg-[#fff] w-[4px] h-[4px] [box-shadow:0_0_0_1px_var(--accent-color)] absolute"
-              style={{ right: "-3px", top: "-3px" }}
-            ></div>
-            <div
-              className="bg-[#fff] w-[4px] h-[4px] [box-shadow:0_0_0_1px_var(--accent-color)] absolute"
-              style={{ bottom: "-3px", left: "-3px" }}
-            ></div>
-            <div
-              className="bg-[#fff] w-[4px] h-[4px] [box-shadow:0_0_0_1px_var(--accent-color)] absolute"
-              style={{ bottom: "-3px", right: "-3px" }}
-            ></div>
-            <div className="words_width_animat inline-block w-[fit-content] tracking-[-1px] leading-[16px] rounded-[3px] px-[4px] py-px text-[12px] bg-[#666] absolute -top-[28px] left-2/4 -translate-x-1/2">
-              330 x 56
+    <>
+      <div className="relative w-full overflow-hidden">
+        <div className="absolute top-0 left-0 w-screen h-screen z-40 pointer-events-none">
+          <div
+            className="absolute top-0 left-0"
+            style={{
+              transform: "translateY(-350px) rotate(-45deg)",
+              width: "560px",
+              height: "1380px",
+              background:
+                "radial-gradient(68.54% 68.72% at 55.02% 31.46%, rgba(179, 217, 255, 0.08) 0px, rgba(26, 140, 255, 0.02) 50%, rgba(0, 115, 230, 0) 80%)",
+            }}
+          ></div>
+
+          <div
+            className="absolute top-0 left-0"
+            style={{
+              transform: "rotate(-45deg) translate(5%, -50%)",
+              transformOrigin: "left top",
+              width: "240px",
+              height: "1380px",
+              background:
+                "radial-gradient(50% 50% at 50% 50%, rgba(179, 217, 255, 0.06) 0px, rgba(26, 140, 255, 0.02) 80%, transparent 100%)",
+            }}
+          ></div>
+
+          <div
+            className="absolute top-0 left-0"
+            style={{
+              borderRadius: "20px",
+              transform: "rotate(-45deg) translate(-180%, -70%)",
+              transformOrigin: "left top",
+              top: "0px",
+              left: "0px",
+              width: "240px",
+              height: "1380px",
+              background:
+                "radial-gradient(50% 50% at 50% 50%, rgba(179, 217, 255, 0.04) 0px, rgba(0, 115, 230, 0.02) 80%, transparent 100%)",
+            }}
+          ></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto md:mt-[4rem] relative flex flex-col items-center justify-center overflow-hidden px-4 pb-0 pt-20">
+          <h1 className="tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white relative z-20 mx-auto max-w-7xl py-6 text-center text-4xl font-semibold [text-shadow:0px_1px_3px_rgba(27,37,80,0.14)] md:text-4xl lg:text-7xl">
+            <span
+              style={{
+                display: "inline-block",
+                verticalAlign: "top",
+                textDecoration: "inherit",
+                textWrap: "balance",
+              }}
+              className=""
+            >
+              Build Beautiful Interfaces at <Cover>Lightning Speed</Cover>
+            </span>
+          </h1>
+          <h2 className="my-4 font-normal text-neutral-600 dark:text-neutral-200 relative z-20 mx-auto mt-2 max-w-5xl text-center text-base md:mt-4 md:text-xl">
+            <span
+              style={{
+                display: "inline-block",
+                verticalAlign: "top",
+                textDecoration: "inherit",
+                textWrap: "balance",
+              }}
+            >
+              Explore a vast library of beautifully crafted, animated
+              components. Save development time, enhance user experience, and
+              build visually stunning interfaces at lightning speed.
+            </span>
+          </h2>
+          <div className="mt-4 flex w-full flex-col items-center justify-center gap-4 px-8 sm:flex-row">
+            <Link href={"/docs/components"} className="w-full sm:w-max">
+              <Button className="no-underline flex space-x-2 group cursor-pointer transition duration-200 p-px font-semibold px-4 py-2 bg-black dark:bg-white dark:text-black text-white relative z-20 h-10 w-full items-center justify-center rounded-lg text-center text-sm sm:w-52 w-full">
+                Browse Components
+              </Button>
+            </Link>
+            <Link href={"/docs/blocks"} className="w-full sm:w-max">
+              <Button className="no-underline space-x-2 group cursor-pointer transition duration-200 p-px font-semibold px-4 py-2 relative z-20 text-sm bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 dark:hover:bg-neutral-900 shadow-input text-black dark:text-white w-full h-10 flex items-center justify-center rounded-lg text-center sm:w-52 w-full">
+                Browse Blocks
+              </Button>
+            </Link>
+          </div>
+
+          <div className="mb-8 mt-12 flex flex-col md:flex-row md:gap-10 md:px-8">
+            <div>
+              <h2 className="text-neutral-500 text-center mb-4 relative z-10 text-xs">
+                Chosen by Innovators and Visionaries Worldwide
+              </h2>
+              <div className="flex flex-col sm:flex-row items-center justify-center mb-10">
+                <Users />
+              </div>
             </div>
-            Craft Seamless
-            <span className="words_comma__9_pb3">,</span>
-          </span>
-          <span>
-            <text className="stroke-[#f1f1f1] stroke-[0.2px]">
-              {" "}
-              <span className="word_large_text text-[3rem] leading-none">
-                S
-              </span>
-              tunn
-              <span className="word_large_text text-[3rem] leading-none">
-                i
-              </span>
-              ng,{" "}
-            </text>
-          </span>
-          <br />
-          <div className="my-7" />
-          <span className="px-[2px] py-[0] relative inline-flex">
-            <div className="words_width_lens_body inline-block justify-center items-center tracking-[-1px] leading-[16px] rounded-[50%] border-[solid] border-[1px] border-[#2e2e2e] text-[12px] absolute -top-[15px] left-[28%] -translate-x-1/2">
+
+            <div className="relative mt-10">
+              <div className="absolute right-0 z-40 block h-full w-20 bg-white [mask-image:linear-gradient(to_left,white,transparent)] dark:bg-black sm:hidden"></div>
               <div
-                className="m-[3px] w-[63px] h-[63px] rounded-[50%] bg-[rgba(255,_255,_255,_0.2)] [box-shadow:0_4px_30px_rgba(0,_0,_0,_0.1)] backdrop-filter backdrop-blur-[1.2px]"
-                data-word-researchers-glass
-                style={{ transform: "none" }}
-              />
+                className="no-visible-scrollbar relative z-20 mb-4 flex flex-wrap items-center justify-center gap-4"
+                style={{ scrollbarWidth: "none" }}
+              >
+                <div className="mr-4 flex items-center space-x-2">
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="h-4 w-4 flex-shrink-0 stroke-1 text-neutral-500 md:h-10 md:w-10"
+                    >
+                      <path d="M9 15v-6l7.745 10.65a9 9 0 1 1 2.255 -1.993"></path>
+                      <path d="M15 12v-3"></path>
+                    </svg>
+                  </span>
+                  <span className="flex-shrink-0 text-sm font-semibold text-neutral-500">
+                    Next.js
+                  </span>
+                </div>
+                <div className="mr-4 flex items-center space-x-2">
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="h-4 w-4 flex-shrink-0 stroke-1 text-neutral-500 md:h-10 md:w-10"
+                    >
+                      <path d="M6.306 8.711c-2.602 .723 -4.306 1.926 -4.306 3.289c0 2.21 4.477 4 10 4c.773 0 1.526 -.035 2.248 -.102"></path>
+                      <path d="M17.692 15.289c2.603 -.722 4.308 -1.926 4.308 -3.289c0 -2.21 -4.477 -4 -10 -4c-.773 0 -1.526 .035 -2.25 .102"></path>
+                      <path d="M6.305 15.287c-.676 2.615 -.485 4.693 .695 5.373c1.913 1.105 5.703 -1.877 8.464 -6.66c.387 -.67 .733 -1.339 1.036 -2"></path>
+                      <path d="M17.694 8.716c.677 -2.616 .487 -4.696 -.694 -5.376c-1.913 -1.105 -5.703 1.877 -8.464 6.66c-.387 .67 -.733 1.34 -1.037 2"></path>
+                      <path d="M12 5.424c-1.925 -1.892 -3.82 -2.766 -5 -2.084c-1.913 1.104 -1.226 5.877 1.536 10.66c.386 .67 .793 1.304 1.212 1.896"></path>
+                      <path d="M12 18.574c1.926 1.893 3.821 2.768 5 2.086c1.913 -1.104 1.226 -5.877 -1.536 -10.66c-.375 -.65 -.78 -1.283 -1.212 -1.897"></path>
+                      <path d="M11.5 12.866a1 1 0 1 0 1 -1.732a1 1 0 0 0 -1 1.732z"></path>
+                    </svg>
+                  </span>
+                  <span className="flex-shrink-0 text-sm font-semibold text-neutral-500">
+                    React
+                  </span>
+                </div>
+                <div className="mr-4 flex items-center space-x-2">
+                  <span>
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      strokeWidth="0"
+                      viewBox="0 0 24 24"
+                      className="h-4 w-4 flex-shrink-0 stroke-[0.5px] text-neutral-500 md:h-10 md:w-10"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M18.5 9.51a4.22 4.22 0 0 1-1.91-1.34A5.77 5.77 0 0 0 12 6a4.72 4.72 0 0 0-5 4 3.23 3.23 0 0 1 3.5-1.49 4.32 4.32 0 0 1 1.91 1.35A5.77 5.77 0 0 0 17 12a4.72 4.72 0 0 0 5-4 3.2 3.2 0 0 1-3.5 1.51zm-13 4.98a4.22 4.22 0 0 1 1.91 1.34A5.77 5.77 0 0 0 12 18a4.72 4.72 0 0 0 5-4 3.23 3.23 0 0 1-3.5 1.49 4.32 4.32 0 0 1-1.91-1.35A5.8 5.8 0 0 0 7 12a4.72 4.72 0 0 0-5 4 3.2 3.2 0 0 1 3.5-1.51z"></path>
+                    </svg>
+                  </span>
+                  <span className="flex-shrink-0 text-sm font-semibold text-neutral-500">
+                    Tailwind CSS
+                  </span>
+                </div>
+                <div className="mr-4 flex items-center space-x-2">
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="h-4 w-4 flex-shrink-0 stroke-1 text-neutral-500 md:h-10 md:w-10"
+                    >
+                      <path d="M12 12l-8 -8v16l16 -16v16l-4 -4"></path>
+                      <path d="M20 12l-8 8l-4 -4"></path>
+                    </svg>
+                  </span>
+                  <span className="flex-shrink-0 text-sm font-semibold text-neutral-500">
+                    Framer Motion
+                  </span>
+                </div>
+              </div>
             </div>
-            Customizable
-          </span>
-          <span className="mx-52" />
-          <span className="relative words_interfaces after:content-[''] after:absolute after:h-[60px] after:w-[6px] after:-top-[17px] after:-left-[10px] after:rounded-full after:bg-[#f0f0f0] before:content-[''] before:absolute before:h-[6px] before:w-[205px] before:-top-[5px] before:-left-[20px] before:rounded-full before:bg-[#f0f0f0] ">
-            Interfaces
-          </span>
-          <span>with</span>
-          <span className="relative underline-clip after:content-['']  after:absolute  after:top-[95%] after:w-[150%] after:[aspect-ratio:5_/_1] after:left-2/4 after:-translate-x-1/2 after:translate-y-[0]  after:rounded-[50%] after:border-[2px] after:border-[solid] after:border-[hsl(0,0%,90%)] after:[clip-path:polygon(0_0,_50%_50%,_100%_0)]">
-            Kaif UI
-          </span>
-        </h1>
-        <p className="text-muted-foreground text-lg mx-20 mt-6 mb-6 text-center ">
-          the ultimate design system and UI library for creating seamless,
-          beautiful, and highly customizable user interfaces.
-        </p>
-        <div className="flex space-x-3">
-          <Link
-            href={"/docs"}
-            className={
-              "h-9 px-4 py-2 bg-primary text-primary-foreground shadow hover:bg-primary/85 hover:shadow-md inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-            }
-          >
-            Get Started
-          </Link>
+          </div>
         </div>
       </div>
-    </main>
+    </>
   );
 };
 

@@ -6,9 +6,7 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
-      <main className="max-w-7xl mx-auto mt-[4rem]">
-        <Hero />
-      </main>
+      <Hero />
     </>
   );
 }
