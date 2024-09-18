@@ -14,13 +14,20 @@ export const baseOptions: HomeLayoutProps = {
     title: (
       <>
         <Image
-          className="size-7 [header_&]:size-5"
-          src={"/logo.png"}
+          className="size-6 [header_&]:size-5 hidden dark:block rounded"
+          src="/logo/logo-dark-theme.svg"
           alt="logo"
           height={100}
           width={100}
         />
-        <span className="font-medium text-lg [.uwu_&]:hidden max-md:[header_&]:hidden">
+        <Image
+          className="size-6 [header_&]:size-5 dark:hidden rounded"
+          src="/logo/logo-light-theme.svg"
+          alt="logo"
+          height={100}
+          width={100}
+        />
+        <span className="font-bold text-lg [.uwu_&]:hidden max-md:[header_&]:hidden">
           Kaif UI
         </span>
       </>
