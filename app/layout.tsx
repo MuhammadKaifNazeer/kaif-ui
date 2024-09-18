@@ -66,6 +66,12 @@ export const metadata: Metadata = {
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
+      <head>
+        <meta
+          name="google-site-verification"
+          content="BMjfJbsMp6GG5QSG95rO9IVgptLFSYxt1J1HaHa4aOU"
+        />
+      </head>
       <body>
         <RootProvider>
           <ThemeProvider
