@@ -5,7 +5,7 @@ import BlocksData from "@/data/blocksData";
 const AllBlocks: React.FC = () => {
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-20 lg:gap-10 pb-40 items-start relative z-40">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-20 lg:gap-10 pb-40 items-start relative">
         {BlocksData.map((block) => (
           <Link
             key={block.name}
