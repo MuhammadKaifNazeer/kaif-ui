@@ -1,10 +1,14 @@
 import { type DocsLayoutProps } from "fumadocs-ui/layout";
 import { type HomeLayoutProps } from "fumadocs-ui/home-layout";
 import { pageTree } from "@/app/source";
-import { BookIcon, Heart, LayoutTemplateIcon } from "lucide-react";
+import {
+  BookIcon,
+  Heart,
+  LayoutTemplateIcon,
+  PanelsTopLeft,
+} from "lucide-react";
 import Image from "next/image";
 
-// shared configuration
 export const baseOptions: HomeLayoutProps = {
   nav: {
     title: (
@@ -23,28 +27,32 @@ export const baseOptions: HomeLayoutProps = {
     ),
   },
   links: [
-    {
-      icon: <BookIcon />,
-      text: "Documentation",
-      url: "/docs",
-      active: "nested-url",
-    },
-    {
-      text: "Templates",
-      url: "/templates",
-      icon: <LayoutTemplateIcon />,
-    },
+    // {
+    //   icon: <BookIcon />,
+    //   text: "Documentation",
+    //   url: "/docs",
+    //   active: "nested-url",
+    // },
     {
       icon: <BookIcon />,
       text: "Components",
-      url: "/docs",
-      active: "nested-url",
+      url: "/docs/allcomponents",
     },
     {
-      text: "Text Animations",
-      url: "/templates",
       icon: <LayoutTemplateIcon />,
+      text: "Blocks",
+      url: "/docs/allblocks",
     },
+    {
+      icon: <PanelsTopLeft />,
+      text: "Templates",
+      url: "/templates",
+    },
+    // {
+    //   text: "Text Animations",
+    //   url: "/templates",
+    //   icon: <LayoutTemplateIcon />,
+    // },
   ],
 };
 
