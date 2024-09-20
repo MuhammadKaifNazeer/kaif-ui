@@ -76,7 +76,10 @@ article.max-w-\[840px\] {
   }
 }
 
-/* In a CSS or Tailwind file */
 .no-decoration {
+  text-decoration: none !important;
+}
+
+a {
   text-decoration: none !important;
 }
