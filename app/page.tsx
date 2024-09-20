@@ -7,7 +7,6 @@ export default function HomePage() {
     <>
       <Navbar />
       <Hero />
-      <CircularNav />
     </>
   );
 }
