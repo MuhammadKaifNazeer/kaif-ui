@@ -74,6 +74,7 @@ export default function CircularNavigation({
                       }`}
                       onMouseEnter={() => setHoveredItem(item.name)}
                       onMouseLeave={() => setHoveredItem(null)}
+                      onClick={toggleMenu}
                     >
                       <Icon className="w-6 h-6 mb-1" />
                       <span
