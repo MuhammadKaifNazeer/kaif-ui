@@ -27,7 +27,7 @@ export function NavMenu() {
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link href="/docs/allblocks" legacyBehavior passHref>
+            <Link href="/blocks" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 Blocks
               </NavigationMenuLink>

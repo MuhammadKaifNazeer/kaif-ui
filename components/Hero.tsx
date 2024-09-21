@@ -85,7 +85,7 @@ const Hero = () => {
                 Browse Components
               </Button>
             </Link>
-            <Link href={"/docs/allblocks"} className="w-full sm:w-max">
+            <Link href={"/blocks"} className="w-full sm:w-max">
               <Button className="no-underline space-x-2 group cursor-pointer transition duration-200 p-px font-semibold px-4 py-2 relative z-20 text-sm bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 dark:hover:bg-neutral-900 shadow-input text-black dark:text-white w-full h-10 flex items-center justify-center rounded-lg text-center sm:w-52 w-full">
                 Browse Blocks
               </Button>

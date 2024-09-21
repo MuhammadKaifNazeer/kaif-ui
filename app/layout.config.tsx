@@ -48,7 +48,7 @@ export const baseOptions: HomeLayoutProps = {
     {
       icon: <LayoutTemplateIcon />,
       text: "Blocks",
-      url: "/docs/allblocks",
+      url: "/blocks",
     },
     {
       icon: <PanelsTopLeft />,
