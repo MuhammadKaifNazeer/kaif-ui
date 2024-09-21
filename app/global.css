@@ -80,6 +80,6 @@ article.max-w-\[840px\] {
   text-decoration: none !important;
 }
 
-a {
+a.no-decoration {
   text-decoration: none !important;
 }
