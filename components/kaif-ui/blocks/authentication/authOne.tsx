@@ -21,7 +21,7 @@ export default function AuthOne() {
   }
 
   return (
-    <div className="w-full lg:grid min-h-screen lg:grid-cols-2 bg-background">
+    <div className="w-full lg:grid lg:min-h-screen lg:grid-cols-2 bg-background">
       <div className="flex items-center justify-center py-12">
         <div className="mx-auto grid w-[350px] gap-6">
           <div className="flex flex-col space-y-2 text-start">

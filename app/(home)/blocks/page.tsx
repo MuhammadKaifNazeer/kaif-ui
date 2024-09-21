@@ -74,7 +74,9 @@ export default function Blocks() {
           </div>
         </section>
 
-        <MDXContent />
+        <div className="px-4 py-8 md:py-12 md:pb-8 lg:py-12 lg:pb-10">
+          <MDXContent />
+        </div>
       </div>
     </>
   );
