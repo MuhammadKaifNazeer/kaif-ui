@@ -5,6 +5,7 @@ import type { ReactNode } from "react";
 import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
+import { searchDocumentation } from "./search";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -73,7 +74,14 @@ export default function Layout({ children }: { children: ReactNode }) {
         />
       </head>
       <body>
-        <RootProvider>
+      <RootProvider
+          search={{
+            links: [
+              ['Home', '/'],
+              ['Docs', '/docs'],
+            ],
+          }}
+        >
           <ThemeProvider
             attribute="class"
             defaultTheme="system"

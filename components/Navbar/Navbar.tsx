@@ -17,7 +17,7 @@ type NavbarProps = {
 
 const NavLinks = [
   {
-    link: "/docs/allcomponents",
+    link: "/components",
     name: "Components",
   },
   {
@@ -68,7 +68,7 @@ export function Navbar({ className }: NavbarProps) {
         <div
           className={`hidden lg:block w-full ${scrolled ? "backdrop-blur supports-[backdrop-filter]:bg-background/60" : ""}`}
         >
-          <div className="px-4 py-4 flex h-16 items-center max-w-7xl mx-auto w-full">
+          <div className="px-4 py-4 flex h-16 items-center container w-full">
             <div className="flex items-center justify-between w-full">
               <div className="flex items-center justify-start gap-4">
                 <Link href="/">

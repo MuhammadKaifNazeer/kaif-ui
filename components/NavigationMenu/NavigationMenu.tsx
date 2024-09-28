@@ -20,7 +20,7 @@ export function NavMenu() {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <Link href="/docs/allcomponents" legacyBehavior passHref>
+            <Link href="/components" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 Components
               </NavigationMenuLink>

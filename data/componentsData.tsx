@@ -13,6 +13,41 @@ const ComponentsData: Component[] = [
     link: "/docs/components/circularnavigation",
     imageUrl: "/components/circularNavigation.png",
   },
+  {
+    name: "Circular Navigation",
+    supportLine:
+      "An interactive circular menu for seamless navigation throughout your application.",
+    link: "/docs/components/circularnavigation",
+    imageUrl: "/components/circularNavigation.png",
+  },
+  {
+    name: "Circular Navigation",
+    supportLine:
+      "An interactive circular menu for seamless navigation throughout your application.",
+    link: "/docs/components/circularnavigation",
+    imageUrl: "/components/circularNavigation.png",
+  },
+  {
+    name: "Circular Navigation",
+    supportLine:
+      "An interactive circular menu for seamless navigation throughout your application.",
+    link: "/docs/components/circularnavigation",
+    imageUrl: "/components/circularNavigation.png",
+  },
+  {
+    name: "Circular Navigation",
+    supportLine:
+      "An interactive circular menu for seamless navigation throughout your application.",
+    link: "/docs/components/circularnavigation",
+    imageUrl: "/components/circularNavigation.png",
+  },
+  {
+    name: "Circular Navigation",
+    supportLine:
+      "An interactive circular menu for seamless navigation throughout your application.",
+    link: "/docs/components/circularnavigation",
+    imageUrl: "/components/circularNavigation.png",
+  },
 ];
 
 export default ComponentsData;
