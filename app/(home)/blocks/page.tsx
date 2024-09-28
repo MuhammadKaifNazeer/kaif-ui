@@ -1,14 +1,14 @@
-import dynamic from "next/dynamic";
+
 import React from "react";
 import Link from "next/link";
-
-const MDXContent = dynamic(() => import("@/content/docs/blocks/blocks.mdx"));
+import AllBlocks from "@/components/allBlocks/allBlocks"
+import {Separator} from "@/components/ui/separator"
 
 export default function Blocks() {
   return (
-    <>
-      <div className="max-w-7xl mx-auto pt-[5rem]">
-        <section className="mx-auto flex flex-col items-start gap-2 px-4 py-8 md:py-12 md:pb-8 lg:py-12 lg:pb-10">
+    <>    
+      <div className="container pt-[5rem]">
+        <section className="mx-auto flex flex-col items-start gap-2 py-8 md:py-12 md:pb-8 lg:py-12 lg:pb-10">
           <Link
             className="group inline-flex items-center px-0.5 text-sm font-medium"
             href="#"
@@ -60,22 +60,22 @@ export default function Blocks() {
           </p>
           <div className="flex w-full items-center justify-start gap-2 py-2">
             <Link
-              href="/docs/alltemplates"
+              href="/templates"
               className="inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-8 rounded-md px-3 text-xs"
             >
               Browse Templates
             </Link>
             <Link
-              href="/docs/allcomponents"
+              href="/components"
               className="inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
             >
               Browse Components
             </Link>
           </div>
-        </section>
-
-        <div className="px-4 py-8 md:py-12 md:pb-8 lg:py-12 lg:pb-10">
-          <MDXContent />
+        </section>  
+        <Separator className="mb-8"/>
+        <div>
+          <AllBlocks />
         </div>
       </div>
     </>
