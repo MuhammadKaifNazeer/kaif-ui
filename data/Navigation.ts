@@ -10,6 +10,13 @@ const Navigation = [
     ],
   },
   {
+    title: "Guide",
+    links: [
+      { title: "Introduction", href: "#",},
+      { title: "Contribution Guide", href: "#",},
+    ],
+  },
+  {
     title: "Components",
     links: [
       { title: "3D Card Effect", href: "/components/3d-card-effect" },
