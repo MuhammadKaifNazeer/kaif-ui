@@ -66,7 +66,11 @@ export function Navbar({ className }: NavbarProps) {
     <>
       <header className="fixed top-0 z-[100] w-full border-b border-transparent bg-transparent w-full">
         <div
-          className={`hidden lg:block w-full ${scrolled ? "backdrop-blur supports-[backdrop-filter]:bg-background/60" : ""}`}
+          className={`hidden lg:block w-full ${
+            scrolled
+              ? "backdrop-blur supports-[backdrop-filter]:bg-background/60"
+              : ""
+          }`}
         >
           <div className="px-4 py-4 flex h-16 items-center container w-full">
             <div className="flex items-center justify-between w-full">
@@ -94,7 +98,34 @@ export function Navbar({ className }: NavbarProps) {
                     <h3 className="text-xl font-bold">Kaif UI</h3>
                   </div>
                 </Link>
-                <NavMenu />
+                <div className="flex items-center">
+                  <nav
+                    className="relative z-10 flex max-w-max flex-1 items-center justify-center"
+                  >
+                    <div>
+                      <ul
+                        className="flex items-center justify-center gap-2"
+                      >
+                        <li>
+                          {NavLinks.map((link) => (
+                            <Link
+                              href={link.link}
+                              key={link.name}
+                            >
+                              <Button
+                              variant={'ghost'}
+                              className="mx-1"
+                              >
+                                {link.name}
+                                </Button>
+                            </Link>
+                          ))}
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="absolute left-0 top-full flex justify-center"></div>
+                  </nav>
+                </div>
               </div>
               <div className="flex items-center justify-end gap-2">
                 <SearchTriggerButton />
@@ -115,7 +146,11 @@ export function Navbar({ className }: NavbarProps) {
 
         <div className="block lg:hidden">
           <div
-            className={`fixed w-full top-0 flex items-center justify-between gap-4 px-4 py-2 md:px-6 z-[100] ${scrolled ? "backdrop-blur supports-[backdrop-filter]:bg-background/60" : ""}`}
+            className={`fixed w-full top-0 flex items-center justify-between gap-4 px-4 py-2 md:px-6 z-[100] ${
+              scrolled
+                ? "backdrop-blur supports-[backdrop-filter]:bg-background/60"
+                : ""
+            }`}
           >
             <Link href="/">
               <div className="flex flex items-center justify-start gap-2">
@@ -166,14 +201,20 @@ export function Navbar({ className }: NavbarProps) {
           </div>
 
           <div
-            className={`fixed w-screen h-screen bg-black/70 z-[105]  duration-500  ${isOpen ? "-translate-x-0 opacity-1" : "-translate-x-full opacity-0"}`}
+            className={`fixed w-screen h-screen bg-black/70 z-[105]  duration-500  ${
+              isOpen
+                ? "-translate-x-0 opacity-1"
+                : "-translate-x-full opacity-0"
+            }`}
             onClick={() => setIsOpen(false)}
           ></div>
 
           <div
             className={cn(
-              `z-[110] w-[17rem] border-r lg:pt-3 translate-x-full bg-background max-w-[80%] h-screen duration-500 lg:left-0 fixed ${isOpen ? "-translate-x-0" : "-translate-x-full"} top-0`,
-              className,
+              `z-[110] w-[17rem] border-r lg:pt-3 translate-x-full bg-background max-w-[80%] h-screen duration-500 lg:left-0 fixed ${
+                isOpen ? "-translate-x-0" : "-translate-x-full"
+              } top-0`,
+              className
             )}
           >
             <div className="space-y-4 ">
