@@ -1,13 +1,12 @@
-
 import React from "react";
 import Link from "next/link";
-import AllBlocks from "@/components/allBlocks/allBlocks"
-import {Separator} from "@/components/ui/separator"
+import { Separator } from "@/components/ui/separator";
+import { CommingSoon } from "@/components/CommingSoon/CommingSoon";
 
-export default function Blocks() {
+export default function Templates() {
   return (
-    <>    
-      <div className="container pt-[5rem]">
+    <>
+      <div className="container pt-[4rem]">
         <section className="mx-auto flex flex-col items-start gap-2 py-8 md:py-12 md:pb-8 lg:py-12 lg:pb-10">
           <Link
             className="group inline-flex items-center px-0.5 text-sm font-medium"
@@ -34,7 +33,7 @@ export default function Blocks() {
               className="shrink-0 bg-border w-[1px] mx-2 h-4"
             ></div>
             <span className="underline-offset-4 group-hover:underline">
-              Kaif UI Blocks
+              Kaif UI Templates
             </span>
             <svg
               width="15"
@@ -53,29 +52,30 @@ export default function Blocks() {
             </svg>
           </Link>
           <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:leading-[1.1]">
-            Building Blocks for the Web
+            Kaif UI Web Templates
           </h1>
           <p className="max-w-2xl text-lg font-light text-foreground">
-            Beautifully designed. Copy and paste into your apps. Open Source.
+            Explore beautifully designed web templates to enhance your projects
+            effortlessly.
           </p>
           <div className="flex w-full items-center justify-start gap-2 py-2">
             <Link
-              href="/templates"
-              className="inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-8 rounded-md px-3 text-xs"
-            >
-              Browse Templates
-            </Link>
-            <Link
               href="/components"
-              className="inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+              className="inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-8 rounded-md px-3 text-xs"
             >
               Browse Components
             </Link>
+            <Link
+              href="/blocks"
+              className="inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+            >
+              Browse Blocks
+            </Link>
           </div>
-        </section>  
-        <Separator className="mb-8"/>
+        </section>
+        <Separator className="mb-8" />
         <div>
-          <AllBlocks />
+          <CommingSoon />
         </div>
       </div>
     </>

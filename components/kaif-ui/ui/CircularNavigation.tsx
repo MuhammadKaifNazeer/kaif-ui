@@ -67,7 +67,7 @@ export default function CircularNavigation({
                   >
                     <Link
                       href={item.href}
-                      className={`flex flex-col items-center justify-center w-20 h-20 aspect-square rounded-full transition-colors duration-200 no-decoration ${
+                      className={`flex flex-col items-center justify-center w-20 h-20 aspect-square rounded-full transition-colors duration-200 ${
                         hoveredItem === item.name
                           ? "bg-white text-black"
                           : "text-white"

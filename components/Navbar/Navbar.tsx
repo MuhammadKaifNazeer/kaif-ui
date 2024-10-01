@@ -24,7 +24,7 @@ const NavLinks = [
     name: "Blocks",
   },
   {
-    link: "/docs/alltemplates",
+    link: "/templates",
     name: "Templates",
   },
   // {

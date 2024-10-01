@@ -3,14 +3,19 @@ title: Circular Navigation
 description: An interactive circular menu for seamless navigation throughout your application.
 ---
 
-import CircularNav from "@/components/kaif-ui/CircularNav/CircularNav";
+import CircularNav from "@/components/kaif-ui/components/CircularNav/CircularNav";
 
 import { Tabs, Tab } from "fumadocs-ui/components/tabs";
 import { Step, Steps } from "fumadocs-ui/components/steps";
 
 <div className="space-y-2 mb-4">
- <h1 class="scroll-m-20 text-4xl font-bold tracking-tight text-black dark:text-white">Circular Navigation</h1>
- <p class="text-lg text-muted-foreground">An interactive circular menu for seamless navigation throughout your application.</p>
+  <h1 class="scroll-m-20 text-4xl font-bold tracking-tight text-black dark:text-white">
+    Circular Navigation
+  </h1>
+  <p class="text-lg text-muted-foreground">
+    An interactive circular menu for seamless navigation throughout your
+    application.
+  </p>
 </div>
 
 <Tabs items={["preview", "code"]} className="my-4">  
@@ -53,18 +58,18 @@ export default function CircularNav() {
 const toggleMenu = () => setIsOpen(!isOpen);
 
 return (
+
 <>
-<div className="h-screen w-full flex items-center justify-center">
-<Button onClick={toggleMenu}>Open Navigation</Button>
-</div>
-<CircularNavigation
-        navItems={navItems}
-        isOpen={isOpen}
-        toggleMenu={toggleMenu}
-      />
+  <div className="h-screen w-full flex items-center justify-center">
+    <Button onClick={toggleMenu}>Open Navigation</Button>
+  </div>
+  <CircularNavigation
+    navItems={navItems}
+    isOpen={isOpen}
+    toggleMenu={toggleMenu}
+  />
 </>
-);
-}
+); }
 
 ````
     </Tab>
@@ -188,7 +193,9 @@ export default function CircularNavigation({
 </Step>
 </Steps>
 
-<h1 class="scroll-m-20 text-xl font-bold tracking-tight text-black dark:text-white my-4">Tech Stack</h1>
+<h1 class="scroll-m-20 text-xl font-bold tracking-tight text-black dark:text-white my-4">
+  Tech Stack
+</h1>
 
 <Cards>
   <Card title="React" />

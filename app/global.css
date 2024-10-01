@@ -76,17 +76,3 @@ article.max-w-\[840px\] {
   }
 }
 
-.no-decoration {
-  text-decoration: none !important;
-}
-
-a.no-decoration {
-  text-decoration: none !important;
-}
-
-/* In your global.css or tailwind.css */
-@layer utilities {
-  .reset-styles {
-    padding: 0 !important;
-  }
-}

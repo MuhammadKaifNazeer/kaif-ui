@@ -13,13 +13,6 @@ const ComponentsData: Component[] = [
     imageUrl: "/components/circularNavigation.png",
     mdxPath: "components/circularnavigation.mdx", // no need to add "@/content/docs/"
   },
-  {
-    name: "Emogi Nav",
-    supportLine:
-      "An interactive circular menu for seamless navigation throughout your application.",
-    imageUrl: "/components/circularNavigation.png",
-    mdxPath: "components/emoginav.mdx", // no need to add "@/content/docs/"
-  },
 ];
 
 export default ComponentsData;

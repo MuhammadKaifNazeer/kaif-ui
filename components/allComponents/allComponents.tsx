@@ -8,7 +8,7 @@ const AllComponents: React.FC = () => {
     <>
       <div>
         <div className="px-4 max-w-7xl mx-auto">
-          <div className="pt-10 pb-0 flex justify-start container relative z-40">
+          <div className="pt-10 pb-0 flex justify-start relative z-40">
             <Link
               href="/blocks"
               className="bg-slate-900 group mb-8 cursor-pointer relative rounded-full p-px text-xs font-semibold leading-6 text-white inline-block"
@@ -41,7 +41,7 @@ const AllComponents: React.FC = () => {
             {ComponentsData.map((component) => (
               <Link
                 key={component.name}
-                href={`/component/${slugify(component.name)}`}
+                href={`/components/${slugify(component.name)}`}
                 className="antialiased group"
               >
                 <div className="relative dark:border rounded-lg dark:border-white/[0.1] overflow-hidden group-hover:shadow-xl transition duration-200 aspect-video flex items-center justify-center">

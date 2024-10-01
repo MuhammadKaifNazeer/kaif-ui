@@ -80,7 +80,7 @@ const Hero = () => {
             </span>
           </h2>
           <div className="mt-4 flex w-full flex-col items-center justify-center gap-4 px-8 sm:flex-row">
-            <Link href={"/docs/allcomponents"} className="w-full sm:w-max">
+            <Link href={"/components"} className="w-full sm:w-max">
               <Button className="no-underline flex space-x-2 group cursor-pointer transition duration-200 p-px font-semibold px-4 py-2 bg-black dark:bg-white dark:text-black text-white relative z-20 h-10 w-full items-center justify-center rounded-lg text-center text-sm sm:w-52 w-full">
                 Browse Components
               </Button>

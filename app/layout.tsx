@@ -5,7 +5,6 @@ import type { ReactNode } from "react";
 import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
-import { searchDocumentation } from "./search";
 import { Navbar } from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 

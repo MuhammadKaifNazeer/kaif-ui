@@ -40,7 +40,11 @@ export default function Component() {
   return (
     <>
       {MDXContent ? (
-        <MDXContent />
+        <div className="container">
+          <div className="py-9">
+            <MDXContent />
+          </div>
+        </div>
       ) : (
         <div className="h-[70vh] w-full flex items-center justify-center">
           <div className="w-14 h-14 border-[0.40rem] border-t-black dark:border-t-white rounded-full animate-spin cursor-none pointer-events-none" />
