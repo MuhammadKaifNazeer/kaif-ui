@@ -1,7 +1,7 @@
 export interface Component {
   name: string;
   supportLine: string;
-  link: string;
+  mdxPath: string;
   imageUrl: string;
 }
 
@@ -10,43 +10,15 @@ const ComponentsData: Component[] = [
     name: "Circular Navigation",
     supportLine:
       "An interactive circular menu for seamless navigation throughout your application.",
-    link: "/docs/components/circularnavigation",
     imageUrl: "/components/circularNavigation.png",
+    mdxPath: "components/circularnavigation.mdx", // no need to add "@/content/docs/"
   },
   {
-    name: "Circular Navigation",
+    name: "Emogi Nav",
     supportLine:
       "An interactive circular menu for seamless navigation throughout your application.",
-    link: "/docs/components/circularnavigation",
     imageUrl: "/components/circularNavigation.png",
-  },
-  {
-    name: "Circular Navigation",
-    supportLine:
-      "An interactive circular menu for seamless navigation throughout your application.",
-    link: "/docs/components/circularnavigation",
-    imageUrl: "/components/circularNavigation.png",
-  },
-  {
-    name: "Circular Navigation",
-    supportLine:
-      "An interactive circular menu for seamless navigation throughout your application.",
-    link: "/docs/components/circularnavigation",
-    imageUrl: "/components/circularNavigation.png",
-  },
-  {
-    name: "Circular Navigation",
-    supportLine:
-      "An interactive circular menu for seamless navigation throughout your application.",
-    link: "/docs/components/circularnavigation",
-    imageUrl: "/components/circularNavigation.png",
-  },
-  {
-    name: "Circular Navigation",
-    supportLine:
-      "An interactive circular menu for seamless navigation throughout your application.",
-    link: "/docs/components/circularnavigation",
-    imageUrl: "/components/circularNavigation.png",
+    mdxPath: "components/emoginav.mdx", // no need to add "@/content/docs/"
   },
 ];
 

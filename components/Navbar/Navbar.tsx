@@ -7,7 +7,6 @@ import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { X, Rocket, Github } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { NavMenu } from "@/components/NavigationMenu/NavigationMenu";
 import { ThemeToggler } from "@/components/ThemeToggler/ThemeToggler";
 import SearchTriggerButton from "@/components/SearchTriggerButton/SearchTriggerButton";
 
@@ -107,7 +106,7 @@ export function Navbar({ className }: NavbarProps) {
                         className="flex items-center justify-center gap-2"
                       >
                         <li>
-                          {NavLinks.map((link) => (
+                          {NavLinks.map((link) => (  
                             <Link
                               href={link.link}
                               key={link.name}

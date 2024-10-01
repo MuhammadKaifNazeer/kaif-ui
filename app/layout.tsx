@@ -6,6 +6,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { searchDocumentation } from "./search";
+import { Navbar } from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -74,11 +76,11 @@ export default function Layout({ children }: { children: ReactNode }) {
         />
       </head>
       <body>
-      <RootProvider
+        <RootProvider
           search={{
             links: [
-              ['Home', '/'],
-              ['Docs', '/docs'],
+              ["Home", "/"],
+              ["Docs", "/docs"],
             ],
           }}
         >
@@ -89,7 +91,9 @@ export default function Layout({ children }: { children: ReactNode }) {
             disableTransitionOnChange
           >
             <Analytics />
+            <Navbar />
             {children}
+            <Footer />
           </ThemeProvider>
         </RootProvider>
       </body>

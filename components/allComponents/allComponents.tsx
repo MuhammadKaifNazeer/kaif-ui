@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import ComponentsData from "@/data/componentsData";
+import { slugify } from "@/utils/slugify";
 
 const AllComponents: React.FC = () => {
   return (
     <>
       <div>
         <div className="px-4 max-w-7xl mx-auto">
-          <div className="pt-10 pb-0 flex justify-start max-w-7xl mx-auto relative z-40">
+          <div className="pt-10 pb-0 flex justify-start container relative z-40">
             <Link
               href="/blocks"
               className="bg-slate-900 group mb-8 cursor-pointer relative rounded-full p-px text-xs font-semibold leading-6 text-white inline-block"
@@ -39,8 +40,8 @@ const AllComponents: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-20 lg:gap-10 pb-40 items-start relative z-40">
             {ComponentsData.map((component) => (
               <Link
-                key={component.link}
-                href={component.link}
+                key={component.name}
+                href={`/component/${slugify(component.name)}`}
                 className="antialiased group"
               >
                 <div className="relative dark:border rounded-lg dark:border-white/[0.1] overflow-hidden group-hover:shadow-xl transition duration-200 aspect-video flex items-center justify-center">
