@@ -1,0 +1,241 @@
+---
+title: Loader Button
+description: Seamless loading with a customizable Loader Button.
+---
+
+import LoaderButtonDemo from "@/components/kaif-ui/components/LoaderButton/LoaderButton";
+import LoaderButtonVariants from "@/components/kaif-ui/components/LoaderButton/LoaderButtonVariants";
+
+import { Tabs, Tab } from "fumadocs-ui/components/tabs";
+import { Step, Steps } from "fumadocs-ui/components/steps";
+
+<div className="space-y-2 mb-4">
+  <h1 class="scroll-m-20 text-4xl font-bold tracking-tight text-black dark:text-white">
+    Loader Button
+  </h1>
+  <p class="text-lg text-muted-foreground">
+    Seamless loading with a customizable Loader Button.
+  </p>
+</div>
+
+<Tabs items={["preview", "code"]} className="my-4">  
+    <Tab value={"preview"}>    
+    <div className="bg-background rounded-xl">
+     <LoaderButtonDemo/>
+     </div>
+    </Tab>
+    <Tab value={"code"}>
+```tsx
+"use client";
+
+import * as React from "react";
+import LoaderButton from "@/components/kaif-ui/loaderButton";
+
+export default function LoaderButtonDemo() {
+  const [isLoading, setIsLoading] = React.useState<boolean>(false);
+
+async function onSubmit(event: React.SyntheticEvent) {
+event.preventDefault();
+setIsLoading(true);
+
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+
+}
+
+return (
+
+<>
+  <div className="h-[50vh] w-full flex items-center justify-center">
+    <LoaderButton
+      buttonVariant={"default"}
+      onClick={onSubmit}
+      isLoading={isLoading}
+      className="my-class"
+    >
+      Loader Button
+    </LoaderButton>
+  </div>
+</>
+); }
+
+````
+    </Tab>
+ </Tabs>
+
+<h1 class="scroll-m-20 text-2xl font-bold tracking-tight text-black dark:text-white my-4">
+  Installation
+</h1>
+
+<Steps>
+<Step>
+
+### Install Dependencies
+
+```bash
+npm i lucide-react
+````
+
+</Step>
+<Step>
+
+### Install Shadcn Components
+
+```bash
+npx shadcn@latest add button
+```
+
+</Step>
+<Step>
+### Copy the source code
+
+```tsx title="components/kaif-ui/loaderButton.tsx"
+"use client";
+
+// Visit https://kaif-ui.vercel.app/ for more components like this
+
+import * as React from "react";
+import { LoaderCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+type LoaderButtonProps = {
+  isLoading: boolean;
+  className?: string;
+  buttonVariant?:
+    | "default"
+    | "destructive"
+    | "outline"
+    | "secondary"
+    | "ghost"
+    | "link"
+    | null
+    | undefined;
+  children: React.ReactNode;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+};
+
+const LoaderButton: React.FC<LoaderButtonProps> = ({
+  buttonVariant,
+  isLoading,
+  className,
+  children,
+  onClick,
+}) => {
+  return (
+    <Button
+      variant={buttonVariant}
+      className={className}
+      onClick={onClick}
+      disabled={isLoading}
+    >
+      {isLoading && <LoaderCircle className="mr-2 h-4 w-4 animate-spin" />}
+      {children}
+    </Button>
+  );
+};
+
+export default LoaderButton;
+```
+
+</Step>
+</Steps>
+
+<h1 class="scroll-m-20 text-2xl font-bold tracking-tight text-black dark:text-white my-4">
+  Variants
+</h1>
+
+<Tabs items={["preview", "code"]} className="my-4">  
+    <Tab value={"preview"}>    
+    <div className="bg-background rounded-xl">
+     <LoaderButtonVariants/>
+     </div>
+    </Tab>
+    <Tab value={"code"}>
+```tsx
+"use client";
+
+import * as React from "react";
+import LoaderButton from "@/components/kaif-ui/loaderButton";
+
+export default function LoaderButtonVariants() {
+  const [isLoading, setIsLoading] = React.useState<boolean>(false);
+
+  async function onSubmit(event: React.SyntheticEvent) {
+    event.preventDefault();
+    setIsLoading(true);
+
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+  }
+
+  return (
+    <>
+      <div className="px-4 py-10 w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+        <LoaderButton
+          buttonVariant={"default"}
+          onClick={onSubmit}
+          isLoading={isLoading}
+          className="my-class"
+        >
+          Loader Button
+        </LoaderButton>
+        <LoaderButton
+          buttonVariant={"outline"}
+          onClick={onSubmit}
+          isLoading={isLoading}
+          className="my-class"
+        >
+          Loader Button
+        </LoaderButton>
+        <LoaderButton
+          buttonVariant={"secondary"}
+          onClick={onSubmit}
+          isLoading={isLoading}
+          className="my-class"
+        >
+          Loader Button
+        </LoaderButton>
+        <LoaderButton
+          buttonVariant={"ghost"}
+          onClick={onSubmit}
+          isLoading={isLoading}
+          className="my-class"
+        >
+          Loader Button
+        </LoaderButton>
+        <LoaderButton
+          buttonVariant={"link"}
+          onClick={onSubmit}
+          isLoading={isLoading}
+          className="my-class"
+        >
+          Loader Button
+        </LoaderButton>
+        <LoaderButton
+          buttonVariant={"destructive"}
+          onClick={onSubmit}
+          isLoading={isLoading}
+          className="my-class"
+        >
+          Loader Button
+        </LoaderButton>
+      </div>
+    </>
+  );
+}
+```
+    </Tab>
+ </Tabs>
+
+<h1 class="scroll-m-20 text-xl font-bold tracking-tight text-black dark:text-white my-4">
+  Tech Stack
+</h1>
+
+<Cards>
+  <Card title="React" />
+  <Card title="Next.js" />
+  <Card title="Tailwind CSS" />
+  <Card title="TypeScript" />
+</Cards>

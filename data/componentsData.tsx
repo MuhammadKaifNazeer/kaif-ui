@@ -7,6 +7,13 @@ export interface Component {
 
 const ComponentsData: Component[] = [
   {
+    name: "Emogi Nav",
+    supportLine:
+      "Emogi nav, think different.",
+    imageUrl: "/components/circularNavigation.png",
+    mdxPath: "components/emoginav.mdx", // no need to add "@/content/docs/"
+  },
+  {
     name: "Circular Navigation",
     supportLine:
       "An interactive circular menu for seamless navigation throughout your application.",
@@ -14,11 +21,11 @@ const ComponentsData: Component[] = [
     mdxPath: "components/circularnavigation.mdx", // no need to add "@/content/docs/"
   },
   {
-    name: "Emogi Nav",
+    name: "Loader Button",
     supportLine:
-      "Emogi nav, think different.",
+      "Seamless loading with a customizable Loader Button.",
     imageUrl: "/components/circularNavigation.png",
-    mdxPath: "components/emoginav.mdx", // no need to add "@/content/docs/"
+    mdxPath: "components/loaderbutton.mdx", // no need to add "@/content/docs/"
   },
 ];
 

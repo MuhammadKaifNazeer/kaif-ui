@@ -21,6 +21,7 @@ const Navigation = [
     links: [
       { title: "Emogi Nav", href: "/components/emogi-nav" },
       { title: "Circular Navigation", href: "/components/circular-navigation" },
+      { title: "Loader Button", href: "/components/loader-button" },
     ],
   },
   {
