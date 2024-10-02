@@ -1,0 +1,182 @@
+---
+title: Circular Navigation
+description: Emogi nav, think different
+---
+
+import EmogiNavigation from "@/components/kaif-ui/components/emogiNav/emogiNav";
+
+import { Tabs, Tab } from "fumadocs-ui/components/tabs";
+import { Step, Steps } from "fumadocs-ui/components/steps";
+
+<div className="space-y-2 mb-4">
+  <h1 class="scroll-m-20 text-4xl font-bold tracking-tight text-black dark:text-white">
+    Emogi Nav
+  </h1>
+  <p class="text-lg text-muted-foreground">Emogi nav, think different.</p>
+</div>
+
+<Tabs items={["preview", "code"]} className="my-4">  
+    <Tab value={"preview"}>    
+    <div className="bg-background rounded-xl">
+     <EmogiNavigation/>
+     </div>
+    </Tab>
+    <Tab value={"code"}>
+```tsx
+import EmogiNav from "@/components/kaif-ui/emogiNav";
+
+// get animated emogies from: https://googlefonts.github.io/noto-emoji-animation/
+
+const navItems = [
+{
+label: "Home",
+href: "#",
+emogi: "https://fonts.gstatic.com/s/e/notoemoji/latest/1f60d/512.gif",
+alt: "😍",
+},
+{
+label: "About",
+href: "#",
+emogi: "https://fonts.gstatic.com/s/e/notoemoji/latest/1f604/512.gif",
+alt: "😄",
+},
+{
+label: "Work",
+href: "#",
+emogi: "https://fonts.gstatic.com/s/e/notoemoji/latest/1f618/512.gif",
+alt: "😘",
+},
+{
+label: "Services",
+href: "#",
+emogi: "https://fonts.gstatic.com/s/e/notoemoji/latest/1f911/512.gif",
+alt: "🤑",
+},
+{
+label: "Our Team",
+href: "#",
+emogi: "https://fonts.gstatic.com/s/e/notoemoji/latest/1f973/512.gif",
+alt: "🥳",
+},
+{
+label: "Contact",
+href: "#",
+emogi: "https://fonts.gstatic.com/s/e/notoemoji/latest/1f47b/512.gif",
+alt: "👻",
+},
+];
+
+const EmogiNavigation: React.FC = () => {
+return (
+
+<div>
+<EmogiNav navItems={navItems} />
+
+      <div className="preview flex min-h-[100px] w-full justify-center p-2 sm:p-10 items-center">
+        <div className="relative w-full flex items-center justify-center">
+          <p className="text-black dark:text-white">
+            The Navbar will show on top of the page
+          </p>
+        </div>
+      </div>
+    </div>
+
+);
+};
+
+export default EmogiNavigation;
+```
+    </Tab>
+ </Tabs>
+
+<h1 class="scroll-m-20 text-2xl font-bold tracking-tight text-black dark:text-white my-4">
+  Installation
+</h1>
+
+<Steps>
+<Step>
+
+### Install Shadcn Components
+
+```bash
+npx shadcn@latest add tooltip
+```
+
+</Step>
+<Step>
+### Copy the source code
+
+```tsx title="components/kaif-ui/emogiNav.tsx"
+// get animated emogies from: https://googlefonts.github.io/noto-emoji-animation/
+// Visit https://kaif-ui.vercel.app/ for components like this
+
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import Link from "next/link";
+import Image from "next/image";
+
+type NavItem = {
+  label: string;
+  href: string;
+  emogi: string;
+  alt: string;
+};
+
+type EmogiNavProps = {
+  navItems: NavItem[];
+};
+
+const EmogiNav: React.FC<EmogiNavProps> = ({ navItems }) => {
+  return (
+    <div className="fixed top-5 left-[50%] -translate-x-[50%] z-[10000] w-full sm:w-max">
+      <div className="border px-5 py-2 rounded-full border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <nav>
+          <div className="flex items-center justify-center space-x-6">
+            {navItems.map((item) => (
+              <div key={item.href}>
+                <TooltipProvider>
+                  <Tooltip delayDuration={0}>
+                    <TooltipTrigger asChild>
+                      <Link href={item.href}>
+                        <Image
+                          src={item.emogi}
+                          alt={item.alt}
+                          width={48}
+                          height={48}
+                        />
+                      </Link>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>{item.label}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </div>
+            ))}
+          </div>
+        </nav>
+      </div>
+    </div>
+  );
+};
+
+export default EmogiNav;
+```
+
+</Step>
+</Steps>
+
+<h1 class="scroll-m-20 text-xl font-bold tracking-tight text-black dark:text-white my-4">
+  Tech Stack
+</h1>
+
+<Cards>
+  <Card title="React" />
+  <Card title="Next.js" />
+  <Card title="Tailwind CSS" />
+  <Card title="TypeScript" />
+</Cards>{" "}
