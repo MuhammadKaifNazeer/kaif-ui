@@ -7,6 +7,7 @@ import CircularNav from "@/components/kaif-ui/components/CircularNav/CircularNav
 
 import { Tabs, Tab } from "fumadocs-ui/components/tabs";
 import { Step, Steps } from "fumadocs-ui/components/steps";
+import { TypeTable } from "fumadocs-ui/components/type-table";
 
 <div className="space-y-2 mb-4">
   <h1 class="scroll-m-20 text-4xl font-bold tracking-tight text-black dark:text-white">
@@ -86,6 +87,7 @@ return (
 ```bash
 npm i framer-motion lucide-react
 ````
+
 </Step>
 <Step>
 
@@ -213,3 +215,57 @@ export default function CircularNavigation({
   <Card title="Lucide-React" />
   <Card title="TypeScript" />
 </Cards>{" "}
+
+<h1 class="scroll-m-20 text-xl font-bold tracking-tight text-black dark:text-white mt-12">
+  Props
+</h1>
+
+<h1 class="scroll-m-20 text-lg font-bold tracking-tight text-black dark:text-white mt-12">
+  CircularNavigationProps
+</h1>
+
+<TypeTable
+  type={{
+    navItems: {
+      description:
+        "An array of navigation items, each containing a name, icon, and href.",
+      type: "NavItem[]",
+      default: "[]",
+    },
+    isOpen: {
+      description:
+        "Controls whether the circular navigation menu is open or closed.",
+      type: "boolean",
+      default: "false",
+    },
+    toggleMenu: {
+      description: "Function to toggle the menu's open/close state.",
+      type: "() => void",
+      default: "undefined",
+    },
+  }}
+/>
+
+<h1 class="scroll-m-20 text-lg font-bold tracking-tight text-black dark:text-white mt-12">
+  NavItem
+</h1>
+
+<TypeTable
+  type={{
+    name: {
+      description: "The display name of the navigation item.",
+      type: "string",
+      default: "''",
+    },
+    icon: {
+      description: "The icon component for the navigation item.",
+      type: "React.ComponentType<{ className?: string }>",
+      default: "undefined",
+    },
+    href: {
+      description: "The URL link for the navigation item.",
+      type: "string",
+      default: "''",
+    },
+  }}
+/>
