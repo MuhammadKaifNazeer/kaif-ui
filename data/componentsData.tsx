@@ -27,6 +27,13 @@ const ComponentsData: Component[] = [
     mdxPath: "components/circularnavigation.mdx", // no need to add "@/content/docs/"
   },
   {
+    name: "Zoom Parallax",
+    supportLine:
+      "Add captivating depth and movement to your UI with the Zoom Parallax component, creating a truly immersive experience.",
+    imageUrl: "/components/circularNavigation.png",
+    mdxPath: "components/zoomparallax.mdx", // no need to add "@/content/docs/"
+  },
+  {
     name: "Loader Button",
     supportLine: "Seamless loading with a customizable Loader Button.",
     imageUrl: "/components/circularNavigation.png",

@@ -22,6 +22,7 @@ const Navigation = [
       { title: "Emogi Nav", href: "/components/emogi-nav" },
       { title: "Pendulum", href: "/components/pendulum" },
       { title: "Circular Navigation", href: "/components/circular-navigation" },
+      { title: "Zoom Parallax", href: "/components/zoom-parallax" },
       { title: "Loader Button", href: "/components/loader-button" },
       { title: "Tailwind Backgrounds", href: "/components/tailwind-backgrounds" },
     ],
