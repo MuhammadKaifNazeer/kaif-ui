@@ -7,6 +7,7 @@ import PendulumDemo from "@/components/kaif-ui/components/Pendulum/Pendulum ";
 
 import { Tabs, Tab } from "fumadocs-ui/components/tabs";
 import { Step, Steps } from "fumadocs-ui/components/steps";
+import { TypeTable } from 'fumadocs-ui/components/type-table';
 
 <div className="space-y-2 mb-4">
   <h1 class="scroll-m-20 text-4xl font-bold tracking-tight text-black dark:text-white">
@@ -138,3 +139,17 @@ export default Pendulum;
   <Card title="Framer Motion" />
   <Card title="TypeScript" />
 </Cards>{" "}
+
+<h1 class="scroll-m-20 text-xl font-bold tracking-tight text-black dark:text-white mt-12">
+  Props
+</h1>
+
+<TypeTable
+  type={{
+    "className": {
+      description: "Optional prop for adding custom styles to the root div.",
+      type: "string",
+      default: "undefined",
+    },
+  }}
+/>
