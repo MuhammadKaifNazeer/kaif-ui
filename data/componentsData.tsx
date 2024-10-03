@@ -14,6 +14,13 @@ const ComponentsData: Component[] = [
     mdxPath: "components/emoginav.mdx", // no need to add "@/content/docs/"
   },
   {
+    name: "Pendulum",
+    supportLine:
+      "Bring your UI to life with the smooth, captivating motion of the Pendulum component.",
+    imageUrl: "/components/circularNavigation.png",
+    mdxPath: "components/pendulum.mdx", // no need to add "@/content/docs/"
+  },
+  {
     name: "Circular Navigation",
     supportLine:
       "An interactive circular menu for seamless navigation throughout your application.",

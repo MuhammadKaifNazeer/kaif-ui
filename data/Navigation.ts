@@ -20,6 +20,7 @@ const Navigation = [
     title: "Components",
     links: [
       { title: "Emogi Nav", href: "/components/emogi-nav" },
+      { title: "Pendulum", href: "/components/pendulum" },
       { title: "Circular Navigation", href: "/components/circular-navigation" },
       { title: "Loader Button", href: "/components/loader-button" },
     ],
