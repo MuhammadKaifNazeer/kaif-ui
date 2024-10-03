@@ -6,6 +6,8 @@ description: Keep users engaged with endless content loading using the Infinite 
 import { InfiniteScrollVertical } from "@/components/kaif-ui/components/InfiniteScroll/VerticalScroll";
 import { InfiniteScrollHorizontal } from "@/components/kaif-ui/components/InfiniteScroll/HorizontalScroll";
 
+import { TypeTable } from "fumadocs-ui/components/type-table";
+
 import { Tabs, Tab } from "fumadocs-ui/components/tabs";
 import { Step, Steps } from "fumadocs-ui/components/steps";
 
@@ -131,56 +133,56 @@ import { InfiniteScroll } from "@/components/kaif-ui/infiniteScroll";
 import Image from "next/image";
 
 const images = [
-  {
-    title: "Image 1",
-    image:
-      "https://cdn.pixabay.com/photo/2024/09/20/05/39/panda-9060543_640.jpg",
-  },
-  {
-    title: "Image 2",
-    image:
-      "https://cdn.pixabay.com/photo/2024/04/12/18/18/ai-generated-8692405_1280.jpg",
-  },
-  {
-    title: "Image 3",
-    image:
-      "https://cdn.pixabay.com/photo/2024/01/10/03/29/ai-generated-8498790_1280.jpg",
-  },
-  {
-    title: "Image 4",
-    image:
-      "https://cdn.pixabay.com/photo/2024/05/30/17/23/bicycle-8798997_640.jpg",
-  },
-  {
-    title: "Image 5",
-    image:
-      "https://cdn.pixabay.com/photo/2024/05/26/10/26/ai-generated-8788505_960_720.jpg",
-  },
-  {
-    title: "Image 1 second row",
-    image:
-      "https://cdn.pixabay.com/photo/2024/09/20/05/39/panda-9060543_640.jpg",
-  },
-  {
-    title: "Image 2 second row",
-    image:
-      "https://cdn.pixabay.com/photo/2024/04/12/18/18/ai-generated-8692405_1280.jpg",
-  },
-  {
-    title: "Image 3 second row",
-    image:
-      "https://cdn.pixabay.com/photo/2024/01/10/03/29/ai-generated-8498790_1280.jpg",
-  },
-  {
-    title: "Image 4 second row",
-    image:
-      "https://cdn.pixabay.com/photo/2024/05/30/17/23/bicycle-8798997_640.jpg",
-  },
-  {
-    title: "Image 5 second row",
-    image:
-      "https://cdn.pixabay.com/photo/2024/05/26/10/26/ai-generated-8788505_960_720.jpg",
-  },
+{
+title: "Image 1",
+image:
+"https://cdn.pixabay.com/photo/2024/09/20/05/39/panda-9060543_640.jpg",
+},
+{
+title: "Image 2",
+image:
+"https://cdn.pixabay.com/photo/2024/04/12/18/18/ai-generated-8692405_1280.jpg",
+},
+{
+title: "Image 3",
+image:
+"https://cdn.pixabay.com/photo/2024/01/10/03/29/ai-generated-8498790_1280.jpg",
+},
+{
+title: "Image 4",
+image:
+"https://cdn.pixabay.com/photo/2024/05/30/17/23/bicycle-8798997_640.jpg",
+},
+{
+title: "Image 5",
+image:
+"https://cdn.pixabay.com/photo/2024/05/26/10/26/ai-generated-8788505_960_720.jpg",
+},
+{
+title: "Image 1 second row",
+image:
+"https://cdn.pixabay.com/photo/2024/09/20/05/39/panda-9060543_640.jpg",
+},
+{
+title: "Image 2 second row",
+image:
+"https://cdn.pixabay.com/photo/2024/04/12/18/18/ai-generated-8692405_1280.jpg",
+},
+{
+title: "Image 3 second row",
+image:
+"https://cdn.pixabay.com/photo/2024/01/10/03/29/ai-generated-8498790_1280.jpg",
+},
+{
+title: "Image 4 second row",
+image:
+"https://cdn.pixabay.com/photo/2024/05/30/17/23/bicycle-8798997_640.jpg",
+},
+{
+title: "Image 5 second row",
+image:
+"https://cdn.pixabay.com/photo/2024/05/26/10/26/ai-generated-8788505_960_720.jpg",
+},
 ];
 
 export function InfiniteScrollHorizontal() {
@@ -385,3 +387,47 @@ export function InfiniteScroll({
   <Card title="Framer Motion" />
   <Card title="TypeScript" />
 </Cards>
+
+<h1 class="scroll-m-20 text-xl font-bold tracking-tight text-black dark:text-white mt-12">
+  Props
+</h1>
+
+<TypeTable
+  type={{
+    children: {
+      description: "The content to be displayed inside the infinite scroll.",
+      type: "React.ReactNode",
+      default: "None",
+    },
+    gap: {
+      description: "The gap between the sliding elements.",
+      type: "number",
+      default: 16,
+    },
+    duration: {
+      description: "The duration of the scroll animation in seconds.",
+      type: "number",
+      default: 25,
+    },
+    durationOnHover: {
+      description: "The duration of the scroll animation when hovering.",
+      type: "number",
+      default: "None",
+    },
+    direction: {
+      description: "The scroll direction, either horizontal or vertical.",
+      type: '"horizontal" | "vertical"',
+      default: "horizontal",
+    },
+    reverse: {
+      description: "Reverses the scroll direction.",
+      type: "boolean",
+      default: false,
+    },
+    className: {
+      description: "Custom CSS classes to style the component.",
+      type: "string",
+      default: "None",
+    },
+  }}
+/>
