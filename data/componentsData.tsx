@@ -18,7 +18,7 @@ const ComponentsData: Component[] = [
       "Bring your UI to life with the smooth, captivating motion of the Pendulum component.",
     imageUrl: "/components/circularNavigation.png",
     mdxPath: "components/pendulum.mdx", // no need to add "@/content/docs/"
-  }, 
+  },
   {
     name: "Infinite Scroll",
     supportLine:
@@ -45,6 +45,13 @@ const ComponentsData: Component[] = [
     supportLine: "Seamless loading with a customizable Loader Button.",
     imageUrl: "/components/circularNavigation.png",
     mdxPath: "components/loaderbutton.mdx", // no need to add "@/content/docs/"
+  },
+  {
+    name: "Floating Dock",
+    supportLine:
+      "Effortless access and interaction with a sleek, intuitive Floating Dock.",
+    imageUrl: "/components/circularNavigation.png",
+    mdxPath: "components/floatingdock.mdx", // no need to add "@/content/docs/"
   },
   {
     name: "Tailwind Backgrounds",

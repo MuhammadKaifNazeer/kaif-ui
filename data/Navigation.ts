@@ -25,6 +25,7 @@ const Navigation = [
       { title: "Infinite Scroll", href: "/components/infinite-scroll" },
       { title: "Zoom Parallax", href: "/components/zoom-parallax" },
       { title: "Loader Button", href: "/components/loader-button" },
+      { title: "Floating Dock", href: "/components/floating-dock" },
       { title: "Tailwind Backgrounds", href: "/components/tailwind-backgrounds" },
     ],
   },
