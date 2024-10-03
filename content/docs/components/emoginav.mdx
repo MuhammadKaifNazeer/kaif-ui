@@ -7,6 +7,7 @@ import EmogiNavigation from "@/components/kaif-ui/components/emogiNav/emogiNav";
 
 import { Tabs, Tab } from "fumadocs-ui/components/tabs";
 import { Step, Steps } from "fumadocs-ui/components/steps";
+import { TypeTable } from "fumadocs-ui/components/type-table";
 
 <div className="space-y-2 mb-4">
   <h1 class="scroll-m-20 text-4xl font-bold tracking-tight text-black dark:text-white">
@@ -180,3 +181,52 @@ export default EmogiNav;
   <Card title="Tailwind CSS" />
   <Card title="TypeScript" />
 </Cards>{" "}
+
+<h1 class="scroll-m-20 text-xl font-bold tracking-tight text-black dark:text-white mt-12">
+  Props
+</h1>
+
+<h1 class="scroll-m-20 text-lg font-bold tracking-tight text-black dark:text-white mt-12">
+  EmogiNavProps
+</h1>
+
+<TypeTable
+  type={{
+    navItems: {
+      description:
+        "An array of `NavItem` objects representing the emoji navigation links.",
+      type: "NavItem[]",
+      default: [],
+    },
+  }}
+/>
+
+<h1 class="scroll-m-20 text-lg font-bold tracking-tight text-black dark:text-white mt-12">
+  NavItem
+</h1>
+
+<TypeTable
+  type={{
+    label: {
+      description:
+        "The text label displayed in the tooltip for each navigation item.",
+      type: "string",
+      default: "",
+    },
+    href: {
+      description: "The URL link associated with the emoji navigation item.",
+      type: "string",
+      default: "",
+    },
+    emogi: {
+      description: "The image URL or path for the animated emoji.",
+      type: "string",
+      default: "",
+    },
+    alt: {
+      description: "Alt text for the emoji image to improve accessibility.",
+      type: "string",
+      default: "",
+    },
+  }}
+/>
