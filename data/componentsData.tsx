@@ -8,8 +8,7 @@ export interface Component {
 const ComponentsData: Component[] = [
   {
     name: "Emogi Nav",
-    supportLine:
-      "Emogi nav, think different.",
+    supportLine: "Emogi nav, think different.",
     imageUrl: "/components/circularNavigation.png",
     mdxPath: "components/emoginav.mdx", // no need to add "@/content/docs/"
   },
@@ -29,10 +28,16 @@ const ComponentsData: Component[] = [
   },
   {
     name: "Loader Button",
-    supportLine:
-      "Seamless loading with a customizable Loader Button.",
+    supportLine: "Seamless loading with a customizable Loader Button.",
     imageUrl: "/components/circularNavigation.png",
     mdxPath: "components/loaderbutton.mdx", // no need to add "@/content/docs/"
+  },
+  {
+    name: "Tailwind Backgrounds",
+    supportLine:
+      "Elevate your design with customizable Tailwind backgrounds for a stylish, modern look.",
+    imageUrl: "/components/circularNavigation.png",
+    mdxPath: "components/tailwindbackgrounds.mdx", // no need to add "@/content/docs/"
   },
 ];
 

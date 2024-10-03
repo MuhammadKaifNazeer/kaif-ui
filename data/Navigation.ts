@@ -23,6 +23,7 @@ const Navigation = [
       { title: "Pendulum", href: "/components/pendulum" },
       { title: "Circular Navigation", href: "/components/circular-navigation" },
       { title: "Loader Button", href: "/components/loader-button" },
+      { title: "Tailwind Backgrounds", href: "/components/tailwind-backgrounds" },
     ],
   },
   {
