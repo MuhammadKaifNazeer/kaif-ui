@@ -18,6 +18,13 @@ const ComponentsData: Component[] = [
       "Bring your UI to life with the smooth, captivating motion of the Pendulum component.",
     imageUrl: "/components/circularNavigation.png",
     mdxPath: "components/pendulum.mdx", // no need to add "@/content/docs/"
+  }, 
+  {
+    name: "Infinite Scroll",
+    supportLine:
+      "Keep users engaged with endless content loading using the Infinite Scroll component.",
+    imageUrl: "/components/circularNavigation.png",
+    mdxPath: "components/infinitescroll.mdx", // no need to add "@/content/docs/"
   },
   {
     name: "Circular Navigation",

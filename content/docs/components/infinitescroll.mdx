@@ -1,0 +1,387 @@
+---
+title: Infinite Scroll
+description: Keep users engaged with endless content loading using the Infinite Scroll component.
+---
+
+import { InfiniteScrollVertical } from "@/components/kaif-ui/components/InfiniteScroll/VerticalScroll";
+import { InfiniteScrollHorizontal } from "@/components/kaif-ui/components/InfiniteScroll/HorizontalScroll";
+
+import { Tabs, Tab } from "fumadocs-ui/components/tabs";
+import { Step, Steps } from "fumadocs-ui/components/steps";
+
+<div className="space-y-2 mb-4">
+  <h1 class="scroll-m-20 text-4xl font-bold tracking-tight text-black dark:text-white">
+    Infinite Scroll
+  </h1>
+  <p class="text-lg text-muted-foreground">
+    Keep users engaged with endless content loading using the Infinite Scroll
+    component.
+  </p>
+</div>
+
+<h1 class="scroll-m-20 text-2xl font-bold tracking-tight text-black dark:text-white mb-4 mt-8">
+  Infinite Scroll Vertical
+</h1>
+
+<Tabs items={["preview", "code"]} className="my-4">  
+    <Tab value={"preview"}>    
+    <div className="bg-background rounded-xl">
+     <InfiniteScrollVertical/>
+     </div>
+    </Tab>
+    <Tab value={"code"}>
+```tsx
+import { InfiniteScroll } from '@/components/kaif-ui/infiniteScroll';
+import Image from 'next/image';
+
+const images = [
+{
+title: "Image 1",
+image: "https://cdn.pixabay.com/photo/2024/09/20/05/39/panda-9060543_640.jpg",
+},
+{
+title: "Image 2",
+image: "https://cdn.pixabay.com/photo/2024/04/12/18/18/ai-generated-8692405_1280.jpg",
+},
+{
+title: "Image 3",
+image: "https://cdn.pixabay.com/photo/2024/01/10/03/29/ai-generated-8498790_1280.jpg",
+},
+{
+title: "Image 4",
+image: "https://cdn.pixabay.com/photo/2024/05/30/17/23/bicycle-8798997_640.jpg",
+},
+{
+title: "Image 5",
+image: "https://cdn.pixabay.com/photo/2024/05/26/10/26/ai-generated-8788505_960_720.jpg",
+},
+{
+title: "Image 1 second row",
+image: "https://cdn.pixabay.com/photo/2024/09/20/05/39/panda-9060543_640.jpg",
+},
+{
+title: "Image 2 second row",
+image: "https://cdn.pixabay.com/photo/2024/04/12/18/18/ai-generated-8692405_1280.jpg",
+},
+{
+title: "Image 3 second row",
+image: "https://cdn.pixabay.com/photo/2024/01/10/03/29/ai-generated-8498790_1280.jpg",
+},
+{
+title: "Image 4 second row",
+image: "https://cdn.pixabay.com/photo/2024/05/30/17/23/bicycle-8798997_640.jpg",
+},
+{
+title: "Image 5 second row",
+image: "https://cdn.pixabay.com/photo/2024/05/26/10/26/ai-generated-8788505_960_720.jpg",
+},
+];
+
+export function InfiniteScrollVertical() {
+    return (
+        <div className='flex h-[400px] space-x-4 mx-auto w-full max-w-max'>
+            <InfiniteScroll direction='vertical'>
+                {images.map((image) => (
+                    <div className='aspect-square w-[120px] rounded-[4px]'>
+                        <Image
+                            key={image.title}
+                            src={image.image}
+                            alt={image.title}
+                            width={1200}
+                            height={1200}
+                            className="object-cover h-full w-full rounded-[4px]"
+                        />
+                    </div>
+                ))}
+            </InfiniteScroll>
+            <InfiniteScroll direction='vertical' reverse>
+                {images.map((image) => (
+                    <div className='aspect-square w-[120px] rounded-[4px]'>
+                        <Image
+                            key={image.title}
+                            src={image.image}
+                            alt={image.title}
+                            width={1200}
+                            height={1200}
+                            className="object-cover h-full w-full rounded-[4px]"
+                        />
+                    </div>
+                ))}
+            </InfiniteScroll>
+        </div>
+    );
+}
+````
+    </Tab>
+ </Tabs>
+
+<h1 class="scroll-m-20 text-2xl font-bold tracking-tight text-black dark:text-white mb-4 mt-8">
+  Infinite Scroll Horizontal
+</h1>
+
+<Tabs items={["preview", "code"]} className="my-4">  
+    <Tab value={"preview"}>    
+    <div className="bg-background rounded-xl">
+     <InfiniteScrollHorizontal/>
+     </div>
+    </Tab>
+    <Tab value={"code"}>
+```tsx
+import { InfiniteScroll } from "@/components/kaif-ui/infiniteScroll";
+import Image from "next/image";
+
+const images = [
+  {
+    title: "Image 1",
+    image:
+      "https://cdn.pixabay.com/photo/2024/09/20/05/39/panda-9060543_640.jpg",
+  },
+  {
+    title: "Image 2",
+    image:
+      "https://cdn.pixabay.com/photo/2024/04/12/18/18/ai-generated-8692405_1280.jpg",
+  },
+  {
+    title: "Image 3",
+    image:
+      "https://cdn.pixabay.com/photo/2024/01/10/03/29/ai-generated-8498790_1280.jpg",
+  },
+  {
+    title: "Image 4",
+    image:
+      "https://cdn.pixabay.com/photo/2024/05/30/17/23/bicycle-8798997_640.jpg",
+  },
+  {
+    title: "Image 5",
+    image:
+      "https://cdn.pixabay.com/photo/2024/05/26/10/26/ai-generated-8788505_960_720.jpg",
+  },
+  {
+    title: "Image 1 second row",
+    image:
+      "https://cdn.pixabay.com/photo/2024/09/20/05/39/panda-9060543_640.jpg",
+  },
+  {
+    title: "Image 2 second row",
+    image:
+      "https://cdn.pixabay.com/photo/2024/04/12/18/18/ai-generated-8692405_1280.jpg",
+  },
+  {
+    title: "Image 3 second row",
+    image:
+      "https://cdn.pixabay.com/photo/2024/01/10/03/29/ai-generated-8498790_1280.jpg",
+  },
+  {
+    title: "Image 4 second row",
+    image:
+      "https://cdn.pixabay.com/photo/2024/05/30/17/23/bicycle-8798997_640.jpg",
+  },
+  {
+    title: "Image 5 second row",
+    image:
+      "https://cdn.pixabay.com/photo/2024/05/26/10/26/ai-generated-8788505_960_720.jpg",
+  },
+];
+
+export function InfiniteScrollHorizontal() {
+  return (
+    <div className="h-[400px] flex flex-col justify-center gap-4">
+      <div className="flex items-center space-x-4 mx-auto w-full max-w-max">
+        <InfiniteScroll direction="horizontal">
+          {images.map((image) => (
+            <div className="aspect-square w-[120px] rounded-[4px]">
+              <Image
+                key={image.title}
+                src={image.image}
+                alt={image.title}
+                width={1200}
+                height={1200}
+                className="object-cover h-full w-full rounded-[4px]"
+              />
+            </div>
+          ))}
+        </InfiniteScroll>
+      </div>
+      <div className="flex items-center space-x-4 mx-auto w-full max-w-max">
+        <InfiniteScroll direction="horizontal" reverse>
+          {images.map((image) => (
+            <div className="aspect-square w-[120px] rounded-[4px]">
+              <Image
+                key={image.title}
+                src={image.image}
+                alt={image.title}
+                width={1200}
+                height={1200}
+                className="object-cover h-full w-full rounded-[4px]"
+              />
+            </div>
+          ))}
+        </InfiniteScroll>
+      </div>
+    </div>
+  );
+}
+````
+    </Tab>
+ </Tabs>
+
+<h1 class="scroll-m-20 text-2xl font-bold tracking-tight text-black dark:text-white my-4">
+  Installation
+</h1>
+
+<Steps>
+<Step>
+
+### Install Dependencies
+
+```bash
+npm i framer-motion react-use-measure
+```
+
+</Step>
+<Step>
+
+### Add util file
+
+```tsx title="lib/utils.ts"
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+```
+
+</Step>
+<Step>
+### Copy the source code
+
+```tsx title="components/kaif-ui/infiniteScroll.tsx"
+"use client";
+
+// Visit https://kaif-ui.vercel.app/ for more components like this
+
+import { cn } from "@/lib/utils";
+import { useMotionValue, animate, motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import useMeasure from "react-use-measure";
+
+type InfiniteSliderProps = {
+  children: React.ReactNode;
+  gap?: number;
+  duration?: number;
+  durationOnHover?: number;
+  direction?: "horizontal" | "vertical";
+  reverse?: boolean;
+  className?: string;
+};
+
+export function InfiniteScroll({
+  children,
+  gap = 16,
+  duration = 25,
+  durationOnHover,
+  direction = "horizontal",
+  reverse = false,
+  className,
+}: InfiniteSliderProps) {
+  const [currentDuration, setCurrentDuration] = useState(duration);
+  const [ref, { width, height }] = useMeasure();
+  const translation = useMotionValue(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [key, setKey] = useState(0);
+
+  useEffect(() => {
+    let controls;
+    const size = direction === "horizontal" ? width : height;
+    const contentSize = size + gap;
+    const from = reverse ? -contentSize / 2 : 0;
+    const to = reverse ? 0 : -contentSize / 2;
+
+    if (isTransitioning) {
+      controls = animate(translation, [translation.get(), to], {
+        ease: "linear",
+        duration:
+          currentDuration * Math.abs((translation.get() - to) / contentSize),
+        onComplete: () => {
+          setIsTransitioning(false);
+          setKey((prevKey) => prevKey + 1);
+        },
+      });
+    } else {
+      controls = animate(translation, [from, to], {
+        ease: "linear",
+        duration: currentDuration,
+        repeat: Infinity,
+        repeatType: "loop",
+        repeatDelay: 0,
+        onRepeat: () => {
+          translation.set(from);
+        },
+      });
+    }
+
+    return controls?.stop;
+  }, [
+    key,
+    translation,
+    currentDuration,
+    width,
+    height,
+    gap,
+    isTransitioning,
+    direction,
+    reverse,
+  ]);
+
+  const hoverProps = durationOnHover
+    ? {
+        onHoverStart: () => {
+          console.log("hello");
+
+          setIsTransitioning(true);
+          setCurrentDuration(durationOnHover);
+        },
+        onHoverEnd: () => {
+          setIsTransitioning(true);
+          setCurrentDuration(duration);
+        },
+      }
+    : {};
+
+  return (
+    <div className={cn("overflow-hidden", className)}>
+      <motion.div
+        className="flex w-max"
+        style={{
+          ...(direction === "horizontal"
+            ? { x: translation }
+            : { y: translation }),
+          gap: `${gap}px`,
+          flexDirection: direction === "horizontal" ? "row" : "column",
+        }}
+        ref={ref}
+        {...hoverProps}
+      >
+        {children}
+        {children}
+      </motion.div>
+    </div>
+  );
+}
+```
+
+</Step>
+</Steps>
+
+<h1 class="scroll-m-20 text-xl font-bold tracking-tight text-black dark:text-white my-4">
+  Tech Stack
+</h1>
+
+<Cards>
+  <Card title="React" />
+  <Card title="Next.js" />
+  <Card title="Tailwind CSS" />
+  <Card title="Framer Motion" />
+  <Card title="TypeScript" />
+</Cards>
