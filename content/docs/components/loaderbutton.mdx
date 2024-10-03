@@ -8,6 +8,7 @@ import LoaderButtonVariants from "@/components/kaif-ui/components/LoaderButton/L
 
 import { Tabs, Tab } from "fumadocs-ui/components/tabs";
 import { Step, Steps } from "fumadocs-ui/components/steps";
+import { TypeTable } from "fumadocs-ui/components/type-table";
 
 <div className="space-y-2 mb-4">
   <h1 class="scroll-m-20 text-4xl font-bold tracking-tight text-black dark:text-white">
@@ -65,88 +66,11 @@ return (
  </Tabs>
 
 <h1 class="scroll-m-20 text-2xl font-bold tracking-tight text-black dark:text-white my-4">
-  Installation
-</h1>
-
-<Steps>
-<Step>
-
-### Install Dependencies
-
-```bash
-npm i lucide-react
-````
-
-</Step>
-<Step>
-
-### Install Shadcn Components
-
-```bash
-npx shadcn@latest add button
-```
-
-</Step>
-<Step>
-### Copy the source code
-
-```tsx title="components/kaif-ui/loaderButton.tsx"
-"use client";
-
-// Visit https://kaif-ui.vercel.app/ for more components like this
-
-import * as React from "react";
-import { LoaderCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
-
-type LoaderButtonProps = {
-  isLoading: boolean;
-  className?: string;
-  buttonVariant?:
-    | "default"
-    | "destructive"
-    | "outline"
-    | "secondary"
-    | "ghost"
-    | "link"
-    | null
-    | undefined;
-  children: React.ReactNode;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-};
-
-const LoaderButton: React.FC<LoaderButtonProps> = ({
-  buttonVariant,
-  isLoading,
-  className,
-  children,
-  onClick,
-}) => {
-  return (
-    <Button
-      variant={buttonVariant}
-      className={className}
-      onClick={onClick}
-      disabled={isLoading}
-    >
-      {isLoading && <LoaderCircle className="mr-2 h-4 w-4 animate-spin" />}
-      {children}
-    </Button>
-  );
-};
-
-export default LoaderButton;
-```
-
-</Step>
-</Steps>
-
-<h1 class="scroll-m-20 text-2xl font-bold tracking-tight text-black dark:text-white my-4">
   Variants
 </h1>
 
-<Tabs items={["preview", "code"]} className="my-4">  
-    <Tab value={"preview"}>    
+<Tabs items={["preview", "code"]} className="my-4">
+    <Tab value={"preview"}>
     <div className="bg-background rounded-xl">
      <LoaderButtonVariants/>
      </div>
@@ -229,6 +153,83 @@ export default function LoaderButtonVariants() {
     </Tab>
  </Tabs>
 
+<h1 class="scroll-m-20 text-2xl font-bold tracking-tight text-black dark:text-white my-4">
+  Installation
+</h1>
+
+<Steps>
+<Step>
+
+### Install Dependencies
+
+```bash
+npm i lucide-react
+````
+
+</Step>
+<Step>
+
+### Install Shadcn Components
+
+```bash
+npx shadcn@latest add button
+```
+
+</Step>
+<Step>
+### Copy the source code
+
+```tsx title="components/kaif-ui/loaderButton.tsx"
+"use client";
+
+// Visit https://kaif-ui.vercel.app/ for more components like this
+
+import * as React from "react";
+import { LoaderCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+type LoaderButtonProps = {
+  isLoading: boolean;
+  className?: string;
+  buttonVariant?:
+    | "default"
+    | "destructive"
+    | "outline"
+    | "secondary"
+    | "ghost"
+    | "link"
+    | null
+    | undefined;
+  children: React.ReactNode;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+};
+
+const LoaderButton: React.FC<LoaderButtonProps> = ({
+  buttonVariant,
+  isLoading,
+  className,
+  children,
+  onClick,
+}) => {
+  return (
+    <Button
+      variant={buttonVariant}
+      className={className}
+      onClick={onClick}
+      disabled={isLoading}
+    >
+      {isLoading && <LoaderCircle className="mr-2 h-4 w-4 animate-spin" />}
+      {children}
+    </Button>
+  );
+};
+
+export default LoaderButton;
+```
+
+</Step>
+</Steps>
+
 <h1 class="scroll-m-20 text-xl font-bold tracking-tight text-black dark:text-white my-4">
   Tech Stack
 </h1>
@@ -238,4 +239,42 @@ export default function LoaderButtonVariants() {
   <Card title="Next.js" />
   <Card title="Tailwind CSS" />
   <Card title="TypeScript" />
-</Cards>
+</Cards>{" "}
+
+<h1 class="scroll-m-20 text-xl font-bold tracking-tight text-black dark:text-white mt-12">
+  Props
+</h1>
+
+<TypeTable
+  type={{
+    isLoading: {
+      description:
+        "A boolean indicating whether the loader animation should be displayed.",
+      type: "boolean",
+      default: "false",
+    },
+    className: {
+      description: "Optional class names to style the button component.",
+      type: "string",
+      default: "undefined",
+    },
+    buttonVariant: {
+      description:
+        "Defines the style variant of the button, can be one of the provided Tailwind-based variants like 'default', 'destructive', etc.",
+      type: `"default" | "destructive" | "outline" | "secondary" | "ghost" | "link" | null | undefined`,
+      default: `"default"`,
+    },
+    children: {
+      description:
+        "The content to be rendered inside the button, typically text or icons.",
+      type: "React.ReactNode",
+      default: "undefined",
+    },
+    onClick: {
+      description:
+        "Optional onClick event handler that gets triggered when the button is clicked.",
+      type: "(event: React.MouseEvent<HTMLButtonElement>) => void",
+      default: "undefined",
+    },
+  }}
+/>
