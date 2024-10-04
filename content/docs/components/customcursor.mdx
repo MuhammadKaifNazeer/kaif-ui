@@ -1,0 +1,248 @@
+---
+title: Custom Cursor
+description: Enhance user engagement with a stylish, customizable cursor.
+---
+
+import CustomCursor from "@/components/kaif-ui/ui/CustomCursor";
+
+import { Tabs, Tab } from "fumadocs-ui/components/tabs";
+import { Step, Steps } from "fumadocs-ui/components/steps";
+import { TypeTable } from "fumadocs-ui/components/type-table";
+
+<div className="space-y-2 mb-4">
+  <h1 class="scroll-m-20 text-4xl font-bold tracking-tight text-black dark:text-white">
+    Custom Cursor
+  </h1>
+  <p class="text-lg text-muted-foreground">
+    Enhance user engagement with a stylish, customizable cursor.
+  </p>
+</div>
+
+<Tabs items={["preview", "code"]} className="my-4">
+  <Tab value={"preview"}>
+    <div className="bg-background rounded-xl relative">
+      <CustomCursor color="#0561e2" glow={true} size={20} duration={0.5} />
+    </div>
+  </Tab>
+  <Tab value={"code"}>
+    ```tsx
+    <CustomCursor color="#0561e2" glow={true} size={20} duration={0.5} />
+    ````
+  </Tab>
+</Tabs>
+
+<h1 class="scroll-m-20 text-2xl font-bold tracking-tight text-black dark:text-white mt-10 mb-4">
+  Customize your cursor
+</h1>
+
+```tsx
+<CustomCursor color="#0561e2" glow={true} size={20} duration={0.5} />
+```
+
+<h1 class="scroll-m-20 text-lg font-bold tracking-tight text-black dark:text-white mt-10 mb-4">
+  Color
+</h1>
+
+```tsx
+<CustomCursor color="red" />
+```
+
+<h1 class="scroll-m-20 text-lg font-bold tracking-tight text-black dark:text-white mt-10 mb-4">
+  Glow
+</h1>
+
+```tsx
+<CustomCursor glow="true" />
+```
+
+```tsx
+<CustomCursor glow="false" />
+```
+
+<h1 class="scroll-m-20 text-lg font-bold tracking-tight text-black dark:text-white mt-10 mb-4">
+  Size
+</h1>
+
+```tsx
+<CustomCursor size={30} />
+```
+
+<h1 class="scroll-m-20 text-lg font-bold tracking-tight text-black dark:text-white mt-10 mb-4">
+  Duration
+</h1>
+
+```tsx
+<CustomCursor duration={0.6} />
+```
+
+<h1 class="scroll-m-20 text-2xl font-bold tracking-tight text-black dark:text-white mt-10 mb-4">
+  Installation
+</h1>
+
+<Steps>
+<Step>
+
+### Install Dependencies
+
+```bash
+npm i framer-motion
+```
+
+</Step>
+<Step>
+### Copy the source code
+
+```tsx title="components/kaif-ui/CustomCursor.tsx"
+"use client";
+
+// Visit https://kaif-ui.vercel.app/ for more components like this
+
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+
+interface CustomCursorProps {
+  color?: string; // Color of the cursor
+  glow?: boolean; // Whether to show glow or not
+  size?: number; // Size of the cursor
+  duration?: number; // Duration of the cursor animation
+}
+
+const CustomCursor: React.FC<CustomCursorProps> = ({
+  color = "#f53b57", // Default color
+  glow = true, // Default glow
+  size = 20, // Default size
+  duration = 0.5, // Default duration
+}) => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      requestAnimationFrame(() => {
+        setMousePosition({
+          x: e.clientX,
+          y: e.clientY,
+        });
+        setIsVisible(true); // Show cursor when moving
+      });
+    };
+
+    const handleMouseLeave = () => {
+      setIsVisible(false); // Hide cursor when mouse leaves
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseleave", handleMouseLeave);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
+
+  const cursorVariants = {
+    default: {
+      x: mousePosition.x - size / 2, // Adjust for cursor size
+      y: mousePosition.y - size / 2,
+      transition: {
+        duration: duration,
+      },
+    },
+  };
+
+  return (
+    isVisible && ( // Render only if visible
+      <motion.div
+        className={`absolute top-0 left-0 rounded-full pointer-events-none z-50 ${
+          glow ? "glow" : ""
+        }`}
+        variants={cursorVariants}
+        animate="default"
+        style={{
+          width: size,
+          height: size,
+          backgroundColor: color,
+          boxShadow: glow ? `0 0 20px ${color}, 0 0 60px ${color}` : "none", // Apply glow if enabled
+        }}
+      />
+    )
+  );
+};
+
+export default CustomCursor;
+```
+
+</Step>
+<Step>
+### add in layout file
+
+```tsx title="layout.tsx"
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import CustomCursor from "@/components/kaif-ui/CustomCursor";
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "Kaif UI",
+  description: "Kaif UI",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body className={inter.className}>
+        <CustomCursor color="#0561e2" glow={true} size={20} duration={0.5} />
+        {children}
+      </body>
+    </html>
+  );
+}
+```
+
+</Step>
+</Steps>
+
+<h1 class="scroll-m-20 text-xl font-bold tracking-tight text-black dark:text-white mt-10 mb-4">
+  Tech Stack
+</h1>
+
+<Cards>
+  <Card title="React" />
+  <Card title="Next.js" />
+  <Card title="Tailwind CSS" />
+  <Card title="Framer Motion" />
+  <Card title="TypeScript" />
+</Cards>
+
+<h1 class="scroll-m-20 text-xl font-bold tracking-tight text-black dark:text-white mt-12">
+  Props
+</h1>
+
+<TypeTable
+  type={{
+    color: {
+      description: "Sets the color of the cursor.",
+      type: "string",
+      default: '"#f53b57"',
+    },
+    glow: {
+      description: "Indicates whether the cursor should have a glow effect.",
+      type: "boolean",
+      default: "true",
+    },
+    size: {
+      description: "Defines the size of the cursor in pixels.",
+      type: "number",
+      default: "20",
+    },
+    duration: {
+      description: "Specifies the duration of the cursor animation in seconds.",
+      type: "number",
+      default: "0.5",
+    },
+  }}
+/>

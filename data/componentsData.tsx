@@ -40,6 +40,12 @@ const ComponentsData: Component[] = [
     mdxPath: "components/scrollvelocity.mdx", // no need to add "@/content/docs/"
   },
   {
+    name: "Custom Cursor",
+    supportLine: "Enhance user engagement with a stylish, customizable cursor.",
+    imageUrl: "/components/circularNavigation.png",
+    mdxPath: "components/customcursor.mdx", // no need to add "@/content/docs/"
+  },
+  {
     name: "Zoom Parallax",
     supportLine:
       "Add captivating depth and movement to your UI with the Zoom Parallax component, creating a truly immersive experience.",

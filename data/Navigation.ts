@@ -21,9 +21,10 @@ const Navigation = [
     links: [
       { title: "Emogi Nav", href: "/components/emogi-nav" },
       { title: "Pendulum", href: "/components/pendulum" },
-      { title: "Circular Navigation", href: "/components/circular-navigation" },
       { title: "Infinite Scroll", href: "/components/infinite-scroll" },
+      { title: "Circular Navigation", href: "/components/circular-navigation" },
       { title: "Scroll Velocity", href: "/components/scroll-velocity" },
+      { title: "Custom Cursor", href: "/components/custom-cursor" },
       { title: "Zoom Parallax", href: "/components/zoom-parallax" },
       { title: "Loader Button", href: "/components/loader-button" },
       { title: "Floating Dock", href: "/components/floating-dock" },
