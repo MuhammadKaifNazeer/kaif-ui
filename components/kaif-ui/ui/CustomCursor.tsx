@@ -57,7 +57,7 @@ const CustomCursor: React.FC<CustomCursorProps> = ({
   return (
     isVisible && ( // Render only if visible
       <motion.div
-        className={`absolute top-0 left-0 rounded-full pointer-events-none z-50 ${
+        className={`fixed top-0 left-0 rounded-full pointer-events-none z-50 ${
           glow ? "glow" : ""
         }`}
         variants={cursorVariants}

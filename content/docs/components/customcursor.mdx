@@ -22,6 +22,14 @@ import { TypeTable } from "fumadocs-ui/components/type-table";
   <Tab value={"preview"}>
     <div className="bg-background rounded-xl relative">
       <CustomCursor color="#0561e2" glow={true} size={20} duration={0.5} />
+      <div className="h-[70vh] w-full flex items-center justify-center border">
+        <div className="h-full w-full relative flex items-center justify-center">
+          <div className="absolute pointer-events-none inset-0 hidden sm:flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+          <p className="text-4xl sm:text-7xl font-bold relative bg-clip-text text-transparent bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-300 from-neutral-600 to-neutral-800 py-8 z-[40] text-center">
+            Custom Cursor
+          </p>
+        </div>
+      </div>
     </div>
   </Tab>
   <Tab value={"code"}>
@@ -35,43 +43,19 @@ import { TypeTable } from "fumadocs-ui/components/type-table";
   Customize your cursor
 </h1>
 
-```tsx
-<CustomCursor color="#0561e2" glow={true} size={20} duration={0.5} />
-```
-
-<h1 class="scroll-m-20 text-lg font-bold tracking-tight text-black dark:text-white mt-10 mb-4">
-  Color
-</h1>
-
-```tsx
+```tsx title="Color"
 <CustomCursor color="red" />
 ```
 
-<h1 class="scroll-m-20 text-lg font-bold tracking-tight text-black dark:text-white mt-10 mb-4">
-  Glow
-</h1>
-
-```tsx
-<CustomCursor glow="true" />
-```
-
-```tsx
+```tsx title="Glow"
 <CustomCursor glow="false" />
 ```
 
-<h1 class="scroll-m-20 text-lg font-bold tracking-tight text-black dark:text-white mt-10 mb-4">
-  Size
-</h1>
-
-```tsx
+```tsx title="Size"
 <CustomCursor size={30} />
 ```
 
-<h1 class="scroll-m-20 text-lg font-bold tracking-tight text-black dark:text-white mt-10 mb-4">
-  Duration
-</h1>
-
-```tsx
+```tsx title="Duration"
 <CustomCursor duration={0.6} />
 ```
 
