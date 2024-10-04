@@ -1,0 +1,298 @@
+---
+title: Scroll Velocity
+description: Dynamic scroll-based motion for engaging user experiences.
+---
+
+import { ScrollVelocityImages } from "@/components/kaif-ui/components/VelocityScroll/scroll-velocity-images";
+import { ScrollVelocityText } from "@/components/kaif-ui/components/VelocityScroll/scroll-velocity-text";
+
+import { Tabs, Tab } from "fumadocs-ui/components/tabs";
+import { Step, Steps } from "fumadocs-ui/components/steps";
+import { TypeTable } from "fumadocs-ui/components/type-table";
+
+<div className="space-y-2 mb-4">
+  <h1 class="scroll-m-20 text-4xl font-bold tracking-tight text-black dark:text-white">
+    Scroll Velocity
+  </h1>
+  <p class="text-lg text-muted-foreground">
+    Dynamic scroll-based motion for engaging user experiences.
+  </p>
+</div>
+
+<Tabs items={["preview", "code"]} className="my-4">  
+    <Tab value={"preview"}>    
+    <div className="bg-background rounded-xl">
+     <ScrollVelocityImages/>
+     </div>
+    </Tab>
+    <Tab value={"code"}>
+```tsx
+"use client";
+import React from "react";
+import ScrollVelocity from "@/components/kaif-ui/ui/scroll-velocity";
+import Image from "next/image";
+
+const images = [
+{
+title: "Image 1",
+image:
+"https://cdn.pixabay.com/photo/2024/09/20/05/39/panda-9060543_640.jpg",
+},
+{
+title: "Image 2",
+image:
+"https://cdn.pixabay.com/photo/2024/04/12/18/18/ai-generated-8692405_1280.jpg",
+},
+{
+title: "Image 3",
+image:
+"https://cdn.pixabay.com/photo/2024/01/10/03/29/ai-generated-8498790_1280.jpg",
+},
+{
+title: "Image 4",
+image:
+"https://cdn.pixabay.com/photo/2024/05/30/17/23/bicycle-8798997_640.jpg",
+},
+{
+title: "Image 5",
+image:
+"https://cdn.pixabay.com/photo/2024/05/26/10/26/ai-generated-8788505_960_720.jpg",
+},
+{
+title: "Image 1 second row",
+image:
+"https://cdn.pixabay.com/photo/2024/09/20/05/39/panda-9060543_640.jpg",
+},
+{
+title: "Image 2 second row",
+image:
+"https://cdn.pixabay.com/photo/2024/04/12/18/18/ai-generated-8692405_1280.jpg",
+},
+{
+title: "Image 3 second row",
+image:
+"https://cdn.pixabay.com/photo/2024/01/10/03/29/ai-generated-8498790_1280.jpg",
+},
+{
+title: "Image 4 second row",
+image:
+"https://cdn.pixabay.com/photo/2024/05/30/17/23/bicycle-8798997_640.jpg",
+},
+{
+title: "Image 5 second row",
+image:
+"https://cdn.pixabay.com/photo/2024/05/26/10/26/ai-generated-8788505_960_720.jpg",
+},
+];
+const velocity = [3, -3];
+
+export function ScrollVelocityImages() {
+  return (
+    <div className="w-full">
+      <div className="flex flex-col space-y-5 py-10">
+        {velocity.map((v, index) => (
+          <ScrollVelocity key={index} velocity={v}>
+            {images.map(({ title, image }) => (
+              <div
+                key={title}
+                className="relative h-[6rem] w-[9rem] md:h-[8rem] md:w-[12rem] xl:h-[12rem] xl:w-[18rem]"
+              >
+                <Image
+                  src={image}
+                  alt={title}
+                  fill={true}
+                  className="h-full w-full object-cover object-center rounded"
+                />
+              </div>
+            ))}
+          </ScrollVelocity>
+        ))}
+      </div>
+    </div>
+  );
+}
+````
+    </Tab>
+ </Tabs>
+
+<h1 class="scroll-m-20 text-2xl font-bold tracking-tight text-black dark:text-white mt-10 mb-4">
+  Scroll Velocity on Text
+</h1>
+
+<Tabs items={["preview", "code"]} className="my-4">
+    <Tab value={"preview"}>
+    <div className="bg-background rounded-xl">
+     <ScrollVelocityText/>
+     </div>
+    </Tab>
+    <Tab value={"code"}>
+```tsx
+"use client";
+
+import React from "react";
+import ScrollVelocity from "@/components/kaif-ui/scroll-velocity";
+
+export function ScrollVelocityText() {
+  return (
+    <div className="w-full">
+      <div className="flex flex-col space-y-5 py-10">
+        <ScrollVelocity velocity={5}>
+          Scroll Velocity Text - Scroll Velocity Text
+        </ScrollVelocity>
+      </div>
+    </div>
+  );
+}
+```
+    </Tab>
+ </Tabs>
+
+<h1 class="scroll-m-20 text-2xl font-bold tracking-tight text-black dark:text-white mt-10 mb-4">
+  Installation
+</h1>
+
+<Steps>
+<Step>
+
+### Install Dependencies
+
+```bash
+npm i framer-motion
+```
+
+</Step>
+<Step>
+### Copy the source code
+
+```tsx title="components/kaif-ui/scroll-velocity.tsx"
+// Visit https://kaif-ui.vercel.app/ for more components like this
+
+import { ReactNode, useRef } from "react";
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  useMotionValue,
+  useVelocity,
+  useAnimationFrame,
+  wrap,
+} from "framer-motion";
+
+interface Props {
+  children: ReactNode[] | string;
+  velocity: number;
+  movable?: boolean;
+  clamp?: boolean;
+}
+
+export default function ScrollVelocity({
+  children,
+  velocity = 5,
+  movable = true,
+  clamp = false,
+}: Props) {
+  const baseX = useMotionValue(0);
+  const { scrollY } = useScroll();
+  const scrollVelocity = useVelocity(scrollY);
+  const smoothVelocity = useSpring(scrollVelocity, {
+    damping: 50,
+    stiffness: 100,
+  });
+  const velocityFactor = useTransform(smoothVelocity, [0, 10000], [0, 5], {
+    clamp,
+  });
+
+  const x = useTransform(baseX, (v) => `${wrap(0, -50, v)}%`);
+
+  const directionFactor = useRef<number>(1);
+  const scrollThreshold = useRef<number>(5);
+
+  useAnimationFrame((t, delta) => {
+    if (movable) {
+      move(delta);
+    } else {
+      if (Math.abs(scrollVelocity.get()) >= scrollThreshold.current) {
+        move(delta);
+      }
+    }
+  });
+
+  function move(delta: number) {
+    let moveBy = directionFactor.current * velocity * (delta / 1000);
+    if (velocityFactor.get() < 0) {
+      directionFactor.current = -1;
+    } else if (velocityFactor.get() > 0) {
+      directionFactor.current = 1;
+    }
+    moveBy += directionFactor.current * moveBy * velocityFactor.get();
+    baseX.set(baseX.get() + moveBy);
+  }
+
+  return (
+    <div className="relative m-0 flex flex-nowrap overflow-hidden whitespace-nowrap leading-[0.8] tracking-[-2px]">
+      <motion.div
+        className="flex flex-row flex-nowrap whitespace-nowrap text-2xl font-semibold uppercase *:mr-6 *:block md:text-3xl xl:text-5xl"
+        style={{ x }}
+      >
+        {typeof children === "string" ? (
+          <>
+            {Array.from({ length: 5 }).map((_, idx) => (
+              <span key={idx}>{children}</span>
+            ))}
+          </>
+        ) : (
+          children
+        )}
+      </motion.div>
+    </div>
+  );
+}
+```
+
+</Step>
+</Steps>
+
+<h1 class="scroll-m-20 text-xl font-bold tracking-tight text-black dark:text-white mt-10 mb-4">
+  Tech Stack
+</h1>
+
+<Cards>
+  <Card title="React" />
+  <Card title="Next.js" />
+  <Card title="Tailwind CSS" />
+  <Card title="Framer Motion" />
+  <Card title="TypeScript" />
+</Cards>
+
+<h1 class="scroll-m-20 text-xl font-bold tracking-tight text-black dark:text-white mt-12">
+  Props
+</h1>
+
+<TypeTable
+  type={{
+    children: {
+      description:
+        "The content to be displayed inside the scrolling component, can be text or JSX elements.",
+      type: "ReactNode[] | string",
+      default: "undefined",
+    },
+    velocity: {
+      description: "The base velocity at which the content scrolls.",
+      type: "number",
+      default: "5",
+    },
+    movable: {
+      description:
+        "A boolean that controls whether the content should move continuously or only during scrolling.",
+      type: "boolean",
+      default: "true",
+    },
+    clamp: {
+      description:
+        "If true, the velocity factor will be clamped to the range [0, 5].",
+      type: "boolean",
+      default: "false",
+    },
+  }}
+/>

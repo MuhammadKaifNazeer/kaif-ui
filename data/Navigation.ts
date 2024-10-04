@@ -12,8 +12,8 @@ const Navigation = [
   {
     title: "Guide",
     links: [
-      { title: "Introduction", href: "#",},
-      { title: "Contribution Guide", href: "#",},
+      { title: "Introduction", href: "#" },
+      { title: "Contribution Guide", href: "#" },
     ],
   },
   {
@@ -23,10 +23,14 @@ const Navigation = [
       { title: "Pendulum", href: "/components/pendulum" },
       { title: "Circular Navigation", href: "/components/circular-navigation" },
       { title: "Infinite Scroll", href: "/components/infinite-scroll" },
+      { title: "Scroll Velocity", href: "/components/scroll-velocity" },
       { title: "Zoom Parallax", href: "/components/zoom-parallax" },
       { title: "Loader Button", href: "/components/loader-button" },
       { title: "Floating Dock", href: "/components/floating-dock" },
-      { title: "Tailwind Backgrounds", href: "/components/tailwind-backgrounds" },
+      {
+        title: "Tailwind Backgrounds",
+        href: "/components/tailwind-backgrounds",
+      },
     ],
   },
   {

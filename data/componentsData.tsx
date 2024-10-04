@@ -34,6 +34,12 @@ const ComponentsData: Component[] = [
     mdxPath: "components/circularnavigation.mdx", // no need to add "@/content/docs/"
   },
   {
+    name: "Scroll Velocity",
+    supportLine: "Dynamic scroll-based motion for engaging user experiences.",
+    imageUrl: "/components/circularNavigation.png",
+    mdxPath: "components/scrollvelocity.mdx", // no need to add "@/content/docs/"
+  },
+  {
     name: "Zoom Parallax",
     supportLine:
       "Add captivating depth and movement to your UI with the Zoom Parallax component, creating a truly immersive experience.",
