@@ -8,7 +8,7 @@ export interface Component {
 const ComponentsData: Component[] = [
   {
     name: "Emogi Nav",
-    supportLine: "Emogi nav, think different.",
+    supportLine: "Emogi Nav: Think Different, Navigate with Fun.",
     imageUrl: "/components/circularNavigation.png",
     mdxPath: "components/emoginav.mdx", // no need to add "@/content/docs/"
   },
