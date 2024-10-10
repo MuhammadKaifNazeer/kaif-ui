@@ -3,8 +3,8 @@ const Navigation = [
     title: "Follow For Updates",
     links: [
       {
-        title: "Twitter @MuhammadKaif999",
-        href: "https://x.com/MuhammadKaif999",
+        title: "Muhammad Kaif Nazeer",  
+        href: "https://bento.me/muhammadkaifnazeer",
         external: true,
       },
     ],
@@ -36,7 +36,7 @@ const Navigation = [
     ],
   },
   {
-    title: "Explore More",
+    title: "Explore",
     links: [
       { title: "Components", href: "/components" },
       { title: "Blocks", href: "/blocks" },

@@ -42,17 +42,17 @@ export default function Footer() {
                 </div>
               </Link>
             </div>
-            <div>   
-            Brought to you by{" "}
+            <div>
+              Brought to you by{" "}
               <Link
                 target="__blank"
                 className="dark:text-sky-500 text-neutral-600 font-medium"
-                href="https://x.com/MuhammadKaif999"
+                href="https://bento.me/muhammadkaifnazeer"
               >
-               @MuhammadKaif999  
+                Muhammad Kaif Nazeer
               </Link>
             </div>
-          </div>  
+          </div>
           <div className="grid grid-cols-2 gap-10 items-start mt-10 md:mt-0">
             <div className="flex justify-center space-y-4 flex-col mt-4">
               <Link
