@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import BlocksData from "@/data/blocksData";
 import Image from "next/image";
 import Link from "next/link";
+import { slugify } from "@/utils/slugify";
 
 const AllBlocks: React.FC = () => {
    
@@ -10,9 +11,9 @@ const AllBlocks: React.FC = () => {
          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-20 lg:gap-10 pb-40 items-start relative z-40">
             {BlocksData.map((block) => (
               <Link
-                key={block.link}
-                href={block.link}
-                className="antialiased group"
+              key={block.name}
+              href={`/blocks/${slugify(block.name)}`}
+              className="antialiased group"
               >
                 <div className="relative dark:border rounded-lg dark:border-white/[0.1] overflow-hidden group-hover:shadow-xl transition duration-200 aspect-video flex items-center justify-center">
                   <Image

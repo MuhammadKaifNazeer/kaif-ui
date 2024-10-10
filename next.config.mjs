@@ -6,8 +6,8 @@ const withMDX = createMDX();
 const config = {
   reactStrictMode: true,
   images: {
-    domains: ['images.unsplash.com', 'ui.aceternity.com', 'fonts.gstatic.com', 'cdn.pixabay.com'],
+    domains: ['images.unsplash.com', 'ui.aceternity.com', 'fonts.gstatic.com', 'cdn.pixabay.com', 'ui.shadcn.com'],
   },
 };
-
+     
 export default withMDX(config);
