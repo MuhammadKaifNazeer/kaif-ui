@@ -13,6 +13,12 @@ const BlocksData: Block[] = [
     imageUrl: "/components/circularNavigation.png",
     mdxPath: "blocks/herosections.mdx", // no need to add "@/content/docs/"
   },
+  {
+    name: "Pricing",
+    supportLine: "Present your pricing with clarity and impact using sleek, customizable designs.",
+    imageUrl: "/components/circularNavigation.png",
+    mdxPath: "blocks/pricing.mdx", // no need to add "@/content/docs/"
+  },
 ];
 
 export default BlocksData;
