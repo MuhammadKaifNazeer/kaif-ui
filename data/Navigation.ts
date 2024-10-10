@@ -36,6 +36,15 @@ const Navigation = [
     ],
   },
   {
+    title: "Blocks",
+    links: [
+      { title: "Hero Sections", href: "/blocks/hero-sections" },
+      { title: "Pricing", href: "/blocks/pricing" },
+      { title: "Authentication", href: "/blocks/authentication" },
+      { title: "Footer", href: "/blocks/footer" },
+    ],
+  },
+  {
     title: "Explore",
     links: [
       { title: "Components", href: "/components" },
