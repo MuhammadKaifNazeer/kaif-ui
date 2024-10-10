@@ -1,94 +1,93 @@
-"use client";
 
-import * as React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Loader, Github } from "lucide-react";
+// Visit https://kaif-ui.vercel.app/ for more blocks like this
+
+import Image from "next/image"
+import Link from "next/link"
+import { Checkbox } from "@/components/ui/checkbox"
 
 export default function AuthOne() {
-  const [isLoading, setIsLoading] = React.useState<boolean>(false);
+    return (
+        <>  
+            <main className="overflow-hidden bg-gray-50">
+                <div className="relative mx-auto max-w-7xl">
+                    <div className="absolute -right-60 -top-44 h-60 w-[36rem] rotate-[-10deg] transform-gpu rounded-full bg-[linear-gradient(115deg,var(--tw-gradient-stops))] from-[#09f] from-[28%] via-[#2298e7] via-[70%] to-[#0561e2] blur-3xl md:right-0"></div>
+                    <div className="isolate flex min-h-dvh items-center justify-center p-6 lg:p-8">
+                        <div className="w-full max-w-md rounded-xl bg-white shadow-md ring-1 ring-black/5">
+                            <form action="#" method="POST" className="p-7 sm:p-11">
+                                <div className="flex items-start">
+                                    <a href="/">
+                                        <Image
+                                            src={'https://kaif-ui.vercel.app/logo/logo-light-theme.svg'}
+                                            width={20}
+                                            height={20}
+                                            alt="Kaif UI"
+                                            className="size-[3rem] rounded-lg"
+                                        />
+                                    </a>
+                                </div>
+                                <h1 className="mt-8 text-base font-medium text-black">Welcome back!</h1>
+                                <p className="mt-1 text-sm text-gray-600">
+                                    Sign in to your account to continue.
+                                </p>
 
-  async function onSubmit(event: React.SyntheticEvent) {
-    event.preventDefault();
-    setIsLoading(true);
+                                <div className="mt-8 space-y-3">
+                                    <label
+                                        className="text-sm font-medium text-black"
+                                        htmlFor="email"
+                                    >
+                                        Email
+                                    </label>
+                                    <input
+                                        required
+                                        className="block w-full rounded-lg border border-transparent px-2 py-1.5 text-base shadow ring-1 ring-black/10 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-black sm:text-sm bg-white text-black"
+                                        id="email"
+                                        type="email"
+                                        name="email"
+                                    />
+                                </div>
 
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
-  }
+                                <div className="mt-8 space-y-3">
+                                    <label
+                                        className="text-sm font-medium text-black"
+                                        htmlFor="password"
+                                    >
+                                        Password
+                                    </label>
+                                    <input
+                                        required
+                                        className="block w-full rounded-lg border border-transparent px-2 py-1.5 text-base shadow ring-1 ring-black/10 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-black sm:text-sm bg-white text-black"
+                                        id="password"
+                                        type="password"
+                                        name="password"
+                                    />
+                                </div>
+                                <div className="mt-8 flex items-center justify-between text-sm">
+                                    <div className="flex items-center gap-3 text-black bg-white">
+                                        <Checkbox id="remember-me" className="border dark:border-muted"/>
+                                        <label htmlFor="remember-me" className="text-black">Remember me</label>
+                                    </div>
+                                    <Link href="#" className="font-medium hover:text-gray-600 text-black">
+                                        Forgot password?
+                                    </Link>
+                                </div>
 
-  return (
-    <div className="w-full lg:grid lg:min-h-screen lg:grid-cols-2 bg-background">
-      <div className="flex items-center justify-center py-12">
-        <div className="mx-auto grid w-[350px] gap-6">
-          <div className="flex flex-col space-y-2 text-start">
-            <h1 className="text-2xl font-semibold tracking-tight">Login</h1>
-            <p className="text-sm text-muted-foreground">
-              Enter your email below to login to your account
-            </p>
-          </div>
-          <div className="grid gap-4">
-            <form onSubmit={onSubmit} className="grid gap-4">
-              <div className="grid gap-2">
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="m@example.com" />
-              </div>
-              <div className="grid gap-2">
-                <div className="flex items-center">
-                  <Label htmlFor="password">Password</Label>
-                  <Link
-                    href="#"
-                    className="ml-auto inline-block text-sm underline"
-                  >
-                    Forgot your password?
-                  </Link>
+                                <div className="mt-8">
+                                    <button
+                                        type="submit"
+                                        className="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full border border-transparent bg-gray-950 px-4 py-2 text-base font-medium text-white shadow-md hover:bg-gray-800 disabled:bg-gray-950 disabled:opacity-40"
+                                    >
+                                        Sign in
+                                    </button>
+                                </div>
+                            </form>
+                            <div className="m-1.5 rounded-lg bg-gray-50 py-4 text-black text-center text-sm/5 ring-1 ring-black/5">
+                                Not a member?
+                                <a className="font-medium hover:text-gray-600" href="#">Create an account</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <Input id="password" type="password" />
-              </div>
-              <Button disabled={isLoading} type="submit" className="w-full">
-                {isLoading && <Loader className="mr-2 h-4 w-4 animate-spin" />}
-                Login with Email
-              </Button>
-            </form>
-            <div className="relative">
-              <div className="absolute inset-0 flex items-center">
-                <span className="w-full border-t" />
-              </div>
-              <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-background px-2 text-muted-foreground">
-                  Or continue with
-                </span>
-              </div>
-            </div>
-            <Button variant="outline" type="button" disabled={isLoading}>
-              {isLoading ? (
-                <Loader className="mr-2 h-4 w-4 animate-spin" />
-              ) : (
-                <Github className="mr-2 h-4 w-4" />
-              )}{" "}
-              GitHub
-            </Button>
-          </div>
-          <div className="mt-4 text-center text-sm">
-            Don&apos;t have an account?{" "}
-            <Link href="#" className="underline">
-              Sign up
-            </Link>
-          </div>
-        </div>
-      </div>
-      <div className="hidden bg-muted lg:block">
-        <Image
-          src="https://images.unsplash.com/photo-1547119957-637f8679db1e?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Image"
-          width="1920"
-          height="1080"
-          className="h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
-        />
-      </div>
-    </div>
-  );
+            </main>
+        </>
+    );
 }

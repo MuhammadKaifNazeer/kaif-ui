@@ -20,6 +20,12 @@ const BlocksData: Block[] = [
     mdxPath: "blocks/pricing.mdx", // no need to add "@/content/docs/"
   },
   {
+    name: "Authentication",
+    supportLine: "Streamline user access with intuitive and customizable authentication UI.",
+    imageUrl: "/components/circularNavigation.png",
+    mdxPath: "blocks/authentication.mdx", // no need to add "@/content/docs/"
+  },
+  {
     name: "Footer",
     supportLine: "Design seamless, informative footers that complete your website's experience.",
     imageUrl: "/components/circularNavigation.png",

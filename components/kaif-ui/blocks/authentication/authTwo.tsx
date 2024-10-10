@@ -63,11 +63,8 @@ export default function AuthTwo() {
           <div className="relative z-20 mt-auto">
             <blockquote className="space-y-2">
               <p className="text-md">
-                &ldquo;This library has saved me countless hours of work and
-                helped me deliver stunning designs to my clients faster than
-                ever before.&rdquo;
+              Sign up to join us! Create an account to access exclusive features, manage your preferences, and stay connected.
               </p>
-              <footer className="text-sm">Sofia Davis</footer>
             </blockquote>
           </div>
         </div>
