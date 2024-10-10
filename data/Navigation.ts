@@ -12,8 +12,8 @@ const Navigation = [
   {
     title: "Guide",
     links: [
-      { title: "Introduction", href: "#" },
-      { title: "Contribution Guide", href: "#" },
+      { title: "Introduction", href: "/docs" },
+      { title: "Contribution Guide", href: "/docs/contribute" },
     ],
   },
   {

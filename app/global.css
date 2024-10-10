@@ -8,9 +8,12 @@
 }
 
 article.max-w-\[840px\] {
-  max-width: theme('maxWidth.7xl'); 
+  max-width: 1536px !important;
 }
 
+aside#nd-sidebar {
+  display: none;
+}
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -42,7 +45,7 @@ article.max-w-\[840px\] {
   .dark {
     --background: 0 0% 0%;
     --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
+    --card: 0 0% 0%;
     --card-foreground: 0 0% 98%;
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
@@ -75,4 +78,3 @@ article.max-w-\[840px\] {
     @apply bg-background text-foreground;
   }
 }
-
