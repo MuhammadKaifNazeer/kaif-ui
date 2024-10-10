@@ -1,0 +1,344 @@
+---
+title: Footer
+description: Design seamless, informative footers that complete your website's experience.
+---
+
+import { Tabs, Tab } from "fumadocs-ui/components/tabs";
+import { Step, Steps } from "fumadocs-ui/components/steps";
+
+import FooterOne from "@/components/kaif-ui/blocks/Footer/FooterOne";
+import FooterTwo from "@/components/kaif-ui/blocks/Footer/FooterTwo";
+
+<div className="relative">
+  <div className="absolute inset-0 flex items-center">
+    <span className="w-full border-t" />
+  </div>
+  <div className="relative flex justify-center text-xs capitalize">
+    <span className="bg-background px-2 text-2xl font-bold">
+      Footer One
+    </span>
+  </div>
+</div>
+
+<Tabs items={["preview", "code"]}>
+  <Tab value={"preview"}>
+    <FooterOne />
+  </Tab>
+  <Tab value={"code"}>
+```tsx
+
+// Visit https://kaif-ui.vercel.app/ for more blocks like this
+
+import Image from "next/image";
+import Link from "next/link";
+
+export default function FooterOne() {
+    return (
+        <>
+            <div className="border-t border-neutral-100 dark:border-white/[0.1] px-8 py-20 bg-background w-full relative overflow-hidden">
+                <div className="max-w-7xl mx-auto text-sm text-neutral-500 flex sm:flex-row flex-col justify-between items-start md:px-8">
+                    <div>
+                        <div className="mr-0 md:mr-4 md:flex mb-4">
+                            <Link
+                                className="font-normal flex space-x-2 items-center text-sm mr-4 text-black px-2 py-1 relative z-20"
+                                href="/"
+                            >
+                                <Image
+                                    alt="logo"
+                                    loading="lazy"
+                                    width={30}
+                                    height={30}
+                                    decoding="async"
+                                    data-nimg="1"
+                                    src={'https://kaif-ui.vercel.app/logo/logo-light-theme.svg'}
+                                    className="rounded size-[2rem]"
+                                />
+                                <span className="font-bold text-xl text-black dark:text-white">Kaif UI</span>
+                            </Link>
+                        </div>
+                        <div className="mt-2 ml-2">© copyright Kaif UI 2024. All rights reserved.</div>
+                    </div>
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 items-start mt-10 sm:mt-0 md:mt-0">
+                        <div className="flex justify-center space-y-4 flex-col w-full">
+                            <p className="transition-colors hover:text-text-neutral-800 text-neutral-600 dark:text-neutral-300 font-bold">Pages</p>
+                            <ul className="transition-colors hover:text-text-neutral-800 text-neutral-600 dark:text-neutral-300 list-none space-y-4">
+                                <li className="list-none">
+                                    <Link className="transition-colors hover:text-text-neutral-800" href="#">Home</Link>
+                                </li>
+                                <li className="list-none">
+                                    <Link className="transition-colors hover:text-text-neutral-800" href="#">Pricing</Link>
+                                </li>
+                                <li className="list-none">
+                                    <Link className="transition-colors hover:text-text-neutral-800" href="#">Contact</Link>
+                                </li>
+                                <li className="list-none">
+                                    <Link className="transition-colors hover:text-text-neutral-800" href="#">Blog</Link>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="flex justify-center space-y-4 flex-col">
+                            <p className="transition-colors hover:text-text-neutral-800 text-neutral-600 dark:text-neutral-300 font-bold">Socials</p>
+                            <ul className="transition-colors hover:text-text-neutral-800 text-neutral-600 dark:text-neutral-300 list-none space-y-4">
+                                <li className="list-none">
+                                    <Link className="transition-colors hover:text-text-neutral-800" href="#">Facebook</Link>
+                                </li>
+                                <li className="list-none">
+                                    <Link className="transition-colors hover:text-text-neutral-800" href="#">Instagram</Link>
+                                </li>
+                                <li className="list-none">
+                                    <Link className="transition-colors hover:text-text-neutral-800" href="#">Twitter</Link>
+                                </li>
+                                <li className="list-none">
+                                    <Link className="transition-colors hover:text-text-neutral-800" href="#">LinkedIn</Link>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="flex justify-center space-y-4 flex-col">
+                            <p className="transition-colors hover:text-text-neutral-800 text-neutral-600 dark:text-neutral-300 font-bold">Legal</p>
+                            <ul className="transition-colors hover:text-text-neutral-800 text-neutral-600 dark:text-neutral-300 list-none space-y-4">
+                                <li className="list-none">
+                                    <Link className="transition-colors hover:text-text-neutral-800" href="#">Privacy Policy</Link>
+                                </li>
+                                <li className="list-none">
+                                    <Link className="transition-colors hover:text-text-neutral-800" href="#">Terms of Service</Link>
+                                </li>
+                                <li className="list-none">
+                                    <Link className="transition-colors hover:text-text-neutral-800" href="#">Cookie Policy</Link>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="flex justify-center space-y-4 flex-col">
+                            <p className="transition-colors hover:text-text-neutral-800 text-neutral-600 dark:text-neutral-300 font-bold">Register</p>
+                            <ul className="transition-colors hover:text-text-neutral-800 text-neutral-600 dark:text-neutral-300 list-none space-y-4">
+                                <li className="list-none">
+                                    <Link className="transition-colors hover:text-text-neutral-800" href="#">Sign Up</Link>
+                                </li>
+                                <li className="list-none">
+                                    <Link className="transition-colors hover:text-text-neutral-800" href="#">Login</Link>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <p className="text-center uppercase mt-20 text-5xl md:text-9xl lg:text-[12rem] xl:text-[13rem] font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 dark:from-neutral-950 to-neutral-200 dark:to-neutral-800 inset-x-0">Footer</p>
+            </div>
+
+        </>
+    );
+}
+```
+  </Tab>
+</Tabs>
+
+<div className="relative">
+  <div className="absolute inset-0 flex items-center">
+    <span className="w-full border-t" />
+  </div>
+  <div className="relative flex justify-center text-xs capitalize">
+    <span className="bg-background px-2 text-2xl font-bold">
+      Footer Two
+    </span>
+  </div>
+</div>
+
+<Tabs items={["preview", "code"]}>
+  <Tab value={"preview"}>
+    <FooterTwo />
+  </Tab>
+  <Tab value={"code"}>
+```tsx
+import React from "react";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+
+const FooterTwo: React.FC = () => {
+    return (
+        <>
+            <footer id="footer" className="mt-20 w-full hidden sm:block px-8 pt-8">
+                <div className="">
+                    <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
+                        <nav>
+                            <ul role="list" className="grid grid-cols-2 gap-8 sm:grid-cols-3">
+                                <li>
+                                    <div className="font-display text-sm font-semibold tracking-wider">
+                                        Pages
+                                    </div>
+                                    <ul className="mt-4 text-sm text-muted-foreground">
+                                        <li className="mt-4">
+                                            <Link
+                                                href="#"
+                                                className="transition hover:text-neutral-950 dark:hover:text-white"
+                                            >
+                                                Home
+                                            </Link>
+                                        </li>
+                                        <li className="mt-4">
+                                            <Link
+                                                href="#"
+                                                className="transition hover:text-neutral-950 dark:hover:text-white"
+                                            >
+                                                All Products
+                                            </Link>
+                                        </li>
+                                        <li className="mt-4">
+                                            <Link
+                                                href="#"
+                                                className="transition hover:text-neutral-950 dark:hover:text-white"
+                                            >
+                                                Categories
+                                            </Link>
+                                        </li>
+                                        <li className="mt-4">
+                                            <Link
+                                                href="/profile"
+                                                className="transition hover:text-neutral-950 dark:hover:text-white"
+                                            >
+                                                Profile
+                                            </Link>
+                                        </li>
+                                        <li className="mt-4">
+                                            <Link
+                                                href="/contact"
+                                                className="transition hover:text-neutral-950 dark:hover:text-white"
+                                            >
+                                                Contact Us
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div className="font-display text-sm font-semibold tracking-wider">
+                                        Socials
+                                    </div>
+                                    <ul className="mt-4 text-sm text-muted-foreground">
+                                        <li className="mt-4">
+                                            <Link
+                                                href="#"
+                                                className="transition hover:text-neutral-950 dark:hover:text-white"
+                                            >
+                                                Facebook
+                                            </Link>
+                                        </li>
+                                        <li className="mt-4">
+                                            <Link
+                                                href="#"
+                                                className="transition hover:text-neutral-950 dark:hover:text-white"
+                                            >
+                                                Instagram
+                                            </Link>
+                                        </li>
+                                        <li className="mt-4">
+                                            <Link
+                                                href="#"
+                                                className="transition hover:text-neutral-950 dark:hover:text-white"
+                                            >
+                                                Twitter
+                                            </Link>
+                                        </li>
+                                        <li className="mt-4">
+                                            <Link
+                                                href="#"
+                                                className="transition hover:text-neutral-950 dark:hover:text-white"
+                                            >
+                                                LinkedIn
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div className="font-display text-sm font-semibold tracking-wider">
+                                        Legal
+                                    </div>
+                                    <ul className="mt-4 text-sm text-muted-foreground">
+                                        <li className="mt-4">
+                                            <Link
+                                                href="#"
+                                                className="transition hover:text-neutral-950 dark:hover:text-white"
+                                            >
+                                                Privacy Policy
+                                            </Link>
+                                        </li>
+                                        <li className="mt-4">
+                                            <Link
+                                                href="#"
+                                                className="transition hover:text-neutral-950 dark:hover:text-white"
+                                            >
+                                                Terms of Service
+                                            </Link>
+                                        </li>
+                                        <li className="mt-4">
+                                            <Link
+                                                href="#"
+                                                className="transition hover:text-neutral-950 dark:hover:text-white"
+                                            >
+                                                Cookie Policy
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div className="flex lg:justify-end">
+                            <form className="max-w-sm">
+                                <h2 className="font-display text-sm font-semibold tracking-wider">
+                                    Sign up for our newsletter
+                                </h2>
+                                <p className="mt-4 text-sm text-muted-foreground">
+                                    Subscribe to get the latest design news, articles, resources
+                                    and inspiration.
+                                </p>
+                                <div className="relative mt-6">
+                                    <input
+                                        placeholder="Email address"
+                                        autoComplete="email"
+                                        aria-label="Email address"
+                                        className="block w-full rounded-2xl border bg-transparent py-4 pl-6 pr-20 text-base/6 transition"
+                                        type="email"
+                                    />
+                                    <div className="absolute inset-y-1 right-1 flex justify-end">
+                                        <Button
+                                            type="submit"
+                                            aria-label="Submit"
+                                            className="flex aspect-square h-full items-center justify-center rounded-xl bg-neutral-950 text-white transition hover:bg-neutral-800 dark:bg-white dark:hover:bg-white/90 dark:text-neutral-950"
+                                        >
+                                            <ArrowRight size={16} />
+                                        </Button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div className="mb-20 mt-24 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t pt-12">
+                        <Link
+                            href={"/"}
+                            className="flex justify-start items-center"
+                        >
+                            <div className="logo flex items-center justify-start gap-1">
+                                <Image
+                                    alt="logo"
+                                    loading="lazy"
+                                    width={30}
+                                    height={30}
+                                    decoding="async"
+                                    data-nimg="1"
+                                    src={'https://kaif-ui.vercel.app/logo/logo-light-theme.svg'}
+                                    className="rounded size-[2rem]"
+                                />
+                                <h1 className="text-xl font-semibold">Kaif UI</h1>
+                            </div>
+                        </Link>
+                        <p className="text-sm text-muted-foreground">© Kaif UI. 2024</p>
+                    </div>
+                </div>
+            </footer>
+            <div className="sm:hidden w-fullh h-[5rem]"></div>
+        </>
+    );
+};
+
+export default FooterTwo;
+```
+  </Tab>
+</Tabs>

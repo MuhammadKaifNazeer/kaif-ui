@@ -19,6 +19,12 @@ const BlocksData: Block[] = [
     imageUrl: "/components/circularNavigation.png",
     mdxPath: "blocks/pricing.mdx", // no need to add "@/content/docs/"
   },
+  {
+    name: "Footer",
+    supportLine: "Design seamless, informative footers that complete your website's experience.",
+    imageUrl: "/components/circularNavigation.png",
+    mdxPath: "blocks/footer.mdx", // no need to add "@/content/docs/"
+  },
 ];
 
 export default BlocksData;
