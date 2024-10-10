@@ -34,6 +34,13 @@ const ComponentsData: Component[] = [
     mdxPath: "components/circularnavigation.mdx", // no need to add "@/content/docs/"
   },
   {
+    name: "Carousel",
+    supportLine:
+      "Display content seamlessly with the smooth Carousel component.",
+    imageUrl: "/components/circularNavigation.png",
+    mdxPath: "components/carousel.mdx", // no need to add "@/content/docs/"
+  },
+  {
     name: "Scroll Velocity",
     supportLine: "Dynamic scroll-based motion for engaging user experiences.",
     imageUrl: "/components/circularNavigation.png",

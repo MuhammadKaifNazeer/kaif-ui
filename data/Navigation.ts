@@ -23,6 +23,7 @@ const Navigation = [
       { title: "Pendulum", href: "/components/pendulum" },
       { title: "Infinite Scroll", href: "/components/infinite-scroll" },
       { title: "Circular Navigation", href: "/components/circular-navigation" },
+      { title: "Carousel", href: "/components/carousel" },
       { title: "Scroll Velocity", href: "/components/scroll-velocity" },
       { title: "Custom Cursor", href: "/components/custom-cursor" },
       { title: "Zoom Parallax", href: "/components/zoom-parallax" },
