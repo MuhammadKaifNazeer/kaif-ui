@@ -4,11 +4,11 @@ import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
-import { X, Rocket, Github } from "lucide-react";
+import { X, Github } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { ThemeToggler } from "@/components/ThemeToggler/ThemeToggler";
-import SearchTriggerButton from "@/components/SearchTriggerButton/SearchTriggerButton";
+import { Search } from "@/components/Search/Search";
 import Navigation from "@/data/Navigation";
 import { ScrollArea } from "../ui/scroll-area";
 
@@ -40,10 +40,6 @@ const NavLinks = [
     link: "/templates",
     name: "Templates",
   },
-  // {
-  //   link: "/textanimations",
-  //   name: "Text Animation",
-  // },
 ];
 
 export function Navbar({ className }: NavbarProps) {
@@ -77,10 +73,10 @@ export function Navbar({ className }: NavbarProps) {
   const sortedNavigation = Navigation.sort((a, b) =>
     a.title === "Explore" ? -1 : b.title === "Explore" ? 1 : 0
   );
-  
+
   return (
     <>
-      <header className="fixed top-0 z-[100] w-full border-b border-transparent bg-transparent w-full">
+      <header className="fixed top-0 z-[100] w-full border-b border-transparent bg-transparent">
         <div
           className={`hidden lg:block w-full ${
             scrolled
@@ -92,7 +88,7 @@ export function Navbar({ className }: NavbarProps) {
             <div className="flex items-center justify-between w-full">
               <div className="flex items-center justify-start gap-4">
                 <Link href="/">
-                  <div className="flex flex items-center justify-start gap-2">
+                  <div className="flex items-center justify-start gap-2">
                     <Image
                       alt="Logo"
                       loading="lazy"
@@ -116,25 +112,22 @@ export function Navbar({ className }: NavbarProps) {
                 </Link>
                 <div className="flex items-center">
                   <nav className="relative z-10 flex max-w-max flex-1 items-center justify-center">
-                    <div>
-                      <ul className="flex items-center justify-center gap-2">
-                        <li>
-                          {NavLinks.map((link) => (
-                            <Link href={link.link} key={link.name}>
-                              <Button variant={"ghost"} className="mx-1">
-                                {link.name}
-                              </Button>
-                            </Link>
-                          ))}
+                    <ul className="flex items-center justify-center gap-2">
+                      {NavLinks.map((link) => (
+                        <li key={link.name}>
+                          <Link href={link.link}>
+                            <Button variant={"ghost"} className="mx-1">
+                              {link.name}
+                            </Button>
+                          </Link>
                         </li>
-                      </ul>
-                    </div>
-                    <div className="absolute left-0 top-full flex justify-center"></div>
+                      ))}
+                    </ul>
                   </nav>
                 </div>
               </div>
               <div className="flex items-center justify-end gap-2">
-                <SearchTriggerButton />
+                <Search />
                 <ThemeToggler />
                 <Link
                   href="https://github.com/MuhammadKaifNazeer/kaif-ui"
@@ -159,7 +152,7 @@ export function Navbar({ className }: NavbarProps) {
             }`}
           >
             <Link href="/">
-              <div className="flex flex items-center justify-start gap-2">
+              <div className="flex items-center justify-start gap-2">
                 <Image
                   alt="Logo"
                   loading="lazy"
@@ -182,18 +175,16 @@ export function Navbar({ className }: NavbarProps) {
               </div>
             </Link>
             <div className="flex items-center justify-end gap-2">
-              <div className="flex items-center justify-end gap-2">
-                <SearchTriggerButton />
-                <ThemeToggler />
-                <Link
-                  href="https://github.com/MuhammadKaifNazeer/kaif-ui"
-                  target="_blank"
-                >
-                  <Button variant="ghost" size="icon">
-                    <Github className="w-4 h-4" />
-                  </Button>
-                </Link>
-              </div>
+              <Search />
+              <ThemeToggler />
+              <Link
+                href="https://github.com/MuhammadKaifNazeer/kaif-ui"
+                target="_blank"
+              >
+                <Button variant="ghost" size="icon">
+                  <Github className="w-4 h-4" />
+                </Button>
+              </Link>
               <Button
                 variant="ghost"
                 size="icon"
@@ -208,9 +199,7 @@ export function Navbar({ className }: NavbarProps) {
 
           <div
             className={`fixed w-screen h-screen bg-black/70 z-[105]  duration-500  ${
-              isOpen
-                ? "-translate-x-0 opacity-1"
-                : "-translate-x-full opacity-0"
+              isOpen ? "-translate-x-0 opacity-1" : "-translate-x-full opacity-0"
             }`}
             onClick={() => setIsOpen(false)}
           ></div>
@@ -236,7 +225,7 @@ export function Navbar({ className }: NavbarProps) {
                       className="flex justify-start items-center px-2 py-2"
                       onClick={() => setIsOpen(false)}
                     >
-                      <div className="flex flex items-center justify-start gap-2">
+                      <div className="flex items-center justify-start gap-2">
                         <Image
                           alt="Logo"
                           loading="lazy"
@@ -271,32 +260,45 @@ export function Navbar({ className }: NavbarProps) {
                   </div>
                   <div style={{ minWidth: "100%", display: "table" }}>
                     <div className="w-full">
-                      {sortedNavigation.map((section: SectionData, index: number) => (
-                        <div className="pb-4" key={index}>
-                          <h4 className="mb-1 rounded-md px-2 py-1 text-sm font-semibold text-black dark:text-white">
-                            {section.title}
-                          </h4>
-                          <div className="grid grid-flow-row auto-rows-max text-sm">
-                            {section.links.map(
-                              (link: LinkData, idx: number) => (
+                      {sortedNavigation.map(
+                        (section: SectionData, index: number) => (
+                          <div className="pb-4" key={index}>
+                            <h4 className="mb-1 rounded-md px-2 py-1 text-sm font-semibold text-black dark:text-white">
+                              {section.title}
+                            </h4>
+                            <div className="grid grid-flow-row auto-rows-max text-sm">
+                              {section.links.map((link: LinkData, idx: number) => (
                                 <Link
                                   key={idx}
-                                  className="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:text-blue-500 hover:translate-x-1 transition duration-200 text-muted-foreground"
-                                  target={link.external ? "_blank" : undefined}
-                                  rel={
-                                    link.external
-                                      ? "noopener noreferrer"
-                                      : undefined
-                                  }
+                                  className="group flex w-full items-center rounded-md px-2 py-1.5 font-medium hover:translate-x-1 transition-all text-muted-foreground hover:bg-muted"
                                   href={link.href}
+                                  target={link.external ? "_blank" : ""}
+                                  rel={link.external ? "noreferrer" : ""}
+                                  onClick={() => setIsOpen(false)}
                                 >
                                   {link.title}
+                                  {link.external && (
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 24 24"
+                                      strokeWidth="2"
+                                      stroke="currentColor"
+                                      className="ml-1 h-4 w-4"
+                                    >
+                                      <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="M13.5 10.5L18 6m0 0h-5.25M18 6v5.25M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                      />
+                                    </svg>
+                                  )}
                                 </Link>
-                              )
-                            )}
+                              ))}
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        )
+                      )}
                     </div>
                   </div>
                 </ScrollArea>

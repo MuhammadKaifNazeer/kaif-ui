@@ -9,7 +9,7 @@ import { Navbar } from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 
 const inter = Inter({
-  subsets: ["latin"],
+  subsets: ["latin"],   
 });
 
 export const metadata: Metadata = {
@@ -77,10 +77,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <body>
         <RootProvider
           search={{
-            links: [
-              ["Home", "/"],
-              ["Docs", "/docs"],
-            ],
+            enabled: false,
           }}
         >
           <ThemeProvider
