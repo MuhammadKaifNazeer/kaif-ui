@@ -47,9 +47,9 @@ export function Search() {
   };
 
   const sortedNavigation = [
-    ...Navigation.filter(section => section.title !== "Explore"),
-    ...Navigation.filter(section => section.title === "Explore")
-  ];  
+    ...Navigation.filter((section) => section.title !== "Explore"),
+    ...Navigation.filter((section) => section.title === "Explore"),
+  ];
 
   return (
     <>
@@ -86,15 +86,15 @@ export function Search() {
         <CommandInput placeholder="Search..." />
         <CommandList>
           <ScrollArea className="h-[18.5rem]">
-          <CommandEmpty>No results found.</CommandEmpty>
-            {sortedNavigation.map((group) => (
+            <CommandEmpty>No results found.</CommandEmpty>
+            {sortedNavigation.map((group, index) => (
               <React.Fragment key={group.title}>
                 <CommandGroup heading={group.title}>
                   {group.links.map((link) => (
                     <Link
                       key={link.title}
                       href={link.href}
-                      onClick={()=>{
+                      onClick={() => {
                         setOpen(false);
                       }}
                     >
@@ -105,7 +105,8 @@ export function Search() {
                     </Link>
                   ))}
                 </CommandGroup>
-                <CommandSeparator />
+                {/* Render CommandSeparator only if this is not the last group */}
+                {index !== sortedNavigation.length - 1 && <CommandSeparator />}
               </React.Fragment>
             ))}
           </ScrollArea>
