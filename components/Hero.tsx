@@ -1,10 +1,8 @@
 "use client";
 
 import React from "react";
-import { Github } from "lucide-react";
 import Link from "next/link";
 import { Cover } from "@/components/ui/cover";
-import { Users } from "@/components/Users/Users";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
@@ -93,14 +91,6 @@ const Hero = () => {
           </div>
 
           <div className="mb-8 mt-12 flex flex-col md:flex-row md:gap-10 md:px-8">
-            <div>
-              <h2 className="text-neutral-500 text-center mb-4 relative z-10 text-xs">
-                Chosen by Innovators and Visionaries Worldwide
-              </h2>
-              <div className="flex flex-col sm:flex-row items-center justify-center mb-10">
-                <Users />
-              </div>
-            </div>
 
             <div className="relative mt-10">
               <div className="absolute right-0 z-40 block h-full w-20 bg-white [mask-image:linear-gradient(to_left,white,transparent)] dark:bg-black sm:hidden"></div>
