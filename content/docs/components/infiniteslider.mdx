@@ -1,0 +1,150 @@
+---
+title: Infinite Slider
+description: Keep users engaged with endless content loading using the Infinite Slider component.
+---
+
+import { InfiniteSliderVertical } from "@/components/kaif-ui/components/InfiniteSlider/VerticalSlider";
+import { InfiniteSliderHorizontal } from "@/components/kaif-ui/components/InfiniteSlider/HorizontalSlider";
+
+import { TypeTable } from "fumadocs-ui/components/type-table";
+
+import { Tabs, Tab } from "fumadocs-ui/components/tabs";
+import { Step, Steps } from "fumadocs-ui/components/steps";
+
+<div className="space-y-2 mb-4">
+  <h1 class="scroll-m-20 text-4xl font-bold tracking-tight text-black dark:text-white">
+    Infinite Slider
+  </h1>
+  <p class="text-lg text-muted-foreground">
+    Keep users engaged with endless content loading using the Infinite Slider
+    component.
+  </p>
+</div>
+
+<h1 class="scroll-m-20 text-2xl font-bold tracking-tight text-black dark:text-white mb-4 mt-8">
+  Infinite Slider Vertical
+</h1>
+
+<Tabs items={["preview", "code"]} className="my-4">  
+    <Tab value={"preview"}>    
+    <div className="bg-background rounded-xl">
+     <InfiniteSliderVertical/>
+     </div>
+    </Tab>
+    <Tab value={"code"}>
+```tsx
+npm run dev
+````
+    </Tab>
+ </Tabs>
+
+<h1 class="scroll-m-20 text-2xl font-bold tracking-tight text-black dark:text-white mb-4 mt-8">
+  Infinite Slider Horizontal
+</h1>
+
+<Tabs items={["preview", "code"]} className="my-4">  
+    <Tab value={"preview"}>    
+    <div className="bg-background rounded-xl">
+     <InfiniteSliderHorizontal/>
+     </div>
+    </Tab>
+    <Tab value={"code"}>
+```tsx
+npm run dev
+````
+    </Tab>
+ </Tabs>
+
+<h1 class="scroll-m-20 text-2xl font-bold tracking-tight text-black dark:text-white my-4">
+  Installation
+</h1>
+
+<Steps>
+<Step>
+
+### Install Dependencies
+
+```bash
+npm i framer-motion react-use-measure
+```
+
+</Step>
+<Step>
+
+### Add util file
+
+```tsx title="lib/utils.ts"
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+```
+
+</Step>
+<Step>
+### Copy the source code
+
+```tsx title="components/kaif-ui/infiniteSlider.tsx"
+npm run dev
+```
+
+</Step>
+</Steps>
+
+<h1 class="scroll-m-20 text-xl font-bold tracking-tight text-black dark:text-white my-4">
+  Tech Stack
+</h1>
+
+<Cards>
+  <Card title="React" />
+  <Card title="Next.js" />
+  <Card title="Tailwind CSS" />
+  <Card title="Framer Motion" />
+  <Card title="TypeScript" />
+</Cards>
+
+<h1 class="scroll-m-20 text-xl font-bold tracking-tight text-black dark:text-white mt-12">
+  Props
+</h1>
+
+<TypeTable
+  type={{
+    children: {
+      description: "The content to be displayed inside the infinite slider.",
+      type: "React.ReactNode",
+      default: "None",
+    },
+    gap: {
+      description: "The gap between the sliding elements.",
+      type: "number",
+      default: 16,
+    },
+    duration: {
+      description: "The duration of the slider animation in seconds.",
+      type: "number",
+      default: 25,
+    },
+    durationOnHover: {
+      description: "The duration of the slider animation when hovering.",
+      type: "number",
+      default: "None",
+    },
+    direction: {
+      description: "The slider direction, either horizontal or vertical.",
+      type: '"horizontal" | "vertical"',
+      default: "horizontal",
+    },
+    reverse: {
+      description: "Reverses the slider direction.",
+      type: "boolean",
+      default: false,
+    },
+    className: {
+      description: "Custom CSS classes to style the component.",
+      type: "string",
+      default: "None",
+    },
+  }}
+/>

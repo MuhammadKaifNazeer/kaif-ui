@@ -20,11 +20,11 @@ const ComponentsData: Component[] = [
     mdxPath: "components/pendulum.mdx", // no need to add "@/content/docs/"
   },
   {
-    name: "Infinite Scroll",
+    name: "Infinite Slider",
     supportLine:
-      "Keep users engaged with endless content loading using the Infinite Scroll component.",
+      "Keep users engaged with endless content loading using the Infinite Slider component.",
     imageUrl: "/components/infinite-slider.png",
-    mdxPath: "components/infinitescroll.mdx", // no need to add "@/content/docs/"
+    mdxPath: "components/infiniteslider.mdx", // no need to add "@/content/docs/"
   },
   {
     name: "Circular Navigation",

@@ -38,7 +38,7 @@ const Navigation = [
     links: [
       { title: "Emogi Nav", href: "/components/emogi-nav" },
       { title: "Pendulum", href: "/components/pendulum" },
-      { title: "Infinite Scroll", href: "/components/infinite-scroll" },
+      { title: "Infinite Slider", href: "/components/infinite-slider" },
       { title: "Circular Navigation", href: "/components/circular-navigation" },
       { title: "Carousel", href: "/components/carousel" },
       { title: "Scroll Velocity", href: "/components/scroll-velocity" },

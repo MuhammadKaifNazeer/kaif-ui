@@ -17,7 +17,7 @@ type InfiniteSliderProps = {
   className?: string;
 };
 
-export function InfiniteScroll({
+export function InfiniteSlider({
   children,
   gap = 16,
   duration = 25,

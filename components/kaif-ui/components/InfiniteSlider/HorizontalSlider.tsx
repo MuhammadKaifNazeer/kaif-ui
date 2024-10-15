@@ -1,4 +1,4 @@
-import { InfiniteScroll } from "@/components/kaif-ui/ui/infiniteScroll";
+import { InfiniteSlider } from "@/components/kaif-ui/ui/infiniteSlider";
 import Image from "next/image";
 
 const images = [
@@ -54,11 +54,11 @@ const images = [
   },
 ];
 
-export function InfiniteScrollHorizontal() {
+export function InfiniteSliderHorizontal() {
   return (
     <div className="h-[400px] flex flex-col justify-center gap-4">
       <div className="flex items-center space-x-4 mx-auto w-full max-w-max">
-        <InfiniteScroll direction="horizontal">
+        <InfiniteSlider direction="horizontal">
           {images.map((image) => (
             <div className="aspect-square w-[120px] rounded-[4px]">
               <Image
@@ -71,10 +71,10 @@ export function InfiniteScrollHorizontal() {
               />
             </div>
           ))}
-        </InfiniteScroll>
+        </InfiniteSlider>
       </div>
       <div className="flex items-center space-x-4 mx-auto w-full max-w-max">
-        <InfiniteScroll direction="horizontal" reverse>
+        <InfiniteSlider direction="horizontal" reverse>
           {images.map((image) => (
             <div className="aspect-square w-[120px] rounded-[4px]">
               <Image
@@ -87,7 +87,7 @@ export function InfiniteScrollHorizontal() {
               />
             </div>
           ))}
-        </InfiniteScroll>
+        </InfiniteSlider>
       </div>
     </div>
   );
