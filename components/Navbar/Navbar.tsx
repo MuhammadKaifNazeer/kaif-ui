@@ -44,7 +44,7 @@ const NavLinks = [
 ];
 
 export function Navbar({ className }: NavbarProps) {
-  const currentPath = usePathname();
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -110,11 +110,13 @@ export function Navbar({ className }: NavbarProps) {
                 <div className="flex items-center">
                   <nav className="relative z-10 flex max-w-max flex-1 items-center justify-center">
                     <ul className="flex items-center justify-center gap-2">
-                      {NavLinks.map((link) => (
-                        <li key={link.name}>
-                          <Link href={link.link}>
+                      {Navigation.filter(
+                        (section) => section.title === "Explore"
+                      )[0].links.map((link) => (
+                        <li key={link.title}>
+                          <Link href={link.href}>
                             <Button variant={"ghost"} className="mx-1">
-                              {link.name}
+                              {link.title}
                             </Button>
                           </Link>
                         </li>
@@ -196,7 +198,9 @@ export function Navbar({ className }: NavbarProps) {
 
           <div
             className={`fixed w-screen h-screen bg-black/70 z-[105]  duration-500  ${
-              isOpen ? "-translate-x-0 opacity-1" : "-translate-x-full opacity-0"
+              isOpen
+                ? "-translate-x-0 opacity-1"
+                : "-translate-x-full opacity-0"
             }`}
             onClick={() => setIsOpen(false)}
           ></div>
@@ -257,45 +261,37 @@ export function Navbar({ className }: NavbarProps) {
                   </div>
                   <div style={{ minWidth: "100%", display: "table" }}>
                     <div className="w-full">
-                      {Navigation.map(
-                        (section: SectionData, index: number) => (
-                          <div className="pb-4" key={index}>
-                            <h4 className="mb-1 rounded-md px-2 py-1 text-sm font-semibold text-black dark:text-white">
-                              {section.title}
-                            </h4>
-                            <div className="grid grid-flow-row auto-rows-max text-sm">
-                              {section.links.map((link: LinkData, idx: number) => (
+                      {Navigation.filter(
+                        (section: SectionData) =>
+                          section.title === "Explore" ||
+                          section.title === "Follow For Updates"
+                      ).map((section: SectionData, index: number) => (
+                        <div className="pb-4" key={index}>
+                          <h4 className="mb-1 rounded-md px-2 py-1 text-sm font-semibold text-black dark:text-white">
+                            {section.title}
+                          </h4>
+                          <div className="grid grid-flow-row auto-rows-max text-sm">
+                            {section.links.map(
+                              (link: LinkData, idx: number) => (
                                 <Link
                                   key={idx}
-                                  className="group flex w-full items-center rounded-md px-2 py-1.5 font-medium hover:translate-x-1 transition-all text-muted-foreground hover:bg-muted"
+                                  className={`group flex w-full items-center rounded-md px-2 py-1.5 font-medium hover:translate-x-1 transition-all ${
+                                    pathname === link.href
+                                      ? "text-white font-bold"
+                                      : "text-muted-foreground"
+                                  }`}
                                   href={link.href}
                                   target={link.external ? "_blank" : ""}
                                   rel={link.external ? "noreferrer" : ""}
                                   onClick={() => setIsOpen(false)}
                                 >
                                   {link.title}
-                                  {link.external && (
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      fill="none"
-                                      viewBox="0 0 24 24"
-                                      strokeWidth="2"
-                                      stroke="currentColor"
-                                      className="ml-1 h-4 w-4"
-                                    >
-                                      <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M13.5 10.5L18 6m0 0h-5.25M18 6v5.25M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                                      />
-                                    </svg>
-                                  )}
                                 </Link>
-                              ))}
-                            </div>
+                              )
+                            )}
                           </div>
-                        )
-                      )}
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </ScrollArea>
