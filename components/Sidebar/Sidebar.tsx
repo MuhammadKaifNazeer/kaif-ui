@@ -1,7 +1,10 @@
+'use client'
+
 import React from "react";
 import Navigation from "@/data/Navigation";
 import { ScrollArea } from "../ui/scroll-area";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface LinkData {
   title: string;
@@ -15,6 +18,8 @@ interface SectionData {
 }
 
 const Sidebar = () => {
+  const pathname = usePathname();
+
   return (
     <>
       <aside className="fixed top-14 z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 lg:sticky lg:block lg:self-start">
@@ -49,7 +54,11 @@ const Sidebar = () => {
                       {section.links.map((link: LinkData, idx: number) => (
                         <Link
                           key={idx}
-                          className="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:text-blue-500 hover:translate-x-1 transition duration-200 text-muted-foreground"
+                          className={`group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:text-blue-500 hover:translate-x-1 transition duration-200 ${
+                            pathname === link.href
+                              ? "text-white"
+                              : "text-muted-foreground"
+                          }`}
                           target={link.external ? "_blank" : undefined}
                           rel={link.external ? "noopener noreferrer" : undefined}
                           href={link.href}

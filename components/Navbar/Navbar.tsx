@@ -1,4 +1,5 @@
 "use client";
+
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
@@ -69,10 +70,6 @@ export function Navbar({ className }: NavbarProps) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [isOpen]);
-
-  const sortedNavigation = Navigation.sort((a, b) =>
-    a.title === "Explore" ? -1 : b.title === "Explore" ? 1 : 0
-  );
 
   return (
     <>
@@ -260,7 +257,7 @@ export function Navbar({ className }: NavbarProps) {
                   </div>
                   <div style={{ minWidth: "100%", display: "table" }}>
                     <div className="w-full">
-                      {sortedNavigation.map(
+                      {Navigation.map(
                         (section: SectionData, index: number) => (
                           <div className="pb-4" key={index}>
                             <h4 className="mb-1 rounded-md px-2 py-1 text-sm font-semibold text-black dark:text-white">
