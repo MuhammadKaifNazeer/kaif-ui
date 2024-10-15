@@ -65,8 +65,8 @@ const AllComponents: React.FC = () => {
               </Link>
             ))}
             <div className="antialiased h-full">
-              <div className="aspect-video py-10 flex-col h-72 md:h-full w-full relative overflow-hidden rounded-lg dark:bg-black dark:border-white/[0.1] border border-transparent bg-gray-50 bg-dot-slate-200 dark:bg-dot-white/[0.1] flex items-center justify-center">
-                <div className="text-4xl font-bold dark:text-neutral-200 text-neutral-500">
+              <div className="aspect-video py-10 flex-col h-72 md:h-full w-full relative overflow-hidden rounded-lg dark:bg-black dark:border-white/[0.1] border border-transparent bg-gray-50 flex items-center justify-center">
+                <div className="text-4xl font-bold dark:text-neutral-200 text-neutral-700">
                   <span>Coming Soon</span>
                   <div className="opacity-20 absolute left-1/2 top-20 h-[1026px] w-[1026px] -translate-x-1/3 stroke-gray-300/70 [mask-image:linear-gradient(to_bottom,white_20%,transparent_45%)] sm:-translate-x-1/2 lg:ml-12 xl:ml-0">
                     <svg
@@ -139,7 +139,7 @@ const AllComponents: React.FC = () => {
                     </svg>
                   </div>
                 </div>
-                <p className="mt-2 text-base font-normal dark:text-neutral-300 text-neutral-500 px-8 text-center">
+                <p className="mt-2 text-base font-normal dark:text-neutral-300 text-neutral-600 px-8 text-center">
                   We are working hard to bring you more components. Bookmark
                   this page to stay tuned!
                 </p>
