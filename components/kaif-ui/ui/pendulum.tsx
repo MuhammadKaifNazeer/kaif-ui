@@ -35,12 +35,12 @@ const Pendulum: React.FC<PendulumProps> = ({ className }) => {
           <motion.div
             className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-white"
             style={{
-              boxShadow:
-                "inset 0 0 60px white, inset 20px 0 60px violet, inset -20px 0 60px rgb(0, 255, 255), 0 0 20px white, -20px 0 60px violet, 20px 0 60px rgb(0, 255, 255)",
+              boxShadow: "inset 0 0 80px white, 0 0 30px white", // Increased glow effect
             }}
             animate={{
               boxShadow: [
-                "inset 0 0 30px white, inset 10px 0 30px violet, inset -10px 0 30px rgb(0, 255, 255), 0 0 10px white, -10px 0 30px violet, 10px 0 30px rgb(0, 255, 255)",
+                "inset 0 0 50px white, 0 0 20px white", // Increased animation glow
+                "inset 0 0 80px white, 0 0 30px white", // Transitioning to a stronger glow
               ],
             }}
             transition={{
