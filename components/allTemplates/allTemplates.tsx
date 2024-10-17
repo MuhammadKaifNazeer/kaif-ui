@@ -1,10 +1,10 @@
 import React from "react";
-import { CommingSoon } from "@/components/CommingSoon/CommingSoon";
+import {ComingSoon} from "@/components/ComingSoon/ComingSoon";
 
 const AllTemplates = () => {
   return (
     <div>
-      <CommingSoon />
+      <ComingSoon />
     </div>
   );
 };

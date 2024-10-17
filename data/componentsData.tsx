@@ -79,13 +79,6 @@ const ComponentsData: Component[] = [
     imageUrl: "/components/tailwind-backgrounds.png",
     mdxPath: "components/tailwindbackgrounds.mdx", // no need to add "@/content/docs/"
   },
-  {
-    name: "Tailwind Backgrounds",
-    supportLine:
-      "Elevate your design with customizable Tailwind backgrounds for a stylish, modern look.",
-    imageUrl: "/components/tailwind-backgrounds.png",
-    mdxPath: "components/tailwindbackgrounds.mdx", // no need to add "@/content/docs/"
-  },
 ];
 
 export default ComponentsData;

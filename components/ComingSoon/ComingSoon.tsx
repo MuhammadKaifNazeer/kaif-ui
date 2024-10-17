@@ -1,7 +1,8 @@
-export function CommingSoon() {
+
+export function ComingSoon() {
   return (
     <>
-      <div className="">
+      <div className="pb-8">
         <div className="flex shrink-0 items-center justify-center rounded-md border border-dashed h-[30vh] md:h-[50vh]">
           <div className="mx-auto flex w-full flex-col items-center justify-center text-center">
             <svg

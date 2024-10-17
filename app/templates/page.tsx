@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
-import { CommingSoon } from "@/components/CommingSoon/CommingSoon";
+import { ComingSoon } from "@/components/ComingSoon/ComingSoon";
 
 export default function Templates() {
   return (
@@ -75,7 +75,7 @@ export default function Templates() {
         </section>
         <Separator className="mb-8" />
         <div>
-          <CommingSoon />
+          <ComingSoon />
         </div>
       </div>
     </>
