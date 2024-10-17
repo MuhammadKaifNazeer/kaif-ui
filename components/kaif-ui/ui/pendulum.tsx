@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
 // Visit https://kaif-ui.vercel.app/ for more components like this
 
 import { motion } from "framer-motion";
-import {cn} from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 interface PendulumProps {
   className?: string;
@@ -11,8 +11,13 @@ interface PendulumProps {
 
 const Pendulum: React.FC<PendulumProps> = ({ className }) => {
   return (
-    <div className={cn("w-full max-w-screen overflow-hidden h-screen flex items-start justify-center", className)}>
-       <div className="relative flex flex-col items-center justify-center">
+    <div
+      className={cn(
+        "w-full max-w-screen overflow-hidden h-screen flex items-start justify-center",
+        className
+      )}
+    >
+      <div className="relative flex flex-col items-center justify-center">
         {/* Pendulum */}
         <motion.div
           className="pendulum flex flex-col items-center justify-center"
@@ -35,12 +40,12 @@ const Pendulum: React.FC<PendulumProps> = ({ className }) => {
           <motion.div
             className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-white"
             style={{
-              boxShadow: "inset 0 0 80px white, 0 0 30px white", // Increased glow effect
+              boxShadow: "inset 0 0 80px white, 0 0 30px white",
             }}
             animate={{
               boxShadow: [
-                "inset 0 0 50px white, 0 0 20px white", // Increased animation glow
-                "inset 0 0 80px white, 0 0 30px white", // Transitioning to a stronger glow
+                "inset 0 0 50px white, 0 0 20px white",
+                "inset 0 0 80px white, 0 0 30px white",
               ],
             }}
             transition={{

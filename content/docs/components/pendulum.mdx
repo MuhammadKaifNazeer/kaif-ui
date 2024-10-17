@@ -7,7 +7,7 @@ import PendulumDemo from "@/components/kaif-ui/components/Pendulum/Pendulum ";
 
 import { Tabs, Tab } from "fumadocs-ui/components/tabs";
 import { Step, Steps } from "fumadocs-ui/components/steps";
-import { TypeTable } from 'fumadocs-ui/components/type-table';
+import { TypeTable } from "fumadocs-ui/components/type-table";
 
 <div className="space-y-2 mb-4">
   <h1 class="scroll-m-20 text-4xl font-bold tracking-tight text-black dark:text-white">
@@ -27,7 +27,7 @@ import { TypeTable } from 'fumadocs-ui/components/type-table';
     </Tab>
     <Tab value={"code"}>
 ```tsx
-import Pendulum from "@/components/kaif-ui/ui/pendulum";
+import Pendulum from "@/components/kaif-ui/pendulum";
 
 export default function PendulumDemo() {
   return (
@@ -60,7 +60,7 @@ npm i framer-motion
 ### Copy the source code
 
 ```tsx title="components/kaif-ui/pendulum.tsx"
-'use client';
+"use client";
 
 // Visit https://kaif-ui.vercel.app/ for more components like this
 
@@ -102,12 +102,12 @@ const Pendulum: React.FC<PendulumProps> = ({ className }) => {
           <motion.div
             className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-white"
             style={{
-              boxShadow:
-                "inset 0 0 60px white, inset 20px 0 60px violet, inset -20px 0 60px rgb(0, 255, 255), 0 0 20px white, -20px 0 60px violet, 20px 0 60px rgb(0, 255, 255)",
+              boxShadow: "inset 0 0 80px white, 0 0 30px white",
             }}
             animate={{
               boxShadow: [
-                "inset 0 0 30px white, inset 10px 0 30px violet, inset -10px 0 30px rgb(0, 255, 255), 0 0 10px white, -10px 0 30px violet, 10px 0 30px rgb(0, 255, 255)",
+                "inset 0 0 50px white, 0 0 20px white",
+                "inset 0 0 80px white, 0 0 30px white",
               ],
             }}
             transition={{
@@ -146,7 +146,7 @@ export default Pendulum;
 
 <TypeTable
   type={{
-    "className": {
+    className: {
       description: "Optional prop for adding custom styles to the root div.",
       type: "string",
       default: "undefined",
