@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
-import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
-const people = [
+import Image from "next/image";
+
+const customers = [
   {
     id: 1,
     name: "John Doe",
@@ -60,10 +61,37 @@ const people = [
   },
 ];
 
-export function Users() {
+export function CTA() {
   return (
-    <div className="flex flex-row items-center justify-center mb-10 w-full">
-      <AnimatedTooltip items={people} />
+    <div className="w-full sm:px-6 sm:py-10 lg:px-8 flex justify-center items-center">
+      <div className="mx-auto max-w-xl text-center lg:mx-0 lg:flex-auto py-10 lg:py-10 lg:text-left">
+        <h2 className="text-xl text-center font-bold tracking-tight text-black dark:text-white sm:text-4xl mt-4">
+          Want a custom website tailored to your needs? Let's talk
+        </h2>
+        <p className="mt-6 text-sm text-center sm:text-lg leading-8 text-neutral-500 dark:text-neutral-400">
+          We have helped hundreds of founders with their website needs.
+        </p>
+        <div className="mt-10 -ml-4">
+          <div className="flex flex-row items-center justify-center mb-10 w-full">
+            {customers.map((item, idx) => (
+              <div className="-mr-4  relative group" key={item.name}>
+                <Image
+                  height={100}
+                  width={100}
+                  src={item.image}
+                  alt={item.name}
+                  className="object-cover !m-0 !p-0 object-top rounded-full h-14 w-14 border-2 group-hover:scale-105 group-hover:z-30 border-white  relative transition duration-500"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="flex justify-center mt-6">
+          <a className="no-underline flex space-x-2 group cursor-pointer transition duration-200 p-px font-semibold px-4 py-2 w-full sm:w-44 h-10 rounded-lg text-sm text-center items-center justify-center relative z-20 bg-black dark:bg-white dark:text-black text-white">
+            Talk to us
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

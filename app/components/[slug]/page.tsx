@@ -35,7 +35,7 @@ export default function Component() {
     };
 
     loadMDX();
-  }, [component.mdxPath]);
+  }, [component.mdxPath]); 
 
   return (
     <>
