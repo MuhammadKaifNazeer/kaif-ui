@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import TemplatesData from "@/data/templatesData";
 import { slugify } from "@/utils/slugify";
+import { CTA } from "@/components/CTA/CTA";
 
 const TemplatePage: React.FC = () => {
   const { slug } = useParams();
@@ -120,7 +121,7 @@ const TemplatePage: React.FC = () => {
                 </div>
               </div>
             </div>
-            {/* cta here */}
+            <CTA />
           </div>
         </div>
       </div>

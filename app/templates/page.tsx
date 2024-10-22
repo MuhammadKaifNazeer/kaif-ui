@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import AllTemplates from "@/components/allTemplates/allTemplates";
+import { CTA } from "@/components/CTA/CTA";
 
 export default function Templates() {
   return (
@@ -77,6 +78,7 @@ export default function Templates() {
         <div>
           <AllTemplates />
         </div>
+        <CTA />
       </div>
     </>
   );
