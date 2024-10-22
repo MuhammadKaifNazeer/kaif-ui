@@ -73,12 +73,11 @@ const TemplatePage: React.FC = () => {
                 </div>
                 <div className="text-sm text-neutral-600 dark:text-neutral-300 mt-4">
                   free for content creators{" "}
-                  <Link
+                  <span
                     className="font-bold text-neutral-900 dark:text-neutral-50"
-                    href="/pricing"
                   >
                     Comming Soon
-                  </Link>
+                  </span>
                 </div>
               </div>
             </div>
