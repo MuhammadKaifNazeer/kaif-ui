@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Cover } from "@/components/ui/cover";
 import { Button } from "@/components/ui/button";
 
-const Hero = () => {
+const HeroSection = () => {
   return (
     <>
       <div className="relative w-full overflow-hidden">
@@ -197,4 +197,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default HeroSection;
