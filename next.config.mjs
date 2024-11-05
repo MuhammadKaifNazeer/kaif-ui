@@ -6,7 +6,7 @@ const withMDX = createMDX();
 const config = {
   reactStrictMode: true,
   images: {
-    domains: ['images.unsplash.com', 'plus.unsplash.com', 'ui.aceternity.com', 'fonts.gstatic.com', 'cdn.pixabay.com', 'ui.shadcn.com'],
+    domains: ['images.unsplash.com', 'plus.unsplash.com', 'ui.aceternity.com', 'fonts.gstatic.com', 'cdn.pixabay.com', 'ui.shadcn.com', 'avatars.githubusercontent.com'],
   },
   env: {
     EMAILJS_SERVICE_ID: process.env.EMAILJS_SERVICE_ID,
