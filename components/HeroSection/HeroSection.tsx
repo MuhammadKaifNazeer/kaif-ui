@@ -91,7 +91,6 @@ const HeroSection = () => {
           </div>
 
           <div className="mb-8 mt-12 flex flex-col md:flex-row md:gap-10 md:px-8">
-
             <div className="relative mt-10">
               <div className="absolute right-0 z-40 block h-full w-20 bg-white [mask-image:linear-gradient(to_left,white,transparent)] dark:bg-black sm:hidden"></div>
               <div

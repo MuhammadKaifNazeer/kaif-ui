@@ -20,6 +20,13 @@ const ComponentsData: Component[] = [
     mdxPath: "components/pendulum.mdx", // no need to add "@/content/docs/"
   },
   {
+    name: "MacBook Keyboard",
+    supportLine:
+      "An interactive, minimalist MacBook-inspired keyboard component for seamless user engagement.",
+    imageUrl: "/components/MacBookKeyboard.png",
+    mdxPath: "components/macbookkeyboard.mdx", // no need to add "@/content/docs/"
+  },
+  {
     name: "Infinite Slider",
     supportLine:
       "Keep users engaged with endless content loading using the Infinite Slider component.",
