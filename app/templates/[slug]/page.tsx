@@ -73,11 +73,13 @@ const TemplatePage: React.FC = () => {
                 </div>
                 <div className="text-sm text-neutral-600 dark:text-neutral-300 mt-4">
                   free for content creators{" "}
-                  <span
+                  <Link
+                    href={"https://forms.gle/2nxuP7rPW6ooHvXY8"}
+                    target="_blank"
                     className="font-bold text-neutral-900 dark:text-neutral-50"
                   >
-                    Comming Soon
-                  </span>
+                    Join Now
+                  </Link>
                 </div>
               </div>
             </div>
