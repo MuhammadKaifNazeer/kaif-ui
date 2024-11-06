@@ -70,6 +70,7 @@ const Navigation = [
       { title: "Blocks", href: "/blocks" },
       { title: "Templates", href: "/templates" },
       { title: "Showcase", href: "/showcase" },
+      { title: "Sponsers", href: "/sponsers" },
     ],
   },
 ];

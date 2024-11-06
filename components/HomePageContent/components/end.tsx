@@ -32,9 +32,10 @@ export default function End() {
               "bg-primary text-primary-foreground shadow hover:bg-primary/85 hover:shadow-md",
               "h-9 px-4 py-2"
             )}
-            href={"/components"}
+            href={"/sponsers"}
           >
-            Browse Components
+            
+            Sponsers
           </Link>
           <Link
             className={cn(
