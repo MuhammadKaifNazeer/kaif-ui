@@ -1,14 +1,21 @@
-import { ExternalLink, BookText, Circle, LayoutList, FileTextIcon } from "lucide-react";
+import {
+  ExternalLink,
+  BookText,
+  Circle,
+  LayoutList,
+  FileTextIcon,
+  LayoutPanelTop,
+} from "lucide-react";
 
 type LinkItem = {
   title: string;
   href: string;
-  external?: boolean; 
+  external?: boolean;
 };
 
 type NavigationGroup = {
   title: string;
-  icon: React.ElementType; 
+  icon: React.ElementType;
   links: LinkItem[];
 };
 
@@ -18,7 +25,7 @@ const Navigation = [
     icon: ExternalLink,
     links: [
       {
-        title: "Muhammad Kaif Nazeer",  
+        title: "Muhammad Kaif Nazeer",
         href: "https://bento.me/muhammadkaifnazeer",
         external: true,
       },
@@ -60,6 +67,14 @@ const Navigation = [
       { title: "Pricing", href: "/blocks/pricing" },
       { title: "Authentication", href: "/blocks/authentication" },
       { title: "Footer", href: "/blocks/footer" },
+    ],
+  },
+  {
+    title: "Templates",
+    icon: LayoutPanelTop,
+    links: [
+      { title: "Kaif UI Docs", href: "/templates/kaif-ui-docs" },
+      { title: "Fluxis Studios", href: "/templates/fluxis-studios" },
     ],
   },
   {
