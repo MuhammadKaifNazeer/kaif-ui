@@ -1,17 +1,18 @@
 ---
 title: Contribution Guide
-description: Contribution Guide       
+description: Contribution Guide
 ---
 
-import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
-import { Callout } from 'fumadocs-ui/components/callout';
+import { Accordion, Accordions } from "fumadocs-ui/components/accordion";
+import { Callout } from "fumadocs-ui/components/callout";
 import { Step, Steps } from "fumadocs-ui/components/steps";
-import Link from 'fumadocs-core/link';
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import Link from "fumadocs-core/link";
 
 Thank you for your interest in contributing to Kaif UI! Your contributions are invaluable in helping us improve the library and make it a better tool for developers.
 
 <Callout type="info">
-## Contribution Rules   
+## Contribution Rules
 
 - Follow the existing code style
 - Write clear and concise comments
@@ -24,44 +25,359 @@ These rules may be updated from time to time to reflect changes in the project o
 
 </Callout>
 
-## Get Started
+## Getting Started with Contributing to Kaif UI
 
 <Steps>
     
 <Step>
+### Fork the Repository
 
-  ### Clone the respository
+Create a personal copy of Kaif UI on your GitHub account to start contributing.
 
-```bash
-git clone https://github.com/MuhammadKaifNazeer/kaif-ui.git  
-```
+Go to the [Kaif UI GitHub repository](https://github.com/MuhammadKaifNazeer/kaif-ui) and click on the "Fork" button at the top right. This will create a copy of the repository under your GitHub account.
+
 </Step>
 
 <Step>
 
-  ### Navigate to directory
+### Clone Your Forked Repository
 
 ```bash
-cd kaif-ui
+git clone https://github.com/YourUsername/kaif-ui.git
 ```
+
+Replace `YourUsername` with your GitHub username.
+
 </Step>
 
 <Step>
 
-  ### Install Dependencies
+### Install Dependencies
 
 ```bash
 npm install
 ```
+
 </Step>
 
 <Step>
 
-  ### Run development server
+### Create a New Branch
+
+Important: Before making any changes, create a separate branch for your component to keep the main branch clean.
 
 ```bash
-npm run dev
+git checkout -b your-feature-branch
 ```
+
+Replace `your-feature-branch` with a descriptive name for your feature or component.
+
+</Step>
+
+<Step>
+### Navigate to the Folder
+
+Here, If you want to contribute the component, Head over to the following directory:
+
+```plaintext
+@/components/kaif-ui/components
+```
+
+And if you want to contribute the block, Head over to the following directory:
+
+```plaintext
+@/components/kaif-ui/blocks
+```
+
+</Step>
+
+<Step>
+### Create Your Component or Block
+
+<Tabs items={['Component', 'Block']}>
+  <Tab value="Component">
+  
+In the `components` folder, create your component:
+
+```plaintext
+@/components/kaif-ui/components/YourComponent/YourComponent.tsx
+```
+
+  </Tab>
+  <Tab value="Block">
+    
+In the `blocks` folder, create your block:
+
+```plaintext
+@/components/kaif-ui/blocks/YourBlockCategory/YourBlock.tsx
+```
+
+  </Tab>
+</Tabs>
+
+</Step>
+
+<Step>
+### Add Documentation
+
+<Tabs items={['Component', 'Block']}>
+  <Tab value="Component">
+  
+After creating the component, navigate to:
+
+```plaintext
+@/content/docs/components
+```
+
+  </Tab>
+  <Tab value="Block">
+    
+After creating the block, navigate to:
+
+```plaintext
+@/content/docs/blocks
+```
+
+  </Tab>
+</Tabs>
+
+Here, Create a new `.mdx` file for your component or block:
+
+<Tabs items={['Component', 'Block']}>
+  <Tab value="Component">
+
+```plaintext
+@/content/docs/components/yourcomponent.mdx
+```
+
+Example `.mdx` Structure
+
+```mdx
+---
+title: Your Component Name
+description: Describe of your component.
+---
+
+import YourComponent from "@/components/kaif-ui/components/YourComponent/YourComponent";
+
+import { Tabs, Tab } from "fumadocs-ui/components/tabs";
+import { Step, Steps } from "fumadocs-ui/components/steps";
+import { TypeTable } from "fumadocs-ui/components/type-table";
+
+<div className="space-y-2 mb-4">
+  <h1 class="scroll-m-20 text-4xl font-bold tracking-tight text-black dark:text-white">
+    Your Component Name
+  </h1>
+  <p class="text-lg text-muted-foreground">
+    Short description of your component
+  </p>
+</div>
+
+<Tabs items={["preview", "code"]} className="my-4">
+  <Tab value={"preview"}>
+    <div className="bg-background rounded-xl">
+      <YourComponent />
+    </div>
+  </Tab>
+  <Tab value={"code"}>your component usage code here in .tsx</Tab>
+</Tabs>
+
+<h1 class="scroll-m-20 text-2xl font-bold tracking-tight text-black dark:text-white my-4">
+  Installation
+</h1>
+
+// describe the steps: how developer can you component in their project
+
+here is the example steps
+
+<Steps>
+  <Step>
+    ### Install Dependencies
+
+    npm i dependencies-of-your-component
+
+  </Step>
+  <Step>
+    ### Copy the source code
+
+    // core code of your component
+
+  </Step>
+</Steps>
+
+<h1 class="scroll-m-20 text-xl font-bold tracking-tight text-black dark:text-white my-4">
+  Tech Stack of Your Component
+</h1>
+
+<Cards>
+  <Card title="React" />
+  <Card title="Next.js" />
+  <Card title="Tailwind CSS" />
+  <Card title="TypeScript" />
+</Cards>
+
+<h1 class="scroll-m-20 text-xl font-bold tracking-tight text-black dark:text-white mt-12">
+  Props
+</h1>
+
+<TypeTable
+  type={{
+    className: {
+      description: "Optional class names to style the button component.",
+      type: "string",
+      default: "undefined",
+    },
+    children: {
+      description:
+        "The content to be rendered inside the button, typically text or icons.",
+      type: "React.ReactNode",
+      default: "undefined",
+    },
+  }}
+/>
+```
+
+  </Tab>
+  <Tab value="Block">
+
+```plaintext
+@/content/docs/blocks/yourblockCategory.mdx
+```
+
+Example `.mdx` Structure
+
+```mdx
+---
+title: Your Block Name
+description: Describe Your Block
+---
+
+import { Tabs, Tab } from "fumadocs-ui/components/tabs";
+import { Step, Steps } from "fumadocs-ui/components/steps";
+
+import YourBlock from "@/components/kaif-ui/blocks/YourBlock/YourBlock";
+
+<div className="relative">
+  <div className="absolute inset-0 flex items-center">
+    <span className="w-full border-t" />
+  </div>
+  <div className="relative flex justify-center text-xs capitalize">
+    <span className="bg-background px-2 text-2xl font-bold">
+      Your Block Name
+    </span>
+  </div>
+</div>
+
+<Tabs items={["preview", "code"]} className="my-4">
+  <Tab value={"preview"}>
+    <div className="bg-background rounded-xl">
+      <YourBlock />
+    </div>
+  </Tab>
+  <Tab value={"code"}>code of your block</Tab>
+</Tabs>
+```
+
+  </Tab>
+</Tabs>
+
+</Step>
+
+<Step>
+### Display Your Component or Block
+
+<Tabs items={['Component', 'Block']}>
+  <Tab value="Component">
+   To display your component in Kaif UI, add it in the `componentsData.tsx` file:
+
+```plaintext
+@/data/componentsData.tsx
+```
+
+Here is the example:
+
+```tsx
+{
+  name: "Emoji Nav",
+  supportLine: "Emoji Nav: Think Different, Navigate with Fun.",
+  imageUrl: "/components/emoji-nav.png",
+  mdxPath: "components/emojinav.mdx" // no need to add "@/content/docs/"
+},
+```
+
+Add a component image in:
+
+```plaintext
+@/public/components
+```
+
+  </Tab>
+  <Tab value="Block">
+  To display your block in Kaif UI, add it in the `blockssData.tsx` file:
+   
+```plaintext
+@/data/blockssData.tsx
+```
+
+Here is the example:
+
+```tsx
+{
+  name: "Hero Sections",
+  supportLine: "Make a stunning first impression with captivating hero sections.",
+  imageUrl: "/blocks/hero-section.png",
+  mdxPath: "blocks/herosections.mdx", // no need to add "@/content/docs/"
+},
+```
+
+Add a block image in:
+
+```plaintext
+@/public/blocks
+```
+
+  </Tab>
+</Tabs>
+</Step>
+
+<Step>
+### Add Yourself as a Contributor
+
+Don’t forget to add yourself to the `contributors.tsx` file:
+
+```plaintext
+@/data/contributors.tsx
+```
+
+Example entry:
+
+```tsx
+{
+  name: "Your Name",
+  image: "https://avatars.githubusercontent.com/u/your-github-id?v=4",
+  github: "https://github.com/YourUsername"
+}
+```
+
+</Step>
+
+<Step>
+### Submit Your Changes
+
+After completing the above steps, commit and push your changes:
+
+```bash
+git add .
+git commit -m "Added [your component name] component"
+git push origin your-feature-branch
+```
+
+</Step>
+
+<Step>
+  ### Create a Pull Request 
+     
+  Then, create a Pull Request (PR) to merge your branch into the main branch on GitHub.
 </Step>
 
 </Steps>
@@ -71,50 +387,102 @@ npm run dev
 Some common questions you may encounter:
 
 <Accordions>
-<Accordion id="What kind of contributions can I make?" title="What kind of contributions can I make?">
-You can contribute in several ways, including:
+  <Accordion id="What kind of contributions can I make?" title="What kind of contributions can I make?">
+    <p>You can contribute in several ways, including:</p>
+    <ul>
+      <li>Bug fixes and performance improvements.</li>
+      <li>New components, blocks, or templates.</li>
+      <li>Improving documentation and guides.</li>
+      <li>Writing unit tests to ensure the quality of the codebase.</li>
+      <li>Suggesting new features or enhancements to existing components.</li>
+    </ul>
+  </Accordion>
 
-- Bug fixes and performance improvements.   
-- New components, blocks, or templates.
-- Improving documentation and guides.
-- Writing unit tests to ensure the quality of the codebase.
-- Suggesting new features or enhancements to existing components.
-</Accordion>
-    <Accordion id="How do I suggest a new feature or component?" title="How do I suggest a new feature or component?">
-      Before working on a new feature or component, please open a GitHub issue to discuss your idea with the maintainers and community. This helps ensure your contribution aligns with the project's roadmap and style.
-    </Accordion>
-    <Accordion id="What should I do before submitting a pull request?" title="What should I do before submitting a pull request?">
-Ensure the following before submitting a pull request:
+{" "}
 
-- Follow the **Contribution Rules** outlined above.
-- Ensure your code is well-documented and easy to understand.
-- Make sure all linting, formatting, and tests pass without errors.
-- Double-check the code against the project's style and formatting guide.
+<Accordion
+  id="How do I suggest a new feature or component?"
+  title="How do I suggest a new feature or component?"
+>
+  <p>
+    Before working on a new feature or component, please open a GitHub issue to
+    discuss your idea with the maintainers and community. This helps ensure your
+    contribution aligns with the project's roadmap and style.
+  </p>
 </Accordion>
-    <Accordion id="Can I work on multiple issues at the same time?" title="Can I work on multiple issues at the same time?">
-        Yes, but we encourage contributors to focus on one issue at a time to avoid confusion. If you're working on multiple issues, create separate branches for each contribution to keep things organized.
-    </Accordion>
-    <Accordion id="What should I do if I find a bug?" title="What should I do if I find a bug?">
-If you encounter a bug, please check if it has already been reported. If not, you can open a new issue on GitHub with the following details:
 
-- A brief description of the bug.
-- Steps to reproduce it.
-- Expected vs. actual behavior.
-- Screenshots (if applicable).
-</Accordion>
-    <Accordion id="Can I contribute without writing code?" title="Can I contribute without writing code?">
-Absolutely! You can help by:
+{" "}
 
-- Reporting bugs.
-- Improving documentation or guides.
-- Participating in discussions about feature requests or improvements.
+<Accordion
+  id="What should I do before submitting a pull request?"
+  title="What should I do before submitting a pull request?"
+>
+  <p>Ensure the following before submitting a pull request:</p>
+  <ul>
+    <li>
+      Follow the <strong>Contribution Rules</strong> outlined above.
+    </li>
+    <li>Ensure your code is well-documented and easy to understand.</li>
+    <li>Make sure all linting, formatting, and tests pass without errors.</li>
+    <li>
+      Double-check the code against the project's style and formatting guide.
+    </li>
+  </ul>
 </Accordion>
-    <Accordion id="How are contributors recognized?" title="How are contributors recognized?">
-All contributors to Kaif UI are acknowledged in the Contributors section of the documentation and in the GitHub repository. We deeply appreciate every contribution, big or small.   
+
+{" "}
+
+<Accordion
+  id="Can I work on multiple issues at the same time?"
+  title="Can I work on multiple issues at the same time?"
+>
+  <p>
+    Yes, but we encourage contributors to focus on one issue at a time to avoid
+    confusion. If you're working on multiple issues, create separate branches
+    for each contribution to keep things organized.
+  </p>
 </Accordion>
+
+{" "}
+
+<Accordion
+  id="What should I do if I find a bug?"
+  title="What should I do if I find a bug?"
+>
+  <p>
+    If you encounter a bug, please check if it has already been reported. If
+    not, you can open a new issue on GitHub with the following details:
+  </p>
+  <ul>
+    <li>A brief description of the bug.</li>
+    <li>Steps to reproduce it.</li>
+    <li>Expected vs. actual behavior.</li>
+    <li>Screenshots (if applicable).</li>
+  </ul>
+</Accordion>
+
+{" "}
+
+<Accordion
+  id="Can I contribute without writing code?"
+  title="Can I contribute without writing code?"
+>
+  <p>Absolutely! You can help by:</p>
+  <ul>
+    <li>Reporting bugs.</li>
+    <li>Improving documentation or guides.</li>
+    <li>
+      Participating in discussions about feature requests or improvements.
+    </li>
+  </ul>
+</Accordion>
+
+  <Accordion id="How are contributors recognized?" title="How are contributors recognized?">
+    <p>All contributors to Kaif UI are acknowledged in the Contributors section of the documentation and in the GitHub repository. We deeply appreciate every contribution, big or small.</p>
+  </Accordion>
 </Accordions>
-        
-## Learn More   
+
+## Learn More
 
 To learn more about Kaif UI, take a look at the following resources:
 
@@ -124,13 +492,13 @@ To learn more about Kaif UI, take a look at the following resources:
 ## Join the Community
 
 Become a part of the **Kaif UI** community! Share your experiences, ask questions, and collaborate with other developers. Together, we can make **kaif UI** even better. [Join Discord](https://discord.com/invite/yZpeqXgqNc).
-   
+
 ## License
 
 **Kaif UI** is licensed under the MIT License. You are free to use, modify, and distribute the library as you see fit. For more information, please refer to the [LICENSE](https://github.com/MuhammadKaifNazeer/kaif-ui/blob/main/LICENSE)
 
 ## Thank You
- 
+
 Thank you for choosing **Kaif UI**. We appreciate your support and look forward to seeing the amazing applications you build with our library.
 
 ### Enjoy!
@@ -140,4 +508,7 @@ We hope you enjoy using **Kaif UI** to build your applications. Our goal is to p
 ---
 
 <p className="font-bold -mb-3">Kaif UI</p>
-<p className="text-xs font-bold">Built with ❤️ by [Muhammad Kaif Nazeer](https://bento.me/muhammadkaifnazeer) </p>
+<p className="text-xs font-bold">
+  Built with ❤️ by [Muhammad Kaif
+  Nazeer](https://bento.me/muhammadkaifnazeer){" "}
+</p>
