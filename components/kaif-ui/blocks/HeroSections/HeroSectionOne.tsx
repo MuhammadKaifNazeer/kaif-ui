@@ -37,7 +37,6 @@ export default function HeroSectionOne() {
                             decoding="async"
                             className="rounded-[20px]"
                             src="/blocks/mail-dark.webp"
-                            style={{ color: "transparent" }}
                         />
                     </div>
                 </div>
