@@ -41,7 +41,7 @@ const EmogiNav: React.FC<EmogiNavProps> = ({ navItems }) => {
                         />
                       </Link>
                     </TooltipTrigger>
-                    <TooltipContent>
+                    <TooltipContent className="z-[11000]">
                       <p>{item.label}</p>
                     </TooltipContent>
                   </Tooltip>
