@@ -7,12 +7,12 @@ export interface Block {
 }
 
 const BlocksData: Block[] = [       
-  {
-    name: "Hero Sections",
-    supportLine: "Make a stunning first impression with captivating hero sections.",
-    imageUrl: "/blocks/hero-section.png",
-    mdxPath: "blocks/herosections.mdx", // no need to add "@/content/docs/"
-  },
+  // {
+  //   name: "Hero Sections",
+  //   supportLine: "Make a stunning first impression with captivating hero sections.",
+  //   imageUrl: "/blocks/hero-section.png",
+  //   mdxPath: "blocks/herosections.mdx", // no need to add "@/content/docs/"
+  // },
   {
     name: "Pricing",
     supportLine: "Present your pricing with clarity and impact using sleek, customizable designs.",
